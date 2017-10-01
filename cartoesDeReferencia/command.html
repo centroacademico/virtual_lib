@@ -1,0 +1,965 @@
+<HTML>
+
+  <HEAD>
+    <TITLE> Evelyn's LINUX Cheat Sheet - A basic guide to LINUX/UNIX
+  commands.</TITLE> 
+  </HEAD>
+ 
+  <BODY bgcolor="#FFFFFF" text="#006699" link="#CC6666" vlink="#CC6666"
+     alink="#003366">
+
+<H1><FONT color="#009966">
+Evelyn's LINUX Cheat Sheet<spacer type=horizontal size=250>
+<IMG ALIGN=RIGHT SRC="images/computerC.gif">
+<spacer type=vertical size=10>
+</FONT></H1>
+
+<FONT size = 3 color="#006699">*Please note that some of these
+commands are specific to the programs and environment I have set-up on my
+machine and will not work for you unless you have your machine set-up
+similarly. <br>Use the command <FONT color="black"><tt>locate
+program_name</tt></FONT> to determine whether or not you have a
+specific program on your machine. 
+<P>
+<spacer type=vertical size=30>
+</FONT>
+
+<H1> 
+<FONT color="#009966"> The Basics to Get Started </FONT> <P>
+</H1>
+<H4>
+The first thing to understand about LINUX is that your files exist in
+what is called a directory tree which you can access from a terminal
+window.  When you log in and open a terminal, you are in your home 
+directory of the directory tree: "/usr/people/login_name".  From this
+path you can see that the trunk of the directory tree starts a place
+called "/".  Your home directory exists off a branch that has "grown"
+from the trunk called usr/ and this directory has split again into
+people/ and finally into your home directory.  You can now create
+further branches off your branch of the directory tree, or work with
+system files that exist in other areas of the directory tree.  If your are used to working with Windows, note that directories are very similar to what would be folders in Windows.
+<br> 
+Here are some very basic initial commands to get you started moving
+around the directory tree: <P>
+
+<FONT color="black"><tt>pwd</tt></FONT> tells you where you are in the
+directory tree<br> 
+<FONT color="black"><tt>ls</tt></FONT> lists the contents of the
+directory you are in<br>
+<FONT color="black"><tt>cd directory_path</tt></FONT> moves you to
+another directory <br> 
+<FONT color="black"><tt>mkdir directory_name</tt></FONT> makes a new
+directory<br> 
+<FONT color="black"><tt>rm filename</tt></FONT> removes a file<br> 
+<FONT color="black"><tt>rmdir directoryname</tt></FONT> removes a directory<br>
+In order to remove all old files and directories contained in
+and below a directory use -r in the remove
+statement so it removes recursively. (Use rm not rmdir.)<br>
+<FONT color="black"><tt>rm -r directory</tt></FONT><br>
+Adding the option <FONT color="black"><tt>-f</tt></FONT> (with or
+without the r) avoids having to confirm 
+each remove (very useful on the supercomputers).<br> 
+<FONT color="black"><tt>cp filename placetocopyto</tt></FONT> copies a
+file to another location (or name if not a path) <br>
+<FONT color="black"><tt>mv filename placetomoveto</tt></FONT> moves a
+file to another location (or name if not a path)<br>
+<FONT color="black"><tt>../</tt></FONT> means go up one directory (You
+can do lots of these in a row (i.e. "../../../")<br> 
+<FONT color="black"><tt>.</tt></FONT> stands for the directory you are in<br>
+<FONT color="black"><tt>~</tt></FONT> stands for your home
+directory<br>
+<FONT color="black"><tt>Ctrl-a</tt></FONT> moves cursor to beginning
+of line<br> 
+<FONT color="black"><tt>Ctrl-e</tt></FONT> moves cursor to the end of
+line<br>
+<FONT color="black"><tt>Tab</tt></FONT> will complete typing the rest
+of any unique partially typed filename or path.  
+<P>
+Many commands have extra options you can add.  For instance, using the
+ls command above with the extra options:<br>
+<FONT color="black"><tt>ls -latr</tt></FONT><br>
+will list the contents of the directory in reverse
+order (oprion r) of the time last modified (option t) with additional
+informatiom about the file sizes and permissions.
+<P>
+To copy files between computers use <FONT color="black"><tt>scp</tt></FONT>
+(ftp is no longer allowed for 
+security reasons), which is almost the same as cp 
+except that you need to include the user and machine name as well:<br>
+<FONT color="black"><tt>scp filename
+mayaan@sp.msi.umn.edu:/misc/folder/foo</tt></FONT> <br> 
+Where filename is what you are copying and the rest is where you are
+copying to. The scp program must exist on both machines for
+this to work. If you need to install it on your Windows machine at home,
+WinSCP can be found on the web for free at <A
+HREF="http://winscp.sourceforge.net/eng/download.php">
+http://winscp.sourceforge.net/eng/download.php</A>.<br> 
+If you want to copy something to our group's laptop, you have to scp
+from rather than to it:<br> 
+<FONT color="black"><tt>scp mayaan@sp.msi.umn.edu:/misc/folder/foo
+.</tt></FONT> <br>
+which will copy a file called foo in /misc/folder directory of your
+machine into whatever directory you are in on the laptop.  
+<P>
+If you need to login to your computer from home, or you want to login to
+another machine 
+from your own, you will have to use <FONT
+color="black"><tt>ssh</tt></FONT>.  On our lab's machines this 
+will already be installed. To install it on your windows machine
+at home go to: <A
+HREF="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">
+http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</A>
+and get the PuTTY executable you need.  For more information you can
+read about ssh at the MSI
+web page: <A
+HREF="http://www.msi.umn.edu/user_support/ssh/">
+http://www.msi.umn.edu/user_support/ssh/</A><br>
+To use ssh:<br>
+<FONT color="black"><tt>ssh -l mayaan sp.msi.umn.edu</tt></FONT><br> 
+Where 'mayaan' is your user name and sp.msi.umn.edu is the name of the
+machine you are ssh-ing to. (You can also use an IP address instead.)
+You only need to add your user name if it is different on the machine you
+are logging on to.  Otherwise just use:<br> 
+<FONT color="black"><tt>ssh sp.msi.umn.edu</tt></FONT><br>
+If you want to be able to use molden or open emacs buffers in a new
+window then you will also need to use the options:<br>
+<FONT color="black"><tt>ssh -X -Y sp.msi.umn.edu</tt></FONT><br>
+to enable X11 forwarding.  (Usually you will want to do this.)  
+<P>
+When you ssh to a particular machine for the first time, it will ask
+you if you want to add them to your list of known hosts.  Later, if
+the name of a machine you have ssh-ed to or from in the past is 
+changed, it will create conflicts with 
+the ssh security keys your machine has saved.
+If you get this warning, go into the .ssh/known_hosts file within your home
+directory and delete the old offending key.  It will look something like
+this:<br>
+<FONT color="black"><tt>pinot-noir 1024 35
+1291129784473943918414976868999086549<br> 
+86410415517156181529778994379806391528830362867173995734<br>
+66658080759778377074425427610673221589448680346317493289<br>
+5288707144936026451479604363236711070229633796081649813</tt></FONT><br> 
+<P>  
+Most of the files you create in LINUX will be made with a file editor
+such as emacs, xemacs or vi.  Usually emacs and vi will already be
+installed on your machine.  To open a new file with emacs type:<br>
+<FONT color="black"><tt>emacs filename</tt></FONT><br>
+If you want to keep using the command line in your terminal while the
+editor is open you can type:<br> 
+<FONT color="black"><tt>Ctrl-z</tt></FONT><br>
+<FONT color="black"><tt>bg</tt></FONT><br>
+which places your currently opened file in the 'background'.
+Or open the editor instead with:<br>
+<FONT color="black"><tt>emacs filename &</tt></FONT><br> 
+If you want to bring the editor into the foreground again type:<br>
+<FONT color="black"><tt>fg</tt></FONT><br>
+As long as the editor (or any program for that matter) is in the
+foreground, you can close it by typing:<br>
+<FONT color="black"><tt>Ctrl-c</tt></FONT><br>
+(This isn't the best way to close most programs.  It usually comes in
+most handy when you accidentally open something and want to quit out
+of it immediately.)  
+<P>
+To learn about more editor commands you can visit either <A
+HREF="http://www.cs.fsu.edu/general/vimanual.html">
+http://www.cs.fsu.edu/general/vimanual.html</A>
+for vi or <A
+HREF="http://www.ma.iup.edu/MathDept/HomePageHelp/emacs.html">
+http://www.ma.iup.edu/MathDept/HomePageHelp/emacs.html</A> for
+emacs. (There are also some additional commands in the miscellaneous
+section below.)
+<P>
+You can also look at a file using your terminal by typing:<br>
+<FONT color="black"><tt>more filename</tt></FONT><br> 
+You can't edit it this way though, only view.
+<P>
+Whenever you want to learn more about how a specific command works,
+you can type:<br>
+<FONT color="black"><tt>man command</tt></FONT> or <FONT
+color="black"><tt>command --help</tt></FONT><br> 
+and a help page will pull up that explains the command details to you.
+<P> 
+To print out what man says type:<br>
+<FONT color="black"><tt>man -t command >print.ps</tt></FONT><br>
+and then use the program gv to look at the print.ps file you
+created.<br>
+<FONT color="black"><tt>gv print.ps</tt></FONT>
+<P>
+Some common programs we use in the lab that you may want to
+familiarize yourself with are:<br>
+<FONT color="black"><tt>molden</tt></FONT> (for viewing Gaussian .out
+files or creating .xyz or z-matrix files)<br>
+<FONT color="black"><tt>vmd</tt></FONT> (for viewing CHARMM pdb and
+dcd files)<br> 
+<FONT color="black"><tt>xmgrace </tt></FONT>or <FONT
+color="black"><tt>tecplot</tt></FONT> (for making data graphs)<br> 
+<FONT color="black"><tt>cvs</tt></FONT> (for storing and accessing files)<br>
+<FONT color="black"><tt>latex</tt></FONT> or <FONT
+color="black"><tt>pdflatex</tt></FONT> (for creating/compiling
+LaTeX documents)<br> 
+<FONT color="black"><tt>gnumeric</tt></FONT> (for creating spreadsheets)<br>
+<FONT color="black"><tt>xpdf</tt></FONT> or <FONT
+color="black"><tt>acroread</tt></FONT> (for viewing pdf files)<br> 
+<FONT color="black"><tt>gimp</tt></FONT> (for editing image files)<br> 
+<FONT color="black"><tt>tkYorkLib.pl</tt></FONT> (for looking up
+journal references)<br>
+<FONT color="black"><tt>ooffice</tt></FONT> (stands for OpenOffice and
+is a complete set of word processing, spread sheet, and presentation
+software similar to what you may be used to from Windows)<br>
+Additional information about using and obtaining most of these
+programs can be found on 
+the Software link of our York Group Intranet. 
+<P>
+</H4>
+
+
+<H1> 
+<FONT color="#009966"> Searching, Editing and other Basics
+</FONT> <P> 
+</H1> 
+
+<H4> 
+To combine a number of files into one file type:<br>
+<FONT color="black"><tt>cat *.bib > allfiles</tt></FONT><br>
+Don't use an output file with the same filename suffix as the files you are
+cat-ing or it will try cat-ing in that one too. 
+<P>
+To search through the files of a directory for a word or phrase use:<br>
+<FONT color="black"><tt>grep -i 'word' *</tt></FONT> <br>
+Without the -i option, the grep command will be case sensitive.  Other
+grep options include:<br> 
+-v to print lines that do not match <br>
+-n to print output with line numbers<br>
+-c to print only a count of number of lines matching<br>
+<br>
+To search within all the files of a directory branch for a
+word or phrase type:<br> 
+<FONT color="black"><tt>find . -type f -print -exec grep -i 'searchword' {}
+\;</tt></FONT> <br> 
+You can also use:<br>
+<FONT color="black"><tt>grep -i 'searchword' */*.src90 | grep
+INE</tt></FONT><br> 
+where "*/*" will search both the current and next lower directories, and
+"| grep INE" will filter out all the lines found with 'searchword'
+which don't also contain "INE". 
+<P>
+To find any file that has been on your computer for more then a day
+type:<br>
+<FONT color="black"><tt>locate filename</tt></FONT>
+<P>
+In addition to editors like emacs, you can also edit files directly
+from the terminal using <FONT color="black"><tt>sed</tt></FONT>, the
+built-in stream editor.  You can use it to make 
+substitutions or deletions in a file with commands
+such as:<br>
+<FONT color="black"><tt>sed 's/oldword/newword/g'
+filename</tt></FONT><br> 
+which substitutes "newword" for "oldword".  The "g" makes the
+substitution global (all instances on that line).  Without the g, it
+will only change the first match on that line. <br>
+Other sed commands:<br>
+<FONT color="black"><tt>sed 's/word/d' filename</tt></FONT><br> 
+This deletes the whole line, not just the word.  To delete just the
+word:<br>
+<FONT color="black"><tt>sed 's/word//' filename</tt></FONT>
+<br>
+The examples given will print out the changes to the terminal.  If
+you want to print the changes to a file instead type:<br>
+<FONT color="black"><tt>sed 's/oldword/newword/' filename >
+newfilename</tt></FONT> where > directs the output into a file called
+newfilename<br> 
+<P>
+To link more than one command together use <FONT
+color="black"><tt>&&</tt></FONT>.  For example:<br> 
+<FONT color="black"><tt>sed 's/oldword/newword/' filename >
+newfilename && emacs newfilename</tt></FONT><br> 
+
+<H1> 
+<FONT color="#009966"> Installing, Tarring, Zipping & RPMs, Etc. </FONT> <P>
+</H1>
+
+<IMG ALIGN=RIGHT SRC="images/headbang.gif">
+
+<H4> 
+Most of the program files you need to install on your machine will be
+downloaded in a compressed format that takes less time to transfer.
+Once on your machine, you will need to uncompress the file before you
+can install it.  First, determine the type of file you have from the
+file suffix.  If it ends 
+in .tar it is probably an unzipped tar file.  If it ends in .Z, .gz,
+.bz2 or.tgz it is probably a zipped tar file (zipping is a form of further
+compression).  
+In order untar a tar file type:<br>
+<FONT color="black"><tt>tar -xvf file.tar</tt></FONT><br>
+if it is a zipped tar file add a z to the options:<br>
+<FONT color="black"><tt>tar -zxvf file.tar.Z</tt></FONT> (except for
+bz2 which uses -j instead of -z)<br> 
+<P>
+If you want to look at the contents of a tar file before you untar it use:<br>
+<FONT color="black"><tt>tar -t filename.tar</tt></FONT><br>
+If you then decide there is only a small part of the total tar file
+you actually need to extract, type:<br>
+<FONT color="black"><tt>tar -zxvf tarfile filepath</tt></FONT>
+<P>
+If you have a large number of files you wish to transfer
+you can make it simpler by tarring them first:<br>
+<FONT color="black"><tt>tar -cvf file.tar
+directory_to_tar</tt></FONT><br>
+(Make sure you don't reverse the order of "file.tar" and "directory_to_tar").
+Then to zip it type:<br>
+<FONT color="black"><tt>gzip -cv file.tar</tt></FONT><br>
+Or better yet, do it all at once with:<br>
+<FONT color="black"><tt>tar -zcvf</tt></FONT><br>
+On our SGIs, this must be done with the command:<br> 
+<FONT color="black"><tt>tar -tvf file.tar directoryname</tt></FONT>
+instead.      
+<P>
+Here's a neat trick for transferring a tar file to another machine
+that will tar "on the fly" rather then requiring you to create a tar
+file on your own machine first.  (Which can be useful if you don't
+have much space left.)
+To do this simultaneous tar, zip, and transfer type:<br>
+<FONT color="black"><tt>tar --rsh-command=`which shh` -zcvf --
+			    --host_computer:filename.tar --
+			    --directory_to_tar</tt></FONT> <br>
+Note that "which ssh" needs back-ticks rather than apostrophies. 
+<P>
+After you uncompress a program tar file you will usually still have to
+install the 
+program yourself.  The usual directory to install programs in is
+/usr/local/.  (You 
+will need root permissions.)  Look for a README file in the file's source
+code to get further instructions.<br>   
+An easier method of installing programs though is to get a rpm
+package rather then a tar file for a program whenever possible.
+Rpm packages do all the work of untarring and installing for you.  
+A good source for these files can be found at:<A
+HREF="http://linux.s390.org/download/rpm2html/index.html">
+http://linux.s390.org/download/rpm2html/index.html
+</A> or <A
+HREF="ftp://ftp.software.umn.edu/pub/linux/redhat/redhat-9-en/os/i386/RedHat/RPMS">
+ftp://ftp.software.umn.edu/pub/linux/redhat/redhat-9-en/os/i386/RedHat/RPMS
+</A><br>
+(Note that this particular link is for people using Redhat 9 but if you
+go up a few directories you can get to the directory specific to the
+LINUX version your using). 
+<P>
+To install rpm packages type:<br>
+<FONT color="black"><tt>rpm -Uvh file.rpm</tt></FONT><br>
+You will often have to be root when you do this but you can do it from any
+location in the directory tree.  
+<br>
+There are lots of other options for rpm files as well. Go to:<br>
+<FONT color="black"><tt>rpm --help</tt></FONT><br>
+to learn more options.<P>  
+
+An even easier way to install things is to use
+a program that grabs 
+and installs all the rpms you need for you.  One such program (which
+you may already have installed) is
+called <FONT color="black"><tt>yum</tt></FONT> and you can get it from: <A
+HREF="http://linux.duke.edu/projects/yum/download.ptml">
+http://linux.duke.edu/projects/yum/download.ptml</A>.
+Once yum is installed you can install new packages by either:<br>
+<FONT color="black"><tt>yum install packagename</tt></FONT><br>
+for a specific package or<br>
+<FONT color="black"><tt>yum upgrade</tt></FONT><br>
+to get everything newly available for your LINUX version.
+<P>
+To see where the executable for a program you want to run is type:<br> 
+<FONT color="black"><tt>which executablename</tt></FONT><P>
+
+</H4>
+<H1>
+<FONT color="#009966"> Environment Set-up, Paths and Linking, Etc.</FONT> <P>
+</H1>
+
+<H4>
+There are a number of "hidden files" (files named with a . as the first
+character which don't show up when you type "ls") in some
+directories, some of which you can
+put personal environment options in.  Within your home directory,
+use emacs or another editor to look at the files .bash_profile,
+.bashrc and /etc/profile to get an idea of the kinds of things which
+these files contain.<br>
+After making a change to these files you will need to either type:<br>
+<FONT color="black"><tt>source .hidden_filename</tt></FONT><br> 
+in each terminal you use or else re-login.
+<P>
+To display all of the environment variables which are currently set:<br>
+<FONT color="black"><tt>env</tt></FONT>
+<P>
+To set environment variables needed to run programs such as CVS, go to
+the file .bash_profile, (or in c shell to .cshrc).  Then, to set up a
+variable such as CVSROOT, type:<br>
+<FONT color="black"><tt>export
+CVSROOT=:ext:theory.chem.umn.edu:/usr/local/cvsroot</tt></FONT><br> 
+which tells CVS to look for its home on theory in the directory
+/usr/local/cvsroot. You will have to re-login for these changes to
+take effect.<br>
+If a variable should be in the path of the whole computer rather than
+just a particular user, (such as for a program all users will use), put
+this variable in /etc/profile instead. 
+<P>
+If you want to be able to run a program from anywhere in your
+directory tree it needs to be "in your path", meaning in the list of
+places it will look for it.  (You can see what is currently in your
+path by typing the env command mentioned above).  The directory "~/bin"
+is always in your path and is a good place for personal
+programs/files.  To run a program file though you will also need to
+have executable permission for that file.
+<P>
+In order to change the permissions for a file:<br>
+<FONT color="black"><tt>chmod XYZ filename</tt></FONT><br>
+where X is the sum of the user permissions, Y is the sum of the group
+permissions, and Z is the sum of the all users permissions.<br> 
+For read permission add 4, for write permission add 2, and for executable
+permission add 1. For example, to create a file which had read, write
+and executable permissions for the user but only read permission for
+every one else, type:<br>
+<FONT color="black"><tt>chmod 744 filename</tt></FONT><br>
+or <br>
+<FONT color="black"><tt>chmod +x filename</tt></FONT><br> which will
+add executable permission to all three.
+<P>
+In order to change the user ownership of a file, go root and then type:<br>
+<FONT color="black"><tt>chown user filename</tt></FONT><br>
+To change group ownership type:<br>
+<FONT color="black"><tt>chgrp -R groupname directory/filename</tt></FONT><br>
+Or you can change both permissions at once by typing:<br>
+<FONT color="black"><tt>chown -R user.group directory/filename</tt></FONT><br>
+(Adding the -R makes it recursive through all directories in the path
+you type).
+<P>
+<IMG ALIGN=RIGHT WIDTH=100 HEIGHT=100 SRC="images/fasttype.gif">
+If you want to use a file/program that is in a different directory but
+you don't want to actually move or copy the file/program over, you can
+instead make a link to it.  There are two types of links, hard and
+soft.  To make a soft link: <br>
+<FONT color="black"><tt>ln -s filepathtoexecutable
+placetomakelinkto</tt></FONT><br> 
+for example:<br>
+<FONT color="black"><tt>ln -s
+~/CVS/DataBase/Semiempirical-SRP/Utilities/EXE/GenRefGeomData .</tt></FONT><br>
+where the "." stands for the directory you are in.<br> 
+A soft link is usually preferable to a hard link, as a hard link will
+delete the actual file if you delete the link.
+<br>
+This is often used to set up a link to an executable
+from your "~/bin" directory because it allows you to run the executable
+from anywhere in your directory tree. 
+<P>
+You can also link one directory to another:<br>
+<FONT color="black"><tt>ln -s /usr/local/src/xmgr/xmgr-4.1.2/xmgr/doc/
+doc</tt></FONT><br> 
+which will link the original directory to a new directory called doc
+that exists in the directory you are currently in.
+<P>
+If you want to make up your own command name to stand for something else,
+ you can make an alias.  Make a file in your ~/bin directory 
+ named what you want your command to be.  Then, inside of the file
+ put the commands that you want it to execute when you type your
+ command.  For example, you can make a file called "sl", inside of 
+ which is the command <FONT color="black"><tt>ls</tt></FONT>.  (That way,
+ every time you accidentally type sl 
+ instead of ls, it will still execute ls.)  Make sure you give the file
+ executable permission or you won't be able to run it.<br>   
+<P>
+
+</H4>
+
+<H1>
+<FONT color="#009966"> Checking Processes </FONT> <P>
+</H1>
+
+<H4>
+<IMAGE ALIGN=RIGHT WIDTH=151 HEIGHT=182 SRC="images/labman1.gif">
+
+To find your IP address:<br>
+<FONT color="black"><tt>/sbin/ifconfig</tt></FONT><br>
+and look for inet addr:
+<P>
+To change your printer setup, run:<br>
+<FONT color="black"><tt>printconf-gui</tt></FONT>
+<P>
+To restart your network:<br>
+<FONT color="black"><tt>service network restart</tt></FONT>
+<P>
+To have the output of a running job (program) be output both to the screen and
+to a file, type:<br> 
+<FONT color="black"><tt>executable < infilename | tee
+outfilename</tt></FONT><br> 
+You will have to wait until the job finishes to use your command line
+again however.  Another way to both direct output to a file and to the
+screen is to first direct it to a file:<br>
+<FONT color="black"><tt>executable < infilename > outfilename &</tt></FONT><br>
+And then to view what is being written to your output file as the program
+runs, type:<br>
+<FONT color="black"><tt>tail -f outfilename</tt></FONT><br>
+This command can be stopped anytime with <FONT
+color="black"><tt>Ctrl-c</tt></FONT> without killing the actual
+program that is running. The -f command for <FONT
+color="black"><tt>tail</tt></FONT> stand for following.  You can also
+print out only a certain number of lines by instead using:<br>
+<FONT color="black"><tt>tail -10 outfilename</tt></FONT><br>
+which would print out the last 10 lines.
+<P>
+To see how much disk space is being used by a directory tree branch: <br>
+<FONT color="black"><tt>du -sh directoryname</tt></FONT><br>
+To see the space used per directory in a branch:<br>
+<FONT color="black"><tt>du | sort -nr | more</tt></FONT> <br>
+To see total space used for each disk partition: <br>
+<FONT color="black"><tt>df -h</tt></FONT>
+<P>
+To check which jobs have run recently type: <br>
+<FONT color="black"><tt>find . -mtime -1 -print</tt></FONT><br>
+The -1 means check everything within the last day.  You can change
+this to any number you want.
+<P>
+To find out where a job on your machine is running, first:<br>
+<FONT color="black"><tt>cd /proc/</tt></FONT><br>
+then locate the process id (PID) directory of your job (which you can find
+by running <FONT color="black"><tt>top</tt></FONT>, see below) and
+look inside it to see where the executable path is. 
+<P>
+If something running on your machine is taking up too much of your
+processor, you can change its priority by 'renice'-ing it.  To renice
+something, first run top:<br>
+<FONT color="black"><tt>top</tt></FONT><br>
+then type r at the cursor prompt.  It will ask you which PID you would
+like to renice (the PID found in the left most column). 
+Finally it will ask you what renice value you would like to set the
+process to. Entering a positive value (something like 20) will lower
+your job's priority while a negative one will raise it.<br>
+If the process you want to change belongs to another user, you will
+have to be root to be allowed to change it.
+<P>
+Other useful top commands:<br>
+To see all the jobs a user has running type u at the top command
+prompt and then enter the users name.  To sort processes
+by newest to oldest type A.  Or to reverse order type R.<br>
+To kill (stop) a job
+type k at the command prompt and enter 15 as the kill signal. (15
+kills "nicely".  If that doesn't work, you can use 9 instead which
+kills abrubtly.)<br> 
+Many other top commands can be viewed with 'man top'.
+<P>
+You can also kill a job on the command line by typing:<br>
+<FONT color="black"><tt>kill -15 jobid</tt></FONT> (note the minus sign
+this time).<br>
+To kill only the jobs of a certain user type:<br>
+<FONT color="black"><tt>kill `ps aux | grep username | awk '{print
+$2}'`</tt></FONT> 
+<P>
+To see the parent to child branching for all processes running type,<br>
+<FONT color="black"><tt>ps afx</tt></FONT> <br>
+This will tell you, for instance,
+which programs are running out of each terminal and will give you the
+PID for each process too.
+<P>
+</H4> 
+
+</H4> 
+<H1> 
+<FONT color="#009966"> File type conversions </FONT><P>
+</H1> 
+<IMAGE ALIGN=RIGHT WIDTH=150 SRC="images/mantype_small.jpg">
+
+<H4>
+If a file is missing a file type suffix, you can find out what type of
+file a file is (text, tar, png, etc.) by typing:<br> 
+<FONT color="black"><tt>file name_of_file</tt></FONT> <br>
+<P> 
+To convert from a ps file to a png or gif file format type: <br>
+<FONT color="black"><tt>ps2png file.ps file.png</tt></FONT><br> or <FONT
+color="black"><tt>ps2gif file.ps 
+file.gif</tt></FONT><br> 
+To convert from a eps file to a pdf file format type: <br>
+<FONT color="black"><tt>epstopdf --nocompress filename</tt></FONT><br>
+To convert an rgb file (made with vmd) to a png file use:<br>
+<FONT color="black"><tt>convert file.rgb file.png</tt></FONT><br>
+<FONT color="black"><tt>convert</tt></FONT> works for many other file
+types as well. Such as:<br> 
+<FONT color="black"><tt>convert file.png file.eps</tt></FONT>
+<P>
+To look at a dvi file (created with LaTeX):<br>
+<FONT color="black"><tt>xdvi filename</tt></FONT><br>
+To print the output of a
+dvi file:<br> 
+<FONT color="black"><tt>dvips -f file.dvi > file.ps</tt></FONT><br>
+and then open it with <FONT color="black"><tt>gv</tt></FONT> and print.<br>
+<P>
+To add more white space around an image:<br>
+<FONT color="black"><tt>convert filename -bordercolor white -boarder
+10x10 newfilename</tt></FONT><br>
+where 10x10 specifies how many pixels of space to add. 
+</H4> 
+
+<H1> 
+<FONT color="#009966"> Supercomputers </FONT><P>
+</H1> 
+
+<H4> 
+There are a number of supercomputers available for use at MSI to help
+you run jobs more quickly using multiple processors.  To find a full
+list of your machine options go to: <A 
+HREF="http://www.msi.umn.edu/user_support/">
+http://www.msi.umn.edu/user_support/</A><br> 
+You can also use the Linux cluster we have available in our own lab.
+To find out more about what computers are available on this go to: <A
+HREF="http://theory.chem.umn.edu/Group/Private/compinfo.html">
+http://theory.chem.umn.edu/Group/Private/compinfo.html</A>
+<P>
+To change your password type <FONT
+color="black"><tt>passwd</tt></FONT> and follow prompts. (This works
+on our Linux machines too). 
+<P>
+To temporarily (1 day) stop our Linux cluster jobs from running on your
+machine:<br>
+<FONT color="black"><tt>nodemodify.pl pause computername</tt></FONT><br>
+or to remove your computer from the Linux cluster:<br>
+<FONT color="black"><tt>nodedown</tt></FONT><br>
+and to re-add it again:<br>
+<FONT color="black"><tt>nodeup</tt></FONT><br>
+Note than when you are off the cluster other people can't run their
+jobs in cluster queue on your machine but you can't run your on theirs either.
+<P>
+In order to use many of the programs available on the MSI machines you
+will have to load a module first.  Going to <A
+HREF="http://www.msi.umn.edu/user_support/software/all.html">
+http://www.msi.umn.edu/user_support/software/all.html</A>
+and finding your desired program will usually tell you how to do this. 
+<P>
+To make computer usage equally distributed between all users, the
+supercomputers use a queuing system.  You have
+to submit large jobs to the queue in order to have them run (rather
+than run them interactivly like you can on your own machine).  To put
+something into the queue system you need to make a submission script
+file.  The format of these files is a different 
+depending on which supercomputer you running are on.
+For instance, on the netfinity, a multiple processor submission script
+file looks something like this:<br>  
+<FONT color="black"><tt>#PBS -l
+nodes=4:ppn=2,mem=1000mb,walltime=96:00:00</tt></FONT><br> 
+<FONT color="black"><tt>#PBS -m e</tt></FONT><br>
+<FONT color="black"><tt>cd ~/charmm/projects/ </tt></FONT><br>
+<FONT color="black"><tt>mpirun -np 8
+~/charmm/projects/charmmpar < ribo379_ionequil.inp >
+ribo379_ionequil.out</tt></FONT><br> 
+<br>
+On the sp:<br>
+<FONT color="black"><tt>#!/bin/csh</tt></FONT><br>
+<FONT color="black"><tt>#@ error = err.err</tt></FONT><br>
+<FONT color="black"><tt>#@ job_type = parallel</tt></FONT><br>
+<FONT color="black"><tt>#@ wall_clock_limit =3:00:00</tt></FONT><br>
+<FONT color="black"><tt>#@ network.MPI = css0,shared,US</tt></FONT><br>
+<FONT color="black"><tt>#@ node = 4</tt></FONT><br>
+<FONT color="black"><tt>#@ tasks_per_node = 2</tt></FONT><br>
+<FONT color="black"><tt>#@ node_usage = shared</tt></FONT><br>
+<FONT color="black"><tt>#@resources = ConsumableMemory(500)</tt></FONT><br>
+<FONT color="black"><tt>#@ queue</tt></FONT><P>
+
+<FONT color="black"><tt>setenv MP_SHARED_MEMORY yes</tt></FONT><P> 
+
+<FONT color="black"><tt>charmmpar < ribo301mg_watequil.inp >
+ribo301mg_watequil.out</tt></FONT><P> 
+ 
+Once you have your submission script, you then need to send it to
+queue.  This also varies by machine.<br>
+<FONT color="black"><tt>qsub scriptname</tt></FONT> (for the netfinity) or <br>
+<FONT color="black"><tt>llsubmit scriptname</tt></FONT> (for the sp)
+<P>
+If you are running Gaussian jobs, however, you can have the submission
+script created for you.  First load the Gaussian module:<br>
+<FONT color="black"><tt>module load g03</tt></FONT><br>
+then create the submission script and submit it to the queue
+simultaneously with:<br> 
+<FONT color="black"><tt>qg03 -p 2 -t 96:00:00 -m 512mb
+jobname.inp</tt></FONT><br> 
+where "-p 2" is the number of processors you want, "-t 96:00:00" is the amount
+of time you want (each system has an upper limit on this) and "-m 512mb"
+is the amount of memory you need.  Make sure you set this to match up
+with what you put in your Gaussian input file.
+<P>
+You can find out more about the queuing systems by going to <A
+HREF="http://www.msi.umn.edu/user_support/">
+http://www.msi.umn.edu/user_support/</A>
+and selecting the link for the system you are using.<bg>
+<P>
+To check the status of a job that has been submitted on the
+ netfinity:<br>
+<FONT color="black"><tt>showq</tt></FONT> or <FONT
+color="black"><tt>qstat | grep username</tt></FONT> or <br>
+<FONT color="black"><tt>qstat -f jobid</tt></FONT> if you need more
+information.<br>  
+On the sp: <FONT color="black"><tt>showq</tt></FONT> or <FONT
+color="black"><tt>llq | grep username</tt></FONT><br>  
+<FONT color="black"><tt>showq</tt></FONT> can also be used to see how
+many processors are available.<br> 
+<P>
+Once a job has been submitted you can find out how soon it will run
+by:<br>
+<FONT color="black"><tt>showstart jobid</tt></FONT>
+<P>
+To delete a job after it has been queued, first use qstat or llq to
+find the job id.  It will be something like this: "17147.ofs".  Then:<br>
+On the sp: <FONT color="black"><tt>llcancel jobid</tt></FONT><br>
+On the netfinity: <FONT color="black"><tt>qdel jobid</tt></FONT>
+<P>
+To find out your disk space quota on a system:<br>
+<FONT color="black"><tt>quota</tt></FONT><br>
+To find out how many hours of allocated time you have used on a system:<br>
+<FONT color="black"><tt>acctinfo</tt></FONT><br>
+This will also tell you how many total hours of allocation our group
+has left before the current grant period ends (each July 1st and Jan. 1st).
+<P>
+InsightII is only available on the bscl supercomputer machines and you
+may need to email them to get an account set up.  To use InsightII 
+remotely:<br> 
+<FONT color="black"><tt>source /usr/local/biosym/cshrc</tt></FONT><br>
+<FONT color="black"><tt>InsightII -axxess</tt></FONT><br>
+(It may give you some error messages but it should still work.)
+<P>
+To make molden stop beeping!:<br>
+<FONT color="black"><tt>xset -b</tt></FONT><br>
+(Sorry I can't help you with InsightII).
+<P>
+To use babel on the supercomputers you will need to be in bash shell
+first (just type <FONT color="black"><tt>bash</tt></FONT> at the
+command prompt to get this). Then:<br> 
+<FONT color="black"><tt>export BABEL_DIR=`pwd`</tt></FONT>
+<P>
+</H4> 
+<IMAGE ALIGN=RIGHT WIDTH=162 HEIGHT=196 SRC="images/computer_typing_thumb.gif">
+<H1> 
+<FONT color="#009966"> Miscellaneous </FONT><P>
+</H1> 
+
+<H4> 
+If your computer freezes, it is best to not just shut it off.  First
+try going to 
+another computer, shh to your machine and become root. Then use the
+top (see info on using top above) to kill the job
+that is causing the problem.<br>
+You can also try:<br>
+<FONT color="black"><tt>Ctrl-F4</tt></FONT><br>
+to open another session on your own computer amd run top from there.
+Then to get back to your session:<br>
+<FONT color="black"><tt>Ctrl-F7</tt></FONT><br>
+<P>
+To turn off your computer properly, first become root. Then:<br>
+<FONT color="black"><tt>shutdown -h now</tt></FONT><br>
+or use -r to reboot.
+<P>
+Sometimes a more useful way of transferring files between machines is
+to use <FONT color="black"><tt>rsync</tt></FONT> rather than scp.
+This can be a good idea if, for instance, you want to copy all of the
+files in a particular directory over that are not already there but
+omit the ones that are.  Or you want to transfer only files that are
+newer versions of similarly named files than ones already there.
+There are many options for this command that can be looked up in the
+man pages.  One usage example:<br>
+<FONT color="black"><tt>rsync -Wvult muscat.chem.umn.edu:/directory/*
+.</tt></FONT><br>
+which will copy over all the files of a directory that are newer than
+older versions while preserving symbolic links and file modification times.  
+<P>
+If you have a floppy disk you want to look at the files on type:<br>
+<FONT color="black"><tt>mount /dev/floppy</tt></FONT><br>
+or if it is Windows formatted:<br>
+<FONT color="black"><tt>mount -t vfat /dev/fd0 /mnt/floppy</tt></FONT><br>
+You will have do be root to do this or have permissions for this
+device.  When you are done, unmount the disk with:<br>
+<FONT color="black"><tt>unmount /dev/fd0</tt></FONT>
+<P>
+To read a cd:<br>
+<FONT color="black"><tt>mount /dev/cdrom</tt></FONT><br>
+<FONT color="black"><tt>cd /mnt/cdrom</tt></FONT><br>
+Some of the newer LINUX versions will mount things like disks, cds and flash
+drives automatically.
+<P>
+To play a cd:<br>
+<FONT color="black"><tt>xplaycd &</tt></FONT>
+<P>
+To burn files onto a cd (you have to be on theory for this):<br>
+<FONT color="black"><tt>cdrecord -vv -dev=cdrw -blank=fast -dao -pad
+-audio filenames</tt></FONT> 
+<P>
+To compile a program you've written in fortran with a Makefile,
+checkout the directory:<br> 
+~/CVS/Software/Configure<br> and copy the file prog.mk to the
+directory your program is in.  Edit the file to be specific for your
+program.  Then type:<br>
+<FONT color="black"><tt>configure</tt></FONT><br> (which should be in
+your path) to create your Makefile.  Now to compile your code type:<br>
+<FONT color="black"><tt>make</tt></FONT><br>
+If you do not have a Makefile you can compile with:<br>
+<FONT color="black"><tt>f95 filename</tt></FONT>
+<P>
+To check the spelling of a file:<br> 
+<FONT color="black"><tt>ispell filename</tt></FONT> <br>
+Emacs also has a spell check option under the Tools menu.
+<P>
+To see how many lines in a file:<br>
+<FONT color="black"><tt>wc -l filename</tt></FONT><br>
+<P>
+To install CHARMM (in serial, not parallel), go into the main directory of the
+source code where the script <FONT
+color="black"><tt>install.com</tt></FONT> exists. (You can check out
+different versions of CHARMM from "~/CVS/Software/Programs/CHARMM")
+Then type:<br>   
+<FONT color="black"><tt>./install.com machinetype memorysize</tt></FONT> <br>
+You can use "large" on our machines or "xlarge" on the supercomputers for
+the memorysize and for machinetype use: "gnu" for Linux, 
+"ibmsp" for the sp, etc.  A list of possible types as well as other
+compiler options, can be found inside the install.com script file.<br>
+To install CHARMM in parallel, use instead:
+<FONT color="black"><tt>./install.com machinetype memorysize M
+MPICH</tt></FONT><br> 
+You will be prompted for where the mpi include and mpi lib files
+are.  This changes as upgrades are made but you can find what's
+current by going to:<A
+HREF="http://www.msi.umn.edu/cgi-bin/soft/software_detail.html?id=225&lab_id=&subject_id=30">
+http://www.msi.umn.edu/cgi-bin/soft/software_detail.html?id=225&lab_id=&subject_id=30</A>.<br>
+Currently on the netfinity they are:<br>
+<FONT color="black"><tt>/usr/local/mpich-gm-rhel3/include</tt></FONT><br>
+<FONT color="black"><tt>/usr/local/mpich-gm-rhel3/lib</tt></FONT><br>
+These may be different depending on which libraries your platform
+uses though.  You can also see our message board for more details.<br>
+When recompiling charmm, especially if you are making changes to the
+code itself, you may need to delete the platform directory created
+within the lib/ and build/ directories.  For example:<br>  
+<FONT color="black"><tt>rm -rf build/gnu</tt></FONT><br>
+<FONT color="black"><tt>rm -rf lib/gnu</tt></FONT><br>
+Don't delete the entire lib/ or build/ directories though or you will
+lose files you need to compile!<br>
+To follow the output of the compilation:<br>
+<FONT color="black"><tt>tail -f build/gnu/gnu.log</tt></FONT><br>
+where gnu is the computer platform type you are using.  
+<P>
+
+<IMAGE ALIGN=RIGHT SRC="images/puter2.gif">
+
+It is often useful to create shell scripts for carrying out tasks.
+For instance, if you want to change the names of many 
+files at once, instead of changing each one separately, you can do
+this by typing the following set of commands:<br>
+<FONT color="black"><tt>for i in `ls *.dat`</tt></FONT><br>
+<FONT color="black"><tt>do</tt></FONT><br>
+<FONT color="black"><tt>mv $i `echo $i|sed 's/dat/txt/'`</tt></FONT><br>
+<FONT color="black"><tt>done</tt></FONT><br>
+This will substitute "tex" for "dat" in each filename that ends in "*.dat".<P> 
+
+Or, if you wanted to run a number of jobs in succession, you can
+create your own submission script. First open a file named what you want your
+script to be called.  Then type:<br>
+<FONT color="black"><tt>#! /bin/sh</tt></FONT><br>
+<br>
+<FONT color="black"><tt>name="job1.inp job2.inp job3.inp
+job4.inp"</tt></FONT><br> 
+<FONT color="black"><tt>for i in $name</tt></FONT><br>
+<FONT color="black"><tt>do</tt></FONT><br>
+<FONT color="black"><tt>g03 < $i > `echo $i|sed 's/inp/out/'`</tt></FONT><br>
+<FONT color="black"><tt>done</tt></FONT><br>
+Add executable permission to the script and then run it with:<br>
+<FONT color="black"><tt>nohup ./script &</tt></FONT><br>
+(Be careful to keep back-ticks and apostrophes strait and don't use a
+& in the g03 command line or the jobs will try to run all at once!)<P>
+
+To sort names or data:<br>
+<FONT color="black"><tt>for i in `ls *.xyz`; do echo $i; done |
+sort</tt></FONT><br> 
+which sorts alphabetically.  To instead sort numerically use sort -n
+(or sort -nr for reverse order).<br>
+Please note that these commands are specific to bash shell.  If you are using a
+different shell (such as on the supercomputers which use c-shell by
+default) you will need to either change to bash shell temporarily:<br>
+<FONT color="black"><tt>bash</tt></FONT> (to enter)<br>
+<FONT color="black"><tt>exit</tt></FONT> (to leave)<br>
+or use commands specific to c shell instead.  For example:<br>
+<FONT color="black"><tt>foreach i (`ls *`)</tt></FONT><br>
+<FONT color="black"><tt>do</tt></FONT><br> 
+<FONT color="black"><tt>mv $i `echo $i|sed 's/dat/txt/'`</tt></FONT><br>
+<FONT color="black"><tt>done</tt></FONT>
+<P>   
+To turn off beeping, go into Current Profile under the Edit menu of
+one of your terminals and de-select terminal bell.  You will have to
+re-login for this to become permanent.
+<P>
+To get rid of a CVS sticky tag on a file (usually created when
+checking out an older version of a file), first make a backup file, then:<br>
+<FONT color="black"><tt>cvs update -A</tt></FONT><br>
+To get a previous cvs version of a file, first:<br>
+<FONT color="black"><tt>cvs log filename</tt></FONT><br>
+to list all previous versions, then:
+<FONT color="black"><tt>cvs update -r version filename</tt></FONT>
+<P>
+To make a graph from only some of the columns in a file:<br>
+<FONT color="black"><tt>xmgrace -block filename -bxy 2:3</tt></FONT><br>
+where -bxy 2:3 tells xmgrace which columns to use for the x & y axis
+<P>
+To change your screen saver run:<br>
+<FONT color="black"><tt>xscreensaver</tt></FONT>
+<P>
+To send a ps or pdf file to the printer:<br>
+<FONT color="black"><tt>lp -d lpc -P 1-2 filename</tt></FONT><br>
+where "lpc" is our color printer (you can also use "lpbw" for our black &
+white printer) and "-P 1-2" is the pages to print (can be left out if
+there is only 1 page or you want to print the whole file).  To view
+the print jobs you have submitted:<br> 
+<FONT color="black"><tt>lpq</tt></FONT><br>
+to cancel a print job:<br>
+<FONT color="black"><tt>cancel jobid</tt></FONT><br>
+(You have to be quick though!)
+<P>
+Some common keyboard commands in emacs:<br>
+<FONT color="black"><tt>Alt-w</tt></FONT> to copy<br>
+<FONT color="black"><tt>Ctrl-w</tt></FONT> to cut<br>
+<FONT color="black"><tt>Ctrl-y</tt></FONT> to paste<br> 
+<FONT color="black"><tt>Ctrl-x Ctrl-l</tt></FONT> to lower case text<br>
+<FONT color="black"><tt>Ctrl-x Ctrl-s</tt></FONT> to save<br>
+<FONT color="black"><tt>Ctrl-x Ctrl-c</tt></FONT> to close buffer<br>
+<FONT color="black"><tt>Esc-<</tt></FONT> to move to beginning of buffer<br>
+<FONT color="black"><tt>Esc-></tt></FONT> to move to end of buffer<br>
+<FONT color="black"><tt>Esc %</tt></FONT> to replace text<br>
+<FONT color="black"><tt>Ctrl-g</tt></FONT> to abort a command<br>
+<FONT color="black"><tt>Ctrl-a</tt></FONT> to move cursor to the beginning
+of line<br> 
+<FONT color="black"><tt>Ctrl-e</tt></FONT> to move cursor to the end
+of line<br> 
+<FONT color="black"><tt>Esc lpr-buffer</tt></FONT> to print an emacs
+buffer without the header<br>
+Many of these commands can also be found in the toolbar menus.
+<P>
+To change to font settings of your emacs editor, left mouse click
+inside the emacs buffer while holding the shift key
+or go into xfontsel.<P>
+To change defaults for xemacs/emacs, look in .Xdefaults or .emacs
+<P>
+To have your computer beep to tell you when a job your running is
+finished use:<br>
+<FONT color="black"><tt>program < inputfile && cat
+/usr/share/sounds/KDE_Beep_Beep.wav > /dev/audio</tt></FONT><br>
+ (Very useful if you have your computer set-up to have more than one
+ workspace screen). Depending on what you have installed you may or
+ may not have this 
+ specific wav sound file but you can look through the directory to
+ find another one you do have.
+</H4>
+
+<A HREF="http://theory.chem.umn.edu/~mayaan">
+Back to my home page</A><br>
+
+
+  </BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+

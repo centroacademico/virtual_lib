@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>Linux Help - Linux Cheat Sheet</title>		<link href="/css/linuxhelp.css" rel="stylesheet" type="text/css" media="all" />
+		<style type="text/css" media="screen"><!--
+.padbcont_header {
+	background-image: url(/images/header_background.gif);
+	width:100%;
+	height:116px  }
+.padbox_header {width:auto; height:auto; padding:0}
+--></style>
+	</head>
+
+	<body leftmargin="0" marginheight="0" marginwidth="0" topmargin="0">
+		<!-- header starts here -->
+		<div class="padbcont_header">
+			<!--agl:cssobject id="header" type="Padded Box" /-->
+			<div class="mainsite_nav">
+				<img class="header_end_left" src="/images/header_end_left.gif" alt="" width="28" height="115" border="0" />
+<a href="/">
+					<img class="header_logo" src="/images/lh_logo.gif" alt="Logo" width="54" height="55" border="0" />
+				<img class="header_wordmark" src="/images/linuxhelp_wrdmrk.gif" alt="Linux Help" width="141" height="55" border="0" />
+</a>
+				<img class="header_end_right" src="/images/header_end_right.gif" alt="" width="28" height="115" border="0" />		
+				<!-- header ends here -->
+<div class=banner>
+<a href="http://www.easydns.com/?V=linuxhelp1">
+<img border=0 src="/images/Small_easyDNS_ad.gif" alt="DNS Hosting with easyDNS"></a>
+</div>
+				<!-- top level navigation starts -->
+				<div class="top_nav">
+					<img class="top_nav_greenline" src="/images/header_greenline.gif" alt="" height="46" width="1" border="0" /> <a href="/guides/">guides</a>
+				<img class="top_nav_greenline" src="/images/header_greenline.gif" alt="" height="46" width="1" border="0" /> <a href="/forums/">forums</a> 
+				<img class="top_nav_greenline" src="/images/header_greenline.gif" alt="" height="46" width="1" border="0" /> <a href="http://linuxhelp.markjr.net/forums/index.php?automodule=blog">blogs</a> 
+<!--
+				<img class="top_nav_greenline" src="/images/header_greenline.gif" alt="" height="46" width="1" border="0" /> <a href="linux_downloads">downloads</a>
+-->
+</div>
+				<!-- top level navigation ends --><!-- main site navigation begins -->
+				<!-- main site navigation begins -->
+				<div class="main_nav">
+					<a href="/">Home</a> 
+					<a href="/desktops/">Desktops</a> 
+					<a href="/distributions/">Distributions</a> 
+					<a href="/linux_downloads/">ISO Images</a> 
+					<a href="/logos/">Logos</a> 
+					<a href="/newbies/">Newbies</a> 
+					<a href="/forums/index.php?act=SF&f=8">Reviews</a> 
+					<a href="/software/">Software</a> 
+					<a href="/resources/">Support</a> 
+					<a href="http://wiki.linuxhelp.net">Linuxhelp Wiki</a></div>
+				<!-- main site navigation ends --></div>
+		</div>
+<br />
+
+<table align=center width=100% cellpadding=5 cellspacing=0 border=0>
+<tr>
+<td valign=top background="/images/tile_back.gif">
+<B>Linux Cheat Sheet</B>
+</td>
+<td align=right background="/images/tile_back.gif">
+&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+
+<table align=center width=100% cellpadding=5 cellspacing=0 border=1
+bordercolor=#000000>
+<tr>
+<td>
+<center><script type="text/javascript"><!--
+google_ad_client = "pub-8219019886274741";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="4994467583";
+google_color_border = "ffffff";
+google_color_bg = "ffffff";
+google_color_link = "000080";
+google_color_url = "CCCCCC";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</center><a href="/guides/cheats/cheats-print.php">
+<img src="/images/print.gif" alt="Printable Version" align=right border=0></a>
+
+<P align="left">
+Luke's Cheat Sheet For Linux<br>
+Created on Friday December 8th, 2000<br>
+<br>
+&nbsp; &nbsp;<font color="#3333ff"><big></big><font color="#3366ff"><big><u><b>Packages.</b></u></big><br>
+<br>
+<b>&nbsp;&nbsp; <small>RPM - </small><a href="http://www.redhat.com">Red 
+Hat 
+</a></b></font><big><font color="#3366ff"><b><small>Package Management</small></b></font><br>
+<br>
+</big></font>Install - <b>rpm -i ***.rpm</b><br>
+Upgrade -<i></i><b>rpm -Uvh ***.rpm</b><br>
+Erase/uninstall - <b>rpm -e package-name</b><br>
+Force installation -<i></i><b>rpm -Uvh --force --nodeps ***.rpm</b><br>
+Query package - <b>rpm -q package-name</b><i><br>
+</i><br>
+
+<b>&nbsp;&nbsp; <font color="#3366ff">
+<a href="http://www.debian.org">Debian&nbsp; </a>Package Managment
+
+
+ (.debs)</font></b><font color="#3366ff"><b><br>
+</b></font><br>
+Firstly edit /etc/apt/sources.list and add your closest mirror and cds with debian on:<br>
+Example<br>
+deb ftp://ftp.us.debian.org/debian stable main contrib non-free<br>
+deb cdrom:[Debian GNU/Linux 2.2 r0 _Potato_ - Official i386 Binary-1 (20000814)]<br>
+then run <i>apt-get update</i><br>
+<b>DPKG<br>
+</b>install - <b>dpkg -i package.deb<br>
+</b>remove/uninstall - <b>dpkg -r package</b><br>
+List files asscoiated with package -<i><b></b></i><b>dpkg -L package</b><br>
+Version - <b>dpkg -l package</b><br>
+Unpack A deb - <b>dpkg -unpack package.deb</b><br>
+<b>APT</b><br>
+install - <b>apt-get install &lt;package&gt;</b><br>
+search - <b>apt-cache search &lt;package&gt;</b><br>
+remove - <b>apt-get remove &lt;package&gt;</b><br>
+(When using apt-get to download off the Internet, the .deb files are placed
+
+ in /var/cache/apt/archives)<br>
+<br>
+<b>&nbsp;&nbsp; <font color="#3366ff"><big>Network Side</big></font><br>
+</b>
+<ul>
+  <li>Allow Hosts -<i></i>edit<i><b>/etc/hosts.allow</b></i><b>&nbsp;&nbsp; &nbsp; #Example
+
+
+ </b>Service:IP-ADDRESS</li>
+  <li>Deny Hosts - edit <b><i>/etc/hosts.allow</i>&nbsp; &nbsp; &nbsp; # Example </b>ALL:ALL</li>
+  <li>Hosts on Network - edit<i><b>/etc/hosts</b></i><b>&nbsp; </b></li>
+  <li>#Example &nbsp; <i>IPADDRESS &nbsp; &nbsp; HOSTNAME &nbsp; &nbsp; HOSTNAME.DOMAINNAME</i></li>
+  <li>Set Hostname - <b>hostname &lt;hostname&gt;</b></li>
+  <li>Nameservers - edit <b><i>/etc/resolv.conf</i></b></li>
+</ul>
+&nbsp;&nbsp;<b><br>
+&nbsp;&nbsp; <font color="#3366ff"><big><a href="www.kernel.org">Kernel</a>Upgrade</big></font></b>(Refer
+
+
+ to <a href="http://www.linuxhelp.net/guides/kernel/">Joey's 
+upgrading kernel guide</a>for full instructions.)<br>
+<br>
+<b>cp&nbsp; linux-*.*.*.tar.gz ; tar zxvf linux-*.*.*.tar.gz ; mv linux /usr/src/linux-*.*.*<br>
+<br>
+cd /usr/src/linux ; make menuconfig&nbsp; (go to bottom save config to a file
+
+
+ /usr/src/oldconfig)<br>
+<br>
+rm /usr/src/linux ; ln -s /usr/src/linux-*.*.* ; cd /usr/src/linux<br>
+<br>
+make menuconfig (go to bottom load up config file /usr/src/oldconfig, save
+
+
+ and and exit)<br>
+<br>
+make dep; make clean; make bzImage; make modules; make modules_install; make
+
+
+ install ; reboot</b><br>
+<br>
+<b>&nbsp;&nbsp; Sound Configuration</b><br>
+<br>
+Redhat Distribution: run <b>sndconfig</b><br>
+In Debian: Compile soundcard module into kernel<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; Edit <b>/etc/modules</b><br>
+In Slackware: Compile module into kernel<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Edit<b>/etc/rc.d/rc.modules</b><br>
+<br>
+<b>&nbsp; &nbsp; <font color="#3366ff"><big>Useful Information</big></font><br>
+</b>
+<ul>
+  <li>run cat on these files - <b>cat /proc/&lt;filename&gt;</b></li>
+  <li>Install nmap -<b>nmap &lt;Your IP&gt;</b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;- Will list
+
+
+ ports open</li>
+  <li>Edit <b><i>/etc/fstab</i></b>- place in partitions and drives to be
+
+
+ mount</li>
+  <li>Edit <i><b>/etc/inittab</b></i>- Change Runlevel (ie X or Console)</li>
+  <li>Edit <i><b>/etc/inetd.conf</b></i>- Add/Remove Services</li>
+  <li>Edit /etc/syslog.conf - Information on log files<br>
+  </li>
+  <li>Useful commands - <b>free ; ps aux ; top</b></li>
+  <li>Changing Window Manager in Debian - <b>update-alternatives x-window-manager</b></li>
+  <li>Changing Window Manager in Slackware -<b>xwmconfig</b></li>
+  <li>Progammer? Use Vim? - Edit <b>.vimrc</b>add these lines </li>
+</ul>
+<i>&nbsp; &nbsp;<b>set autoindent<br>
+&nbsp; &nbsp; syn on<br>
+&nbsp; &nbsp; set cindent</b></i><br>
+<b><br>
+<br>
+&nbsp;&nbsp; <font color="#3366ff"><big><big>Themes</big></big></font></b><br>
+<a href="http://wm.themes.org"><br>
+Window Maker</a><br>
+<b>mv wm-theme.tar.gz ~/GNUstep/Library/WindowMaker<br>
+cd ~/GNUstep/Library/WindowMake<br>
+tar zxvf wm-theme.tar.gz</b><i></i><br>
+(Right click, Work space&gt;Appearance&gt;Themes&gt;WM-theme)<br>
+<br>
+<a href="http://e.themes.org">Enlightenment</a><br>
+<b>mv e-theme.tar.gz /usr/share/enlightenment/themes/ || ~/.enlightenment/themes/</b><br>
+run <b>e-conf</b><br>
+<a href="http://gtk.themes.org"><br>
+gtk</a><br>
+<b>mkdir ~/themes ; mkdir ~/themes/gnome/</b><b><br>
+mv gtk-theme.tar.gz <br>
+gnomecc</b>&nbsp; &nbsp; &nbsp; (Desktop &gt;Theme selector)<br>
+<br>
+<a href="http://sawfish.themes.org">Sawfish</a><br>
+<b>cp sawfish-theme.tar.gz&nbsp; /usr/share/sawmill || ~./sawmill/themes/<br>
+</b><br>
+<div align="Center"><small><small>This Page is always getting updated.</small></small><br>
+</div>
+<br>
+</P>
+<BR>
+<P align=center>
+Having trouble? Got questions? Require further assistance? If so 
+please feel free to visit our <a href="/forums/">Help Forums</a> and ask 
+the experts!
+</P>
+<BR>
+
+</td>
+</tr>
+</table>
+
+<table align=center width=100% cellpadding=5 cellspacing=0 border=0 bordercolor=
+#000000>
+<tr>
+<td>
+<p>
+Copyright &copy; 1997 - 2008 Private World Domination Inc. All rights reserved.<BR>
+Linux is a registered trademark of Linus Torvalds. All other
+trademarks and copyrights are the property of their respective owners.<BR>
+| <a href="/contact/">Contact Us</a>
+| <a href="/links/">Link to Us</a>
+| <a href="http://www.linuxhelp.net/forums/index.php?act=rssout&id=1">RSS Feed</a>
+| <a href="/staff/">Staff</a> |
+</p>
+
+</td>
+<td>
+<a href="http://www.easydns.com/?V=linuxhelp"><img src="http://banners.easydns.net/?1" alt="DNS Hosting by easyDNS" border=0></a>
+</td>
+</tr>
+</table>
+
+</body>
+</html>

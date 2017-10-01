@@ -1,0 +1,1264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0043)http://www.criarweb.com/manuais/5/print.php -->
+<HTML><HEAD><TITLE>CSS, folhas de estilos - Manual completo</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<STYLE type=text/css>BODY {
+	FONT-SIZE: 10pt; FONT-FAMILY: verdana,arial,helvetica
+}
+TD {
+	FONT-SIZE: 10pt; FONT-FAMILY: verdana,arial,helvetica
+}
+.fuente8 {
+	FONT-SIZE: 8pt; FONT-FAMILY: verdana,arial,helvetica
+}
+.coment {
+	FONT-SIZE: 8pt; FONT-FAMILY: verdana,arial,helvetica; BACKGROUND-COLOR: #eeeeee
+}
+.codigo {
+	FONT-SIZE: 8pt; COLOR: #660000; FONT-FAMILY: verdana,arial,helvetica
+}
+</STYLE>
+
+<META content="MSHTML 6.00.2900.2523" name=GENERATOR></HEAD>
+<BODY text=black vLink=#cc0033 link=#cc0033 bgColor=white topMargin=10 
+marginwidth="10" marginheight="10">
+<TABLE cellSpacing=2 cellPadding=2 width="100%" align=center border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=middle width=155><IMG height=81 alt="" 
+      src="CSS, folhas de estilos - Manual completo_archivos/cabecera_print.gif" 
+      width=218 border=0></TD>
+    <TD align=middle><FONT face=verdana size=5><B>CSS, folhas de 
+      estilos</B></FONT></TD></TR></TBODY></TABLE><BR>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=fuente8 noWrap><B>Manual por: <A 
+      href="http://www.criarweb.com/"></A></B><BR>Criar Web, manuais e recursos 
+      para desenvolvimento web </TD>
+    <TD class=fuente8 align=right><B>Versão on-line: </B><BR><A 
+      href="http://www.criarweb.com/manuais/5">http://www.criarweb.com/manuais/5</A></TD></TR></TBODY></TABLE>
+<HR>
+<BR><FONT face=verdana size=4><B>Introdução às CSS</B></FONT><BR><BR>A linguagem 
+HTML está limitada na hora de aplicar forma a um documento. Isto é assim porque 
+foi concebido para outros usos (sobretudo científicos), diferente dos atuais, 
+que são muito mais amplos. <BR><BR>Para solucionar estes problemas, os web 
+designers utilizaram técnicas tais como a utilização de tabelas imagens 
+transparentes para ajustá-las, a utilização de etiquetas que não são padrões do 
+HTML e outras. Estas "trapaças" causaram muitas vezes problemas nas páginas na 
+hora de sua visualização em distintas plataformas. <BR><BR>Ademais, os 
+desenhadores se viram frustrados pela dificuldade com a qual, mesmo utilizando 
+estes truques, encontravam-se planejando páginas sobre o papel, onde o controle 
+sobre a forma do documento é absoluto. <BR><BR>Finalmente, outro antecedente que 
+fez necessário o desenvolvimento desta tecnologia consiste em que as páginas web 
+têm misturado em seu código HTML o conteúdo do documento com as etiquetas 
+necessárias para lhe dar forma. Isto tem seus inconvenientes já que a leitura do 
+código HTML se faz pesada e difícil na hora de buscar erros ou depurar as 
+páginas. Mesmo que do ponto de vista da riqueza da informação e a utilidade das 
+páginas na hora de armazenar seu conteúdo, é um grande problema que estes textos 
+estejam misturados com etiquetas incrustadas para dar forma a estes: degrada-se 
+sua utilidade. <BR><BR>Nestas páginas de CSS pretendemos tornar conhecida a 
+tecnologia com um enfoque prático para que em poucos capítulos você possa usar 
+as CSS de forma depurada, refletindo toda nossa experiência em seu uso. Não 
+pretendemos explorar todos os aspectos da tecnologia já para realizar isto 
+necessitaríamos uma extensão do livro inteiro. <BR><BR><SPAN 
+class=fuente8>Informe de <B>Miguel Angel Alvarez</B><BR>Mail: <A 
+href="http://www.criarweb.com/artigos/miguel@desarrolloweb.com"><B>miguel@desarrolloweb.com</B></A><BR></SPAN><BR><BR><BR><FONT 
+face=verdana size=4><B>Características e vantagens das CSS</B></FONT><BR><BR>A 
+forma de funcionamento das CSS consiste em definir, mediante uma sintaxe 
+especial, a forma de apresentação que lhe aplicaremos a: <BR><BR>
+<UL>
+  <LI>Um web inteiro, de modo que se pode definir a forma de todo o web de uma 
+  vez só. 
+  <LI>Um documento HTML ou página, que se pode definir a forma, em um pequeno 
+  pedaço da página. 
+  <LI>Uma porção do documento, aplicando estilos visíveis em um pedaço da 
+  página. 
+  <LI>Uma etiqueta em concreto, chegando inclusive a poder definir vários 
+  estilos diferentes para uma só etiqueta. Isto é muito importante já que 
+  oferece potência em nossa programação. Podemos definir, por exemplo, vários 
+  tipos de parágrafos: em vermelho, em azul, com margens, sem margens... 
+</LI></UL>A potência da tecnologia é óbvia. Mas não fica só por aqui, já que 
+ademais esta sintaxe CSS permite aplicar o documento formato de forma muito mais 
+exata. Se antes o HTML ficava curto para planejarmos as páginas e teríamos que 
+utilizar truques pra conseguir nossos efeitos, agora temos muitas mais 
+ferramentas que nos permite definir esta forma. <BR><BR>
+<UL>
+  <LI>Podemos definir a distância entre as linhas do documento. 
+  <LI>Pode-se aplicar recuo às primeiras linhas do parágrafo. 
+  <LI>Podemos colocar elementos na página com maior precisão, e sem lugar para 
+  erros. 
+  <LI>E muito mais, como definir a visibilidade dos elementos, margens, 
+  sublinhados, riscados... </LI></UL>E continuamos mostrando vantagens, já que com 
+o HTML somente podíamos definir atributos nas páginas com pixels e porcentagens, 
+agora podemos definir utilizando muito mais unidades como: <BR><BR>
+<UL>
+  <LI>Pixels (px) e porcentagem (%), como antes. 
+  <LI>Polegadas (in) 
+  <LI>Pontos (pt) 
+  <LI>Centímetros (cm) </LI></UL><B>Navegadores que o suportam</B> <BR><BR>Esta 
+tecnologia é bastante nova, porém nem todos os navegadores a suportam. De fato, 
+somente os navegadores de Netscape versões da 4 em diante e de Microsoft a 
+partir da versão 3 são capazes de compreender os estilos em sintaxe CSS. 
+Ademais, cabe destacar que nem todos os navegadores implementam as mesmas 
+funções de folhas de estilos, por exemplo, Microsoft Internet Explorer 3 não 
+suporta nada em relação a camadas. <BR><BR>Isto quer dizer que devemos usar esta 
+tecnologia com cuidado, já que muitos usuários não poderão ver os formatos que 
+apliquemos às páginas com CSS. Sendo assim, utilizem as folhas de estilos quando 
+estas não forem a supor causar um problema. <BR><BR><SPAN class=fuente8>Informe 
+de <B>Miguel Angel Alvarez</B><BR>Mail: <A 
+href="http://www.criarweb.com/artigos/miguel@desarrolloweb.com"><B>miguel@desarrolloweb.com</B></A><BR></SPAN><BR><BR><BR><FONT 
+face=verdana size=4><B>Uso das CSS I</B></FONT><BR><BR>
+<TABLE cellSpacing=0 cellPadding=3 width=184 align=right bgColor=#ddddaa 
+border=0>
+  <TBODY>
+  <TR>
+    <TD><FONT face=verdana,arial,helvetica color=#003300 size=1>CSS tem uma 
+      sintaxe própria, a veremos através de exemplos.<BR><BR>
+      <DIV align=center>Em seguida, veremos com 
+  detalhes.</DIV></FONT></TD></TR></TBODY></TABLE>Vamos agora descrever os 
+diferentes usos das CSS introduzidos no capítulo anterior. Vamos por ordem 
+descrevendo os pontos segundo sua dificuldade e importância. <BR><BR>Dividimos 
+este capítulo em duas partes por sua extensão e por haver várias formas 
+distintas de aplicar estilos. Aqui veremos as mais simples e no capítulo 
+seguinte outras mais complicadas, mas mais potentes. <BR><BR><B>Pequenas partes 
+da página</B> <BR><BR>Para definir estilos em seções reduzidas de uma página se 
+utiliza a etiqueta <B>&lt;SPAN&gt;</B>. Com seu atributo <B>style</B> indicamos 
+em sintaxe CSS as características de estilos. Vemos com um exemplo, colocaremos 
+um parágrafo onde vamos visualizar determinadas palavras na cor verde<BR><BR>
+<TABLE class=codigo align=center>
+  <TBODY>
+  <TR>
+    <TD><B><FONT face=verdana,arial,helvetica size=1>&lt;p&gt;<BR>Isto é um 
+      parágrafo com várias palavras &lt;SPAN style="color:green"&gt;de cor 
+      verde&lt;/SPAN&gt;. é muito fácil.<BR>&lt;/p&gt;</FONT></B> 
+</TD></TR></TBODY></TABLE><BR>Que tem como resultado: 
+<P>Isto é um parágrafo com várias palavras <SPAN style="COLOR: green">de cor 
+verde</SPAN>. É muito fácil. </P><B>Estilo definido para uma etiqueta</B> 
+<BR><BR>Deste modo podemos fazer com que toda uma etiqueta mostre um estilo 
+determinado. Por exemplo, podemos definir um parágrafo inteiro de cor vermelha e 
+outro de cor azul. Para isso, utilizamos o atributo <B>style</B>, que é admitido 
+por todas as etiquetas do HTML (sempre e quando dispormos de um navegador 
+compatível com CSS). <BR><BR>
+<TABLE class=codigo align=center>
+  <TBODY>
+  <TR>
+    <TD><B><FONT face=verdana,arial,helvetica size=1>&lt;p 
+      style="color:#990000"&gt;<BR>Isto é um parágrafo de cor 
+      vermelha.<BR>&lt;/p&gt; <BR>&lt;p style="color:#000099"&gt;<BR>Isto é um 
+      parágrafo de cor azul.<BR>&lt;/p&gt; 
+</FONT></B></TD></TR></TBODY></TABLE><BR>Que tem como resultado: 
+<P style="COLOR: #990000">Isto é um parágrafo de cor vermelha. </P>
+<P style="COLOR: #000099">Isto é um parágrafo de cor azul. </P><B>Estilo 
+definido em uma parte da página</B> <BR><BR>Com a etiqueta <B>&lt;DIV&gt;</B> 
+podemos definir seções de uma página e aplicar estilos com o atributo 
+<B>style</B>, ou seja, podemos definir estilos de uma só vez a todo um bloco da 
+página. <BR><BR>
+<TABLE class=codigo align=center>
+  <TBODY>
+  <TR>
+    <TD>
+      <P><B><FONT face=verdana,arial,helvetica size=1>&lt;div 
+      style="color:#000099; font-weight:bold"&gt;<BR>&lt;h3&gt;Estas etiquetas 
+      vão em &lt;i&gt;azul e 
+      negrito&lt;/i&gt;&lt;/h3&gt;<BR>&lt;p&gt;<BR>Continuamos dentro do DIV, 
+      por isso permanecem os estilos. <BR>&lt;/p&gt; <BR>&lt;/div&gt; 
+      </FONT></B></P></TD></TR></TBODY></TABLE><BR>Que tem como resultado: 
+<DIV style="FONT-WEIGHT: bold; COLOR: #000099">
+<H3>Estas etiquetas vão em <I>azul e negrito</I></H3>
+<P>Continuamos dentro do DIV, por isso permanecem os estilos. 
+</P></DIV><BR><BR>No próximo capítulo seguiremos vendo formas mais avançadas de 
+usar as CSS. <BR><BR><SPAN class=fuente8>Informe de <B>Miguel Angel 
+Alvarez</B><BR>Mail: <A 
+href="http://www.criarweb.com/artigos/miguel@desarrolloweb.com"><B>miguel@desarrolloweb.com</B></A><BR></SPAN><BR><BR><BR><FONT 
+face=verdana size=4><B>Uso das CSS II</B></FONT><BR><BR><B>Estilo definido para 
+toda uma página</B> <BR><BR>Podemos definir no cabeçalho do documento, estilos 
+para que sejam aplicados a toda página. É uma maneira muito cômoda de dar forma 
+ao documento e muito potente, já que estes estilos continuarão em toda a página 
+e com isso, economizaremos muitas etiquetas HTML que dão forma ao documento. 
+Além disso, se desejamos mudar os estilos da página simplesmente faremos de uma 
+vez só. <BR><BR>Este exemplo é mais complicado visto que utiliza a sintaxe CSS 
+de forma mais avançada. Mas não se preocupe, pois com os exemplos você irá 
+aprendendo seu uso e mais tarde comentaremos a sintaxe com mais profundidade. 
+<BR><BR>No exemplo vemos que se utiliza a etiqueta &lt;STYLE&gt; colocada no 
+cabeçalho da página para definir os diferentes estilos do documento. 
+<BR><BR>Simplificando, entre as etiquetas &lt;STYLE&gt; e &lt;/STYLE&gt;, se 
+coloca o nome da etiqueta que queremos definir os estilos e entre chaves -{ }- 
+colocamos em sintaxe CSS as características de estilos. <BR><BR><B>&lt;html&gt; 
+<BR>&lt;head&gt; <BR>&lt;title&gt;Exemplo de estilos para toda uma 
+página&lt;/title&gt; <BR>&lt;STYLE type="text/css"&gt; <BR>&lt;!-- <BR>H1 
+{text-decoration: underline; text-align:center} <BR>P 
+{font-Family:arial,verdana; color: white; background-color: black} <BR>BODY 
+{color:black;background-color: #cccccc; text-indent:1cm} <BR>// --&gt; 
+<BR>&lt;/STYLE&gt; <BR>&lt;/head&gt; <BR><BR>&lt;body&gt; <BR>&lt;h1&gt;Página 
+com estilos&lt;/h1&gt; <BR>Bem-vindos... <BR>&lt;p&gt;Desculpe ser tão breve, 
+mas isto é um exemplo sem importância&lt;/p&gt; <BR>&lt;/body&gt; 
+<BR>&lt;/html&gt;</B> <BR><BR>Como se pode apreciar no código, definimos que a 
+etiqueta &lt;H1&gt; se apresentará: 
+<UL>
+  <LI>Sublinhada 
+  <LI>Centralizada </LI></UL><BR>Também, por exemplo, definimos que no corpo do 
+texto inteiro da página (etiqueta &lt;BODY&gt; serão aplicados os seguintes 
+estilos: 
+<UL>
+  <LI>Cor do texto negro 
+  <LI>Cor do fundo acinzentado 
+  <LI>Margem lateral de 1 centímetro </LI></UL><BR>Cabe destacar que se aplicamos 
+estilos à etiqueta &lt;BODY&gt;, estes serão herdados pelo resto das etiquetas 
+do documento. Isto será sempre assim, e no caso de que não volte a definir estes 
+estilos nas seguintes etiquetas, dominará a etiqueta mais concreta. Este detalhe 
+pode ser visto na etiqueta &lt;P&gt;, que tem definidos estilos que já foram 
+definidos para &lt;BODY&gt;. Os estilos que são aplicados são os da etiqueta 
+&lt;P&gt; que é mais concreta. <BR><BR>Por último, é válido apreciar os 
+comentários HTML que englobam toda a declaração de estilos: &lt;!--Declaração de 
+estilos--&gt;. Estes comentários são utilizados para que os navegadores antigos 
+que não compreendem a sintaxe CSS, não incluam esse texto no corpo da página. 
+Caso contrário, os navegadores antigos (por exemplo Netscape 3) escreveriam esse 
+"feio código" na página. <BR><BR><B>Estilo definido para todo o site web</B> 
+<BR><BR>Uma das características mais potentes da programação com folhas de 
+estilo, consiste em que podemos definir os estilos de todo um site web de uma só 
+vez. Isto se consegue criando um arquivo onde somente colocamos as declarações 
+de estilos de página e linkando todas as páginas do site com esse arquivo. Dessa 
+forma, todas as páginas compartem uma mesma declaração de estilos e, portanto, 
+se a mudamos, mudarão todas as páginas. Todas as vantagens acrescentadas de que 
+se economiza em linhas de código HTML (o que reduz o peso do documento) e se 
+evita a moléstia de definir uma e outra vez os estilos com o HTML, tal como foi 
+comentado anteriormente. <BR><BR>Veremos agora como o processo para incluir 
+estilos com o arquivo externo. <BR><BR><B>1 - Criamos o arquivo com a declaração 
+de estilos</B> <BR><BR>É um arquivo de texto normal, que pode ter qualquer 
+extensão, apesar de podermos atribuir a extensão .css para lembrarmos que tipo 
+de arquivo é. O texto que devemos incluir deve ser escrito exclusivamente em 
+sintaxe CSS, ou seja, seria errado incluir o código HTML nas etiquetas e etc. 
+Podemos ver um exemplo a seguir: <BR><BR><B>P { <BR>font-size : 12pt; 
+<BR>font-family : arial,helvetica; <BR>font-weight : normal; <BR>} <BR>H1 { 
+<BR>font-size : 36pt; <BR>font-family : verdana,arial; <BR>text-decoration : 
+underline; <BR>text-align : center; <BR>background-color : Teal; <BR>} <BR>TD { 
+<BR>font-size : 10pt; <BR>font-family : verdana,arial; <BR>text-align : center; 
+<BR>background-color : 666666; <BR>} <BR>BODY { <BR>background-color : #006600; 
+<BR>font-family : arial; <BR>color : White; <BR>}</B> <BR><BR><B>2 - Linkamos a 
+página com a folha de estilos</B> <BR><BR>Para isso, vamos colocar a etiqueta 
+&lt;LINK&gt; com os atributos: 
+<UL>
+  <LI>rel="STYLESHEET" indicando que o link é com uma folha de estilos 
+  <LI>type="text/css" porque o arquivo é de texto, em sintaxe CSS 
+  <LI>href="estilos.css" indica o nome do arquivo fonte dos estilos 
+</LI></UL><BR>Vejamos uma página web inteira que linka com a declaração de 
+estilos anterior. <BR><BR>
+<TABLE class=codigo align=center>
+  <TBODY>
+  <TR>
+    <TD>
+      <P><B><FONT face=verdana,arial,helvetica size=1>&lt;!DOCTYPE HTML PUBLIC 
+      "-//W3C//DTD HTML 4.0 Transitional//EN"&gt; </FONT></B></P>
+      <P><B><FONT face=verdana,arial,helvetica 
+      size=1>&lt;html&gt;<BR>&lt;head&gt;<BR>&nbsp;&lt;link rel="STYLESHEET" 
+      type="text/css" 
+      href="estilos.css"&gt;<BR>&nbsp;&lt;title&gt;P&amp;aacute;gina que lê 
+      estilos&lt;/title&gt;<BR>&lt;/head&gt;</FONT></B></P>
+      <P><B><FONT face=verdana,arial,helvetica 
+      size=1>&lt;body&gt;<BR>&lt;h1&gt;P&amp;aacute;gina que lê 
+      estilos&lt;/h1&gt;<BR>Esta p&amp;aacute;gina tem no cabeçalho a etiqueta 
+      necessária para linkar com a folha de estilos. É muito 
+      f&amp;aacute;cil.<BR>&lt;br&gt;<BR>&lt;br&gt;<BR>&lt;table width="300" 
+      cellspacing="2" cellpadding="2" 
+      border="0"&gt;<BR>&lt;tr&gt;<BR>&nbsp;&nbsp;&nbsp; &lt;td&gt;Isto 
+      est&amp;aacute; dentro de um TD, logo tem estilo próprio, declarado no 
+      arquivo 
+      externo&lt;/td&gt;<BR>&lt;/tr&gt;<BR>&lt;tr&gt;<BR>&nbsp;&nbsp;&nbsp; 
+      &lt;td&gt;A segunda fila do 
+      TD&lt;/td&gt;<BR>&lt;/tr&gt;<BR>&lt;/table&gt;</FONT></B></P>
+      <P><B><FONT face=verdana,arial,helvetica 
+      size=1>&lt;/body&gt;<BR>&lt;/html&gt;&nbsp;</FONT></B></P></TD></TR></TBODY></TABLE><BR><BR><B><A 
+href="http://www.criarweb.com/artigos/exemplos/css/leestilos.html" 
+target=_blank>O resultado conseguido por ser visto aqui.</A></B> 
+<BR><BR><B>Regras de importância nos estilos</B> <BR><BR>Os estilos se herdam de 
+uma etiqueta para outra, tal como foi indicado anteriormente. Por exemplo, se 
+temos declarado no &lt;BODY&gt; alguns estilos, em geral, estas declarações 
+também afetarão à etiquetas que estejam dentro desta etiqueta, ou o que é o 
+mesmo, dentro de todo o corpo. <BR><BR>Em muitas ocasiões mais de uma declaração 
+de estilos afeta a mesma parte da página. Sempre se leva em conta a declaração 
+mais particular. Porém, as declarações de estilos podem ser realizados de 
+múltiplas formas e com várias etiquetas, também entre essas formas existe uma 
+hierarquia de importância pra resolver conflitos entre várias declarações de 
+estilos diferentes para uma mesma parte da página. Pode ser visto a seguir, esta 
+hierarquia, primeiro colocamos as formas de declarações mais gerais, e portanto, 
+menos respeitadas em caso de conflito: 
+<UL>
+  <LI>Declaração de estilos com arquivo externo. (para todo o site web) 
+  <LI>Declaração de estilos para toda a página. (com a etiqueta &lt;STYLE&gt; no 
+  cabeçalho da página) 
+  <LI>Estilos definidos em uma parte da página. (com a etiqueta &lt;DIV&gt;) 
+  <LI>Definidos em uma etiqueta em concreto. (Utilizando o atributo style na 
+  etiqueta em questão) 
+  <LI>Declaração de estilo para uma pequena parte do documento. (Com a etiqueta 
+  &lt;SPAN&gt;) </LI></UL><BR>Já vimos como incluir estilos na página, de todas as 
+maneiras possíveis e fizemos uma revisão com a lista anterior. Agora você já 
+está em condições de começar a usar as folhas de estilo em cascata para melhorar 
+sua página e aumentar a produtividade de seu trabalho. Mas esteja atento aos 
+capítulos seguintes onde irá aprende as lições que lhe faltam para dominar bem a 
+matéria: conhecer a sintaxe, os diferentes atributos de estilos e outras coisas 
+que irão melhorar sua página. <BR><BR><SPAN class=fuente8>Informe de <B>Miguel 
+Angel Alvarez</B><BR>Mail: <A 
+href="http://www.criarweb.com/artigos/miguel@desarrolloweb.com"><B>miguel@desarrolloweb.com</B></A><BR></SPAN><BR><BR><BR><FONT 
+face=verdana size=4><B>Outra maneira de definir estilos em um arquivo 
+externo</B></FONT><BR><BR>Veremos agora outra maneira de importar uma declaração 
+externa de estilos CSS: @import url ("arquivo_a_importar.css"), que se utiliza 
+para importar umas declarações de estilos salvadas na rota que se indica entre 
+parênteses. (as aspas são opcionais, mas os parêntesis são obrigatórios, pelo 
+menos, em Explorer). <BR><BR>Deve-se incluir na declaração de estilos global a 
+uma página, ou seja, entre as etiquetas &lt;style type="text/css"&gt; e 
+&lt;/style&gt;, que se colocam no cabeçalho do documento. <BR><BR>É importante 
+assinalar que a sentença de importação do arquivo CSS deve ser escrita na 
+primeira linha da declaração de estilos, algo parecido ao código seguinte. 
+<BR><BR><B>&lt;style type="text/css"&gt; <BR>@import url ("estilo.css"); 
+<BR>body{ <BR>background-color:#ffffcc; <BR>} <BR>&lt;/style&gt;</B> <BR><BR>O 
+funcionamento é o mesmo que se escrevêssemos todo o arquivo a importar dentro 
+das etiquetas dos estilos, com a garantia de que, se redefinimos dentro do 
+código HTML (entre as etiquetas &lt;/style&gt;) estilos que haviam ficado 
+definidos no arquivo externo, os que se aplicarão serão os que tivermos 
+redefinido. <BR><BR>Assim, no exemplo anterior, mesmo que tivéssemos definido em 
+estilo.css uma cor de fundo para a página, a cor que prevaleceria seria o 
+definido em seguida da importação: #ffffcc <BR><BR>A diferença entre este tipo 
+de importação do tipo e a que vimos anteriormente: <BR><BR><B>&lt;link 
+rel="stylesheel" type="text/css" href="folha.css"&gt;</B> <BR><BR>É que @import 
+url ("estilo.css") costuma ser utilizado quando existe umas pautas básicas no 
+trabalho com os estilos (que se definem em um arquivo a importar) e uns estilos 
+específicos para cada página, que se definem a seguir, dentro do código HTML 
+entre as etiquetas &lt;/style&gt;, como é o caso do exemplo visto anteriormente. 
+<BR><BR><SPAN class=fuente8>Informe de <B>Miguel Angel Alvarez</B><BR>Mail: <A 
+href="http://www.criarweb.com/artigos/miguel@desarrolloweb.com"><B>miguel@desarrolloweb.com</B></A><BR></SPAN><BR><BR><BR><FONT 
+face=verdana size=4><B>Sintaxe CSS</B></FONT><BR><BR>Tal como vimos nos 
+exemplos, a sintaxe é bastante simples e repetitiva. Vamos vê-la: 
+<UL>
+  <LI>Para definir um estilo se utilizam atributos como 
+  font-size,text-decoration... seguidos de dois pontos e o valor que lhe 
+  desejamos atribuir. Podemos definir um estilo a base de definir muitos 
+  atributos separados por ponto e vírgula.<BR><B>Exemplo:<BR>font-size: 10pt; 
+  text-decoration: underline; color: black;</B> (o último ponto e vírgula da 
+  lista de atributos é opcional) <BR><BR>
+  <LI>Para definir o estilo de uma etiqueta basta a escrevermos seguida da lista 
+  de atributos fechados entre chaves.<BR><B>Exemplo:<BR>H1{text-align: center; 
+  color:black}</B> <BR><BR>
+  <LI>Os valores que se podem atribuir aos atributos de estilo podem ser vistos 
+  em uma tabela no seguinte capítulo. Muitos destes valores são unidades de 
+  medida, por exemplo, o valor do tamanho de uma margem ou o tamanh da fonte. As 
+  unidades de medida são as seguintes: </LI></UL>
+<TABLE width=160 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD><FONT face=verdana,arial,helvetica size=2>Pontos </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=2>pt </FONT></TD></TR>
+  <TR>
+    <TD><FONT face=verdana,arial,helvetica size=2>Polegadas </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=2>in </FONT></TD></TR>
+  <TR>
+    <TD><FONT face=verdana,arial,helvetica size=2>Centímetros </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=2>cm </FONT></TD></TR>
+  <TR>
+    <TD><FONT face=verdana,arial,helvetica size=2>pixels </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=2>px 
+</FONT></TD></TR></TBODY></TABLE><BR>Até aqui deixamos claro tudo relativo à 
+sintaxe. No próximo capítulo você poderá encontrar uma lista de atributos das 
+folhas de estilo em cascata. <BR><BR><SPAN class=fuente8>Informe de <B>Miguel 
+Angel Alvarez</B><BR>Mail: <A 
+href="http://www.criarweb.com/artigos/miguel@desarrolloweb.com"><B>miguel@desarrolloweb.com</B></A><BR></SPAN><BR><BR><BR><FONT 
+face=verdana size=4><B>Atributos das folhas de estilo</B></FONT><BR><BR>Tanto 
+para praticar em sua aprendizagem como para trabalhar com as CSS o melhor é 
+dispor de uma tabela onde se vejam os distintos atributos e valores de estilos 
+que podemos aplicar às páginas web. <BR><BR>Aqui você pode ver a tabela dos 
+atributos CSS, e tê-la a mão quando for utilizar as CSS. <BR><BR>
+<TABLE cellSpacing=2 cellPadding=1 width=460 align=center border=0>
+  <TBODY>
+  <TR bgColor=#808040>
+    <TD align=middle><FONT face=verdana,arial,helvetica color=#ffffff 
+      size=2><B>Nome do atributo</B></FONT></TD>
+    <TD align=middle><FONT face=verdana,arial,helvetica color=#ffffff 
+      size=2><B>Possíveis valores</B></FONT></TD>
+    <TD align=middle><FONT face=verdana,arial,helvetica color=#ffffff 
+      size=2><B>Exemplos</B></FONT></TD></TR>
+  <TR>
+    <TD align=middle bgColor=#d0d0aa colSpan=3><FONT 
+      face=verdana,arial,helvetica size=2><B>FONTES - FONT</B> </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>color </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>valor RGB ou nome da cor 
+      </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>color: #009900; <BR>color: 
+      red; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Serve para indicar 
+      a cor do texto. Admitem quase todas as etiquetas de HTML. Nem todos os 
+      nomes de cores são admitidos no padrão, é aconselhável então utilizar o 
+      valor RGB. </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>font-size </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>xx-small | x-small | small | 
+      medium | large | x-large | xx-large <BR>Unidades de CSS </FONT></TD>
+    <TD noWrap><FONT face=verdana,arial,helvetica size=1>font-size:12pt; 
+      <BR>font-size: x-large; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Serve para indicar 
+      o tamanho das fontes de forma mais rígida e com maior exatidão. 
+  </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>font-family 
+</B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>serif | sans-serif | cursive 
+      | fantasy | monospace <BR>Todas as fontes habituais </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>font-family:arial,helvetica; 
+      <BR>font-size: fantasy; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Com este atributo 
+      indicamos a familia de tipografia do texto. Os primeiros valores são 
+      genéricos, ou seja, os exploradores as compreendem e utilizam as fontes 
+      que o usuário tenha em seu sistema.<BR>Também podem se definir com 
+      tipografias normais, como ocorria em html. Se o nome de uma fonte tem 
+      espaços se utilizam aspas para que se entenda bem. </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>font-weight 
+</B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>normal | bold | bolder | 
+      lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>font-weight:bold; 
+      <BR>font-weight: 200; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Serve para definir 
+      a largura dos caracteres, ou com outras palavras, para colocar negritas 
+      com total liberdade. <BR>Normal e 400 são o mesmo valor, assim como bold e 
+      700. </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>font-style </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>normal | italic | oblique 
+      </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>font-style:normal; 
+      <BR>font-style: italic; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>É o estilo da 
+      fonte, que pode ser normal, itálico ou oblíquo. O estilo oblíquo é similar 
+      ao itálico. </FONT></TD></TR>
+  <TR>
+    <TD align=middle bgColor=#d0d0aa colSpan=3><FONT 
+      face=verdana,arial,helvetica size=2><B>PARÁGRAFOS - TEXT</B> </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>line-height 
+</B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>normal e unidades CSS 
+    </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>line-height: 12px; 
+      <BR>line-height: normal; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>A altura de uma 
+      linha, e portanto, o espaçamento entre linhas. É uma dessas 
+      características que não se podiam modificar utilizando HTML. </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>text-decoration 
+      </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>none | [ underline || 
+      overline || line-through ] </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>text-decoration: none; 
+      <BR>text-decoration: underline; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Para estabelecer a 
+      decoração de um texto, ou seja, se está sublinhado, tachado, etc. 
+    </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>text-align </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>left | right | center | 
+      justify </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>text-align: right; 
+      <BR>text-align: center; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Serve para indicar 
+      o alinhamento do texto. É interessante destacar que as folhas de estilo 
+      permitem o justificado de texto, mesmo assim, lembre-se que não tem porque 
+      funcionar em todos os sistemas. </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>text-indent 
+</B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>Unidades CSS </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>text-indent: 10px; 
+      <BR>text-indent: 2in; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Um atributo que 
+      serve para fazer recuos ou margens nas páginas. Muito útil e novo. 
+    </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>text-transform 
+    </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>capitalize | uppercase | 
+      lowercase | none </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>text-transform: none; 
+      <BR>text-transform: capitalize; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Permite-nos 
+      transformar o texto, fazendo com que tenha a primeira letra em maiúsculas 
+      de todas as palavras, tudo em maiúsculas ou minúsculas. </FONT></TD></TR>
+  <TR>
+    <TD align=middle bgColor=#d0d0aa colSpan=3><FONT 
+      face=verdana,arial,helvetica size=2><B>FUNDO - BACKGROUND</B> 
+</FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>Background-color 
+      </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>Uma cor, com seu nome ou seu 
+      valor RGB </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>background-color: green; 
+      <BR>background-color: #000055; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Serve para indicar 
+      a cor de fundo de um elemento da página. </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>Background-image 
+      </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>O nome da imagem com seu 
+      caminho relativo ou absoluto </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>background-image: 
+      url(mármol.gif) ; <BR>background-image: url(http://www.x.com/fondo.gif) 
+      </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Colocamos com este 
+      atributo uma imagem de fundo em qualquer elemento da página. </FONT></TD></TR>
+  <TR>
+    <TD align=middle bgColor=#d0d0aa colSpan=3><FONT 
+      face=verdana,arial,helvetica size=2><B>BOX - CAIXA</B> </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>Margin-left 
+</B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>Unidades CSS </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>margin-left: 1cm; 
+      <BR>margin-left: 0,5in; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Indicamos com este 
+      atributo o tamanho da margem à esquerda. </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>Margin-right 
+    </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>Unidades CSS </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>margin-right: 5%; 
+      <BR>margin-right: 1in; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Utiliza-se para 
+      definir o tamanho da margem à direita. </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>Margin-top </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>Unidades CSS </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>margin-top: 0px; 
+      <BR>margin-top: 10px; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Indicamos com este 
+      atributo o tamanho da margem acima da página. </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>Margin-bottom 
+    </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>Unidades CSS </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>margin-bottom: 0pt; 
+      <BR>margin-top: 1px; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Com ele indica-se 
+      o tamanho da margem na parte debaixo da página. </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>Padding-left 
+    </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>Unidades CSS </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>padding-left: 0.5in; 
+      <BR>padding-left: 1px; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Indica o espaço 
+      inserido, pela esquerda, entre a borda do elemento que contem e o conteúdo 
+      deste. É parecido ao atributo cellpadding das tabelas.<BR>O espaço 
+      inserido tem o mesmo fundo que o fundo do elemento que contem. 
+  </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>Padding-right 
+    </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>Unidades CSS </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>padding-right: 0.5cm; 
+      <BR>padding-right: 1pt; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Indica o espaço 
+      inserido, neste caso pela direita, entre a borda do elemento que contém e 
+      o conteúdo deste. É parecido ao atributo cellpadding das tabelas.<BR>O 
+      espaço inserido tem o mesmo fundo que o fundo do elemento que contem. 
+      </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>Padding-top 
+</B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>Unidades CSS </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>padding-top: 10pt; 
+      <BR>padding-top: 5px; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Indica o espaço 
+      inserido, por cima, entre a borda do elemento que contem e o conteúdo 
+      deste. </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>Padding-bottom 
+    </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>Unidades CSS </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>padding-right: 0.5cm; 
+      <BR>padding-right: 1pt; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Indica o espaço 
+      inserido, neste caso por baixo, entre a borda do elemento que contém e o 
+      conteúdo deste. </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>Border-color 
+    </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>cor RGB e nome de cor 
+    </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>border-color: red; 
+      <BR>border-color: #ffccff; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Para indicar a cor 
+      da borda do elemento da página a qual aplicamo-la. Pode-se colocar cores 
+      separadas com os atributos border-top-color, border-right-color, 
+      border-bottom-color, border-left-color. </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>Border-style 
+    </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>none | dotted | solid | 
+      double | groove | ridge | inset | outset </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>border-style: solid; 
+      <BR>border-style: double; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>O estilo da 
+      bordea, os valores significam: none=nenhuma borda, dotted=pontilhado (não 
+      parece funcionar), solid=sólido, double=borda dupla, e desde groove até 
+      outset são bordas com vários efeitos 3D. </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>border-width 
+    </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>Unidades CSS </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>border-width: 10px; 
+      <BR>border-width: 0.5in; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>O tamanho da borda 
+      do elemento ao qual o aplicamos. <BR></FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>float </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>none | left | right 
+    </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>float: right; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Serve para alinhar 
+      um elemento à esquerda ou à direita fazendo com que o texto se agrupe ao 
+      redor de tal elemento. Igual que o atributo align em imagens em seus 
+      valores right e left. </FONT></TD></TR>
+  <TR bgColor=#eeeecc>
+    <TD><FONT face=verdana,arial,helvetica size=2><B>clear </B></FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>none | right | left 
+    </FONT></TD>
+    <TD><FONT face=verdana,arial,helvetica size=1>clear: right; </FONT></TD></TR>
+  <TR>
+    <TD colSpan=3><FONT face=verdana,arial,helvetica size=1>Se este elemento 
+      tem a sua altura imagens ou outros elementos alinhados à direita ou à 
+      esquerda, com o atributo clear fazemos com que se coloque em um lugar onde 
+      já não tenha estes elementos ao lado que indicamos. 
+</FONT></TD></TR></TBODY></TABLE><BR><BR>A especificação de estilos CSS é muito 
+ampla, mas acredito que a imensa maioria está aqui definida, mas claro, com a 
+seleção dos mais importantes. <BR><BR><SPAN class=fuente8>Informe de <B>Miguel 
+Angel Alvarez</B><BR>Mail: <A 
+href="http://www.criarweb.com/artigos/miguel@desarrolloweb.com"><B>miguel@desarrolloweb.com</B></A><BR></SPAN><BR><BR><BR><FONT 
+face=verdana size=4><B>Avançados truques com CSS</B></FONT><BR><BR>As folhas de 
+estilos são um assunto muito longo o qual já foram escritos livros inteiros. Nós 
+nos centramos nos temas mais práticos e por isso vamos já iremos acabar com este 
+capítulo com alguns pontos. <BR><BR><B>Definir estilos utilizando classes</B> 
+<BR><BR>As classes nos servem para criar definições de estilos que podem ser 
+utilizadas repetidas vezes. <BR><BR>Uma classe pode ser definida entre as 
+etiquetas &lt;STYLE&gt; (no cabeçalho do documento), ou em um arquivo externo à 
+página. Para definí-las utilizamos a seguinte sintaxe, um ponto seguido do nome 
+da classe e entre chaves os atributos de estilos desejados. Desta maneira: 
+<BR><BR>.nomedaclasse {atributo: valor;atributo2:valor2; ...} <BR><BR>Uma vez 
+tendo uma classe, podemos utilizá-la em qualquer etiqueta HTML. Para isso 
+utilizaremos o atributo class, colocando como valor o nome da classe, desta 
+forma: <BR><BR>&lt;ETIQUETA class="nomedaclasse"&gt; <BR><BR><B>Exemplo da 
+utilização de classes</B> 
+<TABLE cellSpacing=0 cellPadding=2 align=center border=1>
+  <TBODY>
+  <TR bgColor=white>
+    <TD><FONT face=verdana,arial,helvetica size=1>
+      <P>&lt;html&gt;<BR>&lt;head&gt;<BR>&nbsp;&lt;title&gt;Exemplo da 
+      utilização de classes&lt;/title&gt;<BR>&nbsp;&lt;STYLE 
+      type="text/css"&gt;<BR>&nbsp; .fundonegroletrasbrancas 
+      {background-color:black;color:white;font-size:12;font-family:arial}<BR>&nbsp; 
+      .letrasverdes {color:#009900}<BR>&nbsp;&lt;/STYLE&gt;<BR>&lt;/head&gt;</P>
+      <P>&lt;body&gt;<BR>&lt;h1 class=letrasverdes&gt;Título 
+      1&lt;/h1&gt;<BR>&lt;h1 class=fundonegroletrasbrancas&gt;Título 
+      2&lt;/h1&gt;</P>
+      <P>&lt;p class=letrasverdes&gt;<BR>Isto é um parágrafo com estilo de 
+      letras verdes&lt;/p&gt;<BR>&lt;p class=fundonegroletrasbrancas&gt;<BR>Isto 
+      é um parágrafo com estilo de fundo negro e as letras brancas. É 
+      tudo!&lt;/p&gt;<BR>&lt;/body&gt;<BR>&lt;/html&gt;<BR></P></FONT></TD></TR></TBODY></TABLE><BR><A 
+href="http://www.criarweb.com/artigos/exemplos/css/clase1.html" 
+target=_blank>Ver o exemplo anterior</A> <BR><BR><B>Estilo nos links</B> 
+<BR><BR>Uma técnica muito habitual, que se pode realizar utilizando as folhas de 
+estilo em cascada e não se podia em HTML, é a definição de estilos nos links, 
+tirando os sublinhados ou fazer links na mesma página com distintas cores. 
+<BR><BR>Para aplicar estilo aos links devemos definí-los para os distintos tipos 
+de links que existem (visitados, ativos...). Utilizaremos a seguinte sintaxe, na 
+declaração de estilos global da página (&lt;STYLE&gt;) ou do site (Definição em 
+arquivo externo): <BR><BR><B>Links normais</B> <BR>A:link {atributos} 
+<BR><BR><B>Links visitados</B> <BR>A:visited {atributos} <BR><BR><B>Links 
+ativos</B> <FONT size=1>(Os links estão ativos no preciso momento em que se 
+clica sobre eles)</FONT> <BR>A:active {atributos} <BR><BR><B>Links hover</B> 
+<FONT size=1>(Quando o mouse está em cima deles, funciona somente em 
+explorer)</FONT> <BR>A:hover {atributos} <BR><BR>O atributo para definir links 
+sem sublinhado é<B>text-decoration:none</B>, e para dar cor é color:sua cor. 
+<BR><BR>Também podemos definir o estilo de cada link na própria etiqueta 
+&lt;A&gt;, com o atributo style. Desta maneira podemos fazer com que 
+determinados links da página seja vistas de forma distinta. <BR><BR>Exemplo de 
+estilos nos links 
+<TABLE cellSpacing=0 cellPadding=2 align=center border=1>
+  <TBODY>
+  <TR bgColor=white>
+    <TD>
+      <P><FONT face=verdana,arial,helvetica 
+      size=1>&lt;html&gt;<BR>&lt;head&gt;<BR>&nbsp;&lt;title&gt;Exemplos de 
+      estilo nos links&lt;/title&gt;<BR>&nbsp;&lt;STYLE 
+      type="text/css"&gt;<BR>&nbsp; A:link 
+      {text-decoration:none;color:#0000cc;}<BR>&nbsp; A:visited 
+      {text-decoration:none;color:#ffcc33;}<BR>&nbsp; A:active 
+      {text-decoration:none;color:#ff0000;}<BR>&nbsp; A:hover 
+      {text-decoration:underline;color:#999999;font-weight:bold}<BR>&nbsp;&lt;/STYLE&gt;<BR>&lt;/head&gt;</FONT></P>
+      <P><FONT face=verdana,arial,helvetica size=1>&lt;body&gt;</FONT></P>
+      <P><FONT face=verdana,arial,helvetica size=1>&lt;a 
+      href="http://dominioinexistente.nãofunciona.com"&gt;Link 
+      normal&lt;/a&gt;<BR>&lt;br&gt;<BR>&lt;br&gt;<BR>&lt;a 
+      href="links.html"&gt;Link visitado&lt;/a&gt;<BR>Clicar este link para 
+      vê-lo ativo, <BR>passar o mouse por cima para que mude. </FONT></P>
+      <P><FONT face=verdana,arial,helvetica 
+      size=1>&lt;/body&gt;<BR>&lt;/html&gt;</FONT></P></TD></TR></TBODY></TABLE><BR><A 
+href="http://www.criarweb.com/artigos/exemplos/css/links.html" target=_blank>Ver 
+o exemplo anterior</A> <BR><BR>URL como valor de um atributo: 
+<BR><BR>Determinados atributos de estilos, como <B>background-image</B> 
+necessitam uma URL como valor, para indicá-las podemos definir tanto caminhos 
+relativos como absolutos. Assim, podemos indicar a URL da imagem de fundo destas 
+duas maneiras: <BR><BR><B>background-image: url(fundo.gif)</B> <FONT size=1>No 
+caso de que a imagem esteja no mesmo diretório que a página.</FONT> 
+<B>background-image: url(http://www.criarweb.com/imagens/fundo.gif)</B> ç 
+<BR><BR><B>Ocultar estilos em navegadores antigos</B> <BR><BR>No caso de definir 
+dentro da etiqueta &lt;STYLE&gt; umas declarações de estilos devemos 
+certificarmos que estas não vão ser imprimidas na página com navegadores 
+antigos. Pensar em um navegador que não reconheça a etiqueta &lt;STYLE&gt;, 
+pensará que corresponde com algo que não entende e se esquecerá da etiqueta. O 
+que encontra a seguir é um texto normal e fará com que este se veja na página, 
+como com qualquer outro texto. <BR><BR>Para evitar isso devemos ocultar com 
+comentários HTML (&lt;!-- isto é um comentário --&gt;) tudo que tiver dentro da 
+etiqueta &lt;STYLE&gt;. <BR><BR>Deste modo terminamos nosso manual de CSS. 
+Esperamos poder ter ajudar a fazer páginas melhores e mais rapidamente. 
+<BR><BR><SPAN class=fuente8>Informe de <B>Miguel Angel Alvarez</B><BR>Mail: <A 
+href="http://www.criarweb.com/artigos/miguel@desarrolloweb.com"><B>miguel@desarrolloweb.com</B></A><BR></SPAN><BR><BR><BR><FONT 
+face=verdana size=4><B>Aplicação avançada de estilo aos 
+links</B></FONT><BR><BR>Neste artigo vamos ver como poderíamos criar uma barra 
+de navegação bastante dinâmica utilizando unicamente as Folhas de Estilo em 
+Cascata. No exemplo vamos construir uma barra de navegação que contem links de 
+várias cores que mudam de tonalidade ao passar o mouse por cima. <BR><BR>Podemos 
+<A href="http://www.criarweb.com/artigos/exemplos/css/tabela.html" 
+target=_blank>ver o resultado de nossa barra clicando este link</A>, para ter 
+uma idéia mais exata do que queremos conseguir. <BR><BR><B>Como colocar estilo 
+aos links</B> <BR><BR>Como vimos nos capítulos anteriores de nosso <A 
+href="http://www.criarweb.com/css/">manual de CSS</A>, mas o repetiremos aquí. 
+Define-se o estilo dos links atribuindo sua aparência em seus distintos estados: 
+
+<UL>
+  <LI>Link não visitado. Define-se com o atributo link. 
+  <LI>Link visitado. Define-se com o atributo visited. 
+  <LI>Link ativo (quando se está clicando). Define-se com active. 
+  <LI>Link com o mouse em cima. Define-se com hover. </LI></UL>Esta definição se 
+realiza no cabeçalho da página, entre as etiquetas &lt;STYLE&gt; e 
+&lt;/STYLE&gt;, e é global a toda a página. <BR><BR>Um exemplo disto pode ser 
+visto nesta declaração de estilos: <BR><BR><SPAN class=fuente8>&lt;STYLE 
+type="text/css"&gt; <BR>&nbsp;&nbsp;&nbsp; A:link 
+{text-decoration:none;color:#0000cc;} <BR>&nbsp;&nbsp;&nbsp; A:visited 
+{text-decoration:none;color:#ffcc33;} <BR>&nbsp;&nbsp;&nbsp; A:active 
+{text-decoration:none;color:#ff0000;} <BR>&nbsp;&nbsp;&nbsp; A:hover 
+{text-decoration:underline;color:#999999;} <BR>&lt;/STYLE&gt;</SPAN> 
+<BR><BR><B>Como dar estilo a um link em concreto</B> <BR><BR>Se queremos 
+ressaltar nossa barra de navegação provavelmente vamos querer colocá-la em uma 
+tabela de nossa página web, com uma cor que contraste um pouco com o fundo. Em 
+um caso como este, será necessário que os links da barra de navegação e os links 
+normais da página tenham cores diferentes, por estarem situados sobre dois tipos 
+de fundos distintos. <BR><BR>É por isso que os links da barra vão ter uma cor 
+diferente das definidas no cabeçalho da página, com os estilos. Isto pode ser 
+conseguido desta maneira: <BR><BR><SPAN class=fuente8>&lt;a href="#" 
+style="color:#ff0000"&gt;Meu link&lt;/a&gt;</SPAN> <BR><BR>Definimos a cor de um 
+link de uma maneira, utilizando o atributo style, de modo que este link sempre 
+terá a cor indicada, independentemente de seu estado. <BR><BR>É um link amarelo 
+que ficaria muito bem realçado sobre um fundo escuro, como se pode ver no 
+seguinte exemplo de barra de navegação. <BR><BR>
+<TABLE cellSpacing=1 cellPadding=2 width=100 border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#000099><A style="COLOR: #ffff66" 
+      href="http://www.criarweb.com/artigos/#">Link 1</A></TD></TR>
+  <TR>
+    <TD bgColor=#000099><A style="COLOR: #ffff66" 
+      href="http://www.criarweb.com/artigos/#">Outro link</A></TD></TR>
+  <TR>
+    <TD bgColor=#000099><A style="COLOR: #ffff66" 
+      href="http://www.criarweb.com/artigos/#">Link 
+3</A></TD></TR></TBODY></TABLE><BR><SPAN class=fuente8>Na tabela anterior temos 
+links amarelos em uma web onde os links são azuis por padrão.</SPAN> 
+<BR><BR><B>Como utilizar as classes ao aplicar estilo aos links</B> 
+<BR><BR>Também vimos nos capítulos anteriorres que o uso de classes pode ser 
+muito útil na hora de definir estilos especiais que podemos aplicar às etiquetas 
+que quisermos. Na hora de trabalhar com os links também podemos aplicar as 
+classes para definir distintos tipos de links, que têm distintos tipos de 
+estilos. <BR><BR><SPAN class=fuente8>A.classe1:visited {color:#ff0000;} 
+<BR>A.classe1:active {color:#ff0000;} <BR>A.classe1:link {color:#ff0000} 
+<BR>A.classe1:hover {color:#00ff00} </SPAN><BR><BR>A vantagem ao utilizar as 
+classes com os estilos dos links é que podemos especificar um formato distinto 
+ao link dependendo de seu estado: visitado ou não, ativo ou com o mouse sobre 
+ele. <BR><BR>Se não está claro, ao especificar o estilo com o atributo style do 
+link só podíamos dizer que queremos o link em amarelo, e sempre o teremos em 
+amarelo (seja visitado ou não, ativo, ou estando com o mouse em cima). Com as 
+classes definimos um novo tipo de link ao qual podemos dar distintos formatos 
+dependendo de seu estado. <BR><BR>Outras vantagens de utilizar as classes 
+consistem em que escrevemos somente uma vez os os estilos e que podemos mudar a 
+cor de todos os links da classe ao mudar a declaração. <BR><BR>A partir do que 
+acabamos de aprender podemos criar o exemplo de barra de navegação dinâmica 
+utilizando CSS que havíamos visto ao princípio do capítulo. O código seria o 
+seguinte: <BR><BR><SPAN class=fuente8>&lt;html&gt; <BR>&lt;head&gt; 
+<BR>&nbsp;&nbsp;&nbsp; &lt;title&gt;Exemplo CSS para links&lt;/title&gt; 
+<BR>&lt;style type="text/css"&gt; <BR>&nbsp;&nbsp;&nbsp; A:link {color:#0000cc;} 
+<BR>&nbsp;&nbsp;&nbsp; A:visited {color:#0000cc;} <BR>&nbsp;&nbsp;&nbsp; 
+A:active {color:#0000cc;} <BR>&nbsp;&nbsp;&nbsp; A:hover {color:#0000ff;} 
+<BR><BR>&nbsp;&nbsp;&nbsp; A.classe1:visited {color:#ffff00;} 
+<BR>&nbsp;&nbsp;&nbsp; A.classe1:active {color:#ffff00;} <BR>&nbsp;&nbsp;&nbsp; 
+A.classe1:link {color:#ffff00} <BR>&nbsp;&nbsp;&nbsp; A.classe1:hover 
+{color:#00ff00} <BR><BR>&nbsp;&nbsp;&nbsp; A.classe2:visited 
+{font-size:12;color:#ffffff;} <BR>&nbsp;&nbsp;&nbsp; A.classe2:active 
+{font-size:12;color:#ffffff;} <BR>&nbsp;&nbsp;&nbsp; A.classe2:link 
+{font-size:12;color:#ffffff;} <BR>&nbsp;&nbsp;&nbsp; A.classe2:hover 
+{font-size:12;color:#ffff33;} <BR><BR>&nbsp;&nbsp;&nbsp; body 
+{font-family:arial;font-size:11;font-weight:bold} <BR>&nbsp;&nbsp;&nbsp; td 
+{font-family:arial;font-size:11;font-weight:bold} <BR>&lt;/style&gt; 
+<BR>&lt;/head&gt; <BR><BR>&lt;body&gt; <BR>&lt;a href="#"&gt;Este link é 
+normal&lt;/a&gt; <BR>&lt;br&gt; <BR>&lt;br&gt; <BR>&lt;br&gt; <BR>&lt;span 
+style="font-weight:normal;font-size:10"&gt; <BR>Os links desta barra são 
+especiais, <BR>&lt;br&gt; <BR>estão definidos por classes <BR>&lt;/span&gt; 
+<BR>&lt;br&gt; <BR>&lt;table width="110" cellspacing="1" cellpadding="2" 
+border="0"&gt; <BR>&lt;tr&gt; <BR>&nbsp;&nbsp;&nbsp; &lt;td 
+bgcolor="#aa0000"&gt;&lt;a href="#" class="clase2"&gt;Opções 
+1&lt;/a&gt;&lt;/td&gt; <BR>&lt;/tr&gt; <BR>&lt;tr&gt; <BR>&nbsp;&nbsp;&nbsp; 
+&lt;td bgcolor="red"&gt;&lt;a href="#" class="clase1"&gt;Link 
+classe1&lt;/a&gt;&lt;/td&gt; <BR>&lt;/tr&gt; <BR>&lt;tr&gt; 
+<BR>&nbsp;&nbsp;&nbsp; &lt;td bgcolor="red"&gt;&lt;a href="#" 
+class="clase1"&gt;Outro de classe1&lt;/a&gt;&lt;/td&gt; <BR>&lt;/tr&gt; 
+<BR>&lt;tr&gt; <BR>&nbsp;&nbsp;&nbsp; &lt;td bgcolor="red"&gt;&lt;a href="#" 
+class="classe1"&gt;Mais links&lt;/a&gt;&lt;/td&gt; <BR>&lt;/tr&gt; 
+<BR>&lt;tr&gt; <BR>&nbsp;&nbsp;&nbsp; &lt;td bgcolor="red"&gt;&lt;a href="#" 
+class="clase1"&gt;Ainda mais&lt;/a&gt;&lt;/td&gt; <BR>&lt;/tr&gt; 
+<BR>&lt;/table&gt; <BR><BR>&lt;/body&gt; <BR>&lt;/html&gt; 
+</SPAN><BR><BR>Pode-se <A 
+href="http://www.criarweb.com/artigos/exemplos/css/tabela.html" 
+target=_blank>ver a página em funcionamento neste link</A>. Esperamos que este 
+pequeno manual de CSS seja bastante proveitoso para suas criações. <BR><BR><SPAN 
+class=fuente8>Informe de <B>Miguel Angel Alvarez</B><BR>Mail: <A 
+href="http://www.criarweb.com/artigos/miguel@desarrolloweb.com"><B>miguel@desarrolloweb.com</B></A><BR></SPAN><BR><BR><BR><FONT 
+face=verdana size=4><B>O que são as camadas?</B></FONT><BR><BR><B>Vejamos uma 
+pequena introdução ao que são as camadas, a etiqueta HTML &lt;DIV&gt; utilizada 
+para construí-las e os atributos CSS com os quais podemos aplicar estilos.</B> 
+<P>Como já vimos em nosso <A href="http://www.criarweb.com/css/">manual de 
+CSS</A>, &lt;SPAN&gt; serve para aplicar estilo a uma pequena parte de uma 
+página HTML. Por exemplo, com ela poderíamos fazer com que uma parte de um 
+parágrafo fosse colorida de vermelho. Com &lt;SPAN&gt; não é habitual englobar 
+um pedaço muito grande de texto, por exemplo que ocupe vários parágrafos. 
+<P>Com &lt;DIV&gt; también podemos aplicar estilo a partes de la página HTML. 
+<P>A diferença entre &lt;SPAN&gt; e &lt;DIV&gt; é que com esta última sim que 
+podemos aplicar estilo a uma parte mais ampla da página, por exemplo com três 
+parágrafos. <B>Além do mais, a etiqueta &lt;DIV&gt; tem um uso adicional que é o 
+de criar divisões nas páginas as quais poderemos aplicar uma quantidade 
+adicional de atributos para modificar seus comportamentos</B>. Por exemplo, com 
+o atributo align de HTML podemos alinhar a divisão ao centro, à esquerda, à 
+direita ou justificado. Porém <B>seu uso mais destacado é o de converter essa 
+divisão em uma camada</B>. 
+<P><B>Uma camada é uma divisão</B>, uma parte da página, <B>que tem um 
+comportamento muito independente</B> dentro da janela do navegador, já que 
+podemos colocá-la em qualquer parte da mesma e poderemos mover por ela 
+independentemente, por exemplo. Muitos dos efeitos mais comuns do DHTML se 
+baseiam no uso de camadas. 
+<P>As etiquetas &lt;LAYER&gt; e &lt;ILAYER&gt; têm como objetivo construir 
+camadas, mas estas não são compatíveis mais do que com Netscape, por isso é mais 
+recomendável utilizar a etiqueta &lt;DIV&gt; para fazer camadas. 
+<P>Os atributos que podemos aplicar a estas etiquetas, mas em concreto às duas 
+recomendadas &lt;SPAN&gt; e &lt;DIV&gt;, são principalmente de estilos CSS. 
+Estes atributos nos permitem, como podemos ver no manual de folhas de estilo em 
+cascata de criarweb, modificar de uma maneira muito exaustiva a apresentação dos 
+conteúdos na página. Para aplicar estilos a estas etiquetas utiliza-se o 
+atributo de HTML style, desta forma: 
+<P>&lt;SPAN 
+style="text-decoration:underline;font-weight:bold"&gt;...&lt;/SPAN&gt; 
+<P>&lt;DIV style="color:red;font-size:10px"&gt;...&lt;/DIV&gt; 
+<P>Como podemos ver muitos exemplos no <A 
+href="http://www.criarweb.com/css/">manual de CSS</A>, nos referimos a ele para 
+ampliar esta informação. Mas não havíamos visto ainda uma série de atributos que 
+nos servem para posicionar a divisão na página como uma camada. Estes atributos 
+podem ser aplicados à etiqueta &lt;DIV&gt; que é a qual servia para criar 
+camadas compatíveis com todos os navegadores. 
+<P><B>Os atributos para que a divisão seja uma camada são vários e podem ser 
+vistos a seguir.</B> 
+<P>&lt;div id="c1" style="position:absolute; left: 200px; top: 
+100px;"&gt;<BR>Oi!<BR>&lt;/div&gt; 
+<P>O primeiro, <B>position</B>, indica que se posicione de maneira absoluta na 
+página e os segundos, <B>left</B> e <B>top</B>, são a distância desde a borda 
+esquerda da página e a borda superior. 
+<P>Existem outros atributos especiais para camadas como <B>width</B> e 
+<B>height</B> para indicar a largura e a altura da capa,&nbsp;<B>Z-index</B> que 
+serve para indicar que camadas se vêem em cima de que outras, <B>clip</B> que 
+serve para recortar uma camada e fazer com que partes dela não sejam visíveis, 
+ou <B>visibility</B> para definir se a camada é visível ou não. Estes, e outros 
+atributos veremos no próximo capítulo, onde falaremos do posicionamento de 
+camadas</A>. <BR><BR><SPAN class=fuente8>Informe de <B>Miguel Angel 
+Alvarez</B><BR>Mail: <A 
+href="http://www.criarweb.com/artigos/miguel@desarrolloweb.com"><B>miguel@desarrolloweb.com</B></A><BR></SPAN><BR><BR><BR><FONT 
+face=verdana size=4><B>Atributos para camadas</B></FONT><BR><BR>Vimos no 
+capítulo anterior <A href="http://www.criarweb.com/artigos/130.php?manual=5">o 
+que são as camadas e algumas pequenas mostras sobre como criá-las dando algum 
+estilo.</A>. Agora vamos ver detalhadamente os atributos específicos para 
+aplicar posicionamento a uma camada e outros estilos. <BR><BR>Antes de mais 
+nada, cabe dizer que uma camada pode ter qualquer atributo de estilos dos que 
+vimos no <A href="http://www.criarweb.com/css/">manual de CSS</A>. Assim, o 
+atributo color indica a cor do texto da camada, o atributo font-size indica o 
+tamanho do texto e assim com todos os atributos já vistos. <BR><BR>Agora então, 
+existem uma série de atributos que servem para indicar a forma, o tamanho das 
+camadas, a visibilidade, etc, que não vimos nos capítulos anteriores e que 
+veremos a seguir. <BR><BR><B>Atributo position</B> <BR><BR>Indica o tipo de 
+posicionamento da camada. Pode ter dois valores, relative ou absolute. <BR><BR>- 
+relative indica que a posição da camada é relativa ao lugar onde se estava 
+escrevendo na página no momento de escrever a camada com sua etiqueta 
+<DIV><BR>- absolute indica que a posição da camada se calcula com relação ao 
+ponto superior esquerdo da página. <BR><BR><B>Atributo top</B> <BR><BR>Indica a 
+distância em vertical onde será colocada a camada. Se o atributo position é 
+absolute, top indica a distância da borda superior da camada com relação a borda 
+superior da página. Se o atributo position era relative, top indica a distância 
+desde onde se estava escrevendo nesse momento na página até a borda superior da 
+camada. <BR><BR><B>Atributo left</B> <BR><BR>Basicamente funciona igual ao 
+atributo top, com a diferença que o atributo left indica a distância na 
+horizontal a que estará situada a camada. <BR><BR><B>Atributo height</B> 
+<BR><BR>Serve para indicar o tamanho da camada na vertical, ou seja, sua altura. 
+<BR><BR><B>Atributo width</B> <BR><BR>Indica a largura da camada 
+<BR><BR><B>Atributo visibility</B> <BR><BR>Serve para indicar se a camada pode 
+ser vista na página ou se permanece oculta ao usuário. Este atributo pode ter 
+três valores. <BR><BR>- visible serve para indicar que a camada poderá ser 
+vista. <BR>- hidden indicará que a camada está oculta. <BR>- inherit é o valor 
+por padrão, que quer dizer que herda a visibilidade da camada onde está colocada 
+a camada em questão. Se a camada não está colocada dentro de nenhuma outra se 
+supõem que está colocada na camada do documento, que é toda a página e que 
+sempre está visível. <BR><BR><B>Atributo z-index</B> <BR><BR>Serve para indicar 
+a posição sobre o eixo que terão as distintas camadas da página. Com outras 
+palavras, com z-index podemos dizer quais camadas serão vistas em cima ou 
+embaixo de outras, no caso de que estejam sobrepostas. O atributo z-index toma 
+valores numéricos e a mayor z-index, mais em cima será vista na página. 
+<BR><BR><B>Atributo clip</B> <BR><BR>É um atributo um pouco difícil de explicar. 
+Em concreto serve para recortar determinadas áreas da camada e que não podem ser 
+vistas. Uma camada que está visível se pode recortar para ser vista, mas não 
+será visto nenhum pedaço desta. O cliping se indica por meio de 4 valores, com 
+esta sintaxe. <BR><BR>rect (&lt;top&gt;, &lt;right&gt;, &lt;bottom&gt;, 
+&lt;left&gt;) <BR><BR>Os valores &lt;top&gt;, &lt;right&gt;, &lt;bottom&gt; y 
+&lt;left&gt; indicam distâncias que se podem neste esquema. <BR><BR>
+<DIV align=center><IMG height=260 
+alt="Esquema dos atributos de cliping de uma camada DHTML" 
+src="CSS, folhas de estilos - Manual completo_archivos/cliping.gif" width=397 
+border=0></DIV><BR>Este é um exemplo de camada que utiliza todos os atributos 
+que vimos neste artigo e em algum mais para aplicar estilo à camada. 
+<BR><BR><SPAN class=fuente8>&lt;div style="clip: rect(0,158,148,15); height: 
+250px; width: 170px; left: 10px; top: 220px; position: absolute; visibility: 
+visible; z-index:10; font-size: 14pt; font-family: verdana; text-align: center; 
+background-color: #bbbbbb"&gt; <BR><BR>Esta camada tem um cliping, por isso se 
+vê entrecortada. <BR>&lt;br&gt; <BR>&lt;br&gt; <BR>Isto é uma camada de prova 
+<BR><BR>&lt;/div&gt; </SPAN><BR><BR>Pode <A 
+href="http://www.criarweb.com/artigos/exemplos/css/atributo_camadas.html" 
+target=_blank>ser visto o exemplo em uma página web</A>, onde também poderá ser 
+apreciado o efeito conseguido ao realizar o cliping. <BR><BR><SPAN 
+class=fuente8>Informe de <B>Miguel Angel Alvarez</B><BR>Mail: <A 
+href="http://www.criarweb.com/artigos/miguel@desarrolloweb.com"><B>miguel@desarrolloweb.com</B></A><BR></SPAN><BR><BR><BR><FONT 
+face=verdana size=4><B>Problema com o posicionamento absoluto de 
+camadas</B></FONT><BR><BR>Recebi uma consulta em meu correio eletrônico sobre a 
+colocação de camadas de maneira absoluta, mas na que não nos importa a definição 
+da tela do usuário e outros ir e vir dos elementos HTML. Nosso companheiro 
+expressou sua dúvida da seguinte maneira: <BR><BR><I>Se trabalhamos com 
+position: absolute dando um left e um top funciona se tiver sua página alinhada 
+à esquerda. Minha página está alinhada no centro, então o que acontece é que 
+dependendo da resolução da tela que tenha (largura de 800px,1024px,etc) a página 
+fica sambando e não enquadra nada.</I> <BR><BR>Primeiro de tudo, devemos saber 
+que se trabalhamos com o position relative as camadas se colocam no lugar onde 
+aparecem dentro do código HTML. Deste modo, se colocamos uma camada com position 
+relative dentro de uma célula de uma tabela, tal camada apareceria dentro da 
+célula onde a estamos colocando, independentemente do lugar onde se situa a 
+célula ao mudar a definição da tela. <BR><BR>O problema desta solução é que a 
+camada faria crescer a célula da tabela onde queremos colocá-la ( igual a 
+qualquer outro elemento HTML que colocássemos dentro da tabela) e é muito 
+provável que nosso desenho não nos permitia este fato. Certamente já teria 
+notado este problema e se é não é assim, convido-lhe a que crie a camada que 
+você tenta colocar com o atributo position a relative para ver se com isso seu 
+problema já está resolvido. <BR><BR>Em todos os casos, a camada que tentamos 
+colocar terá que ter o position absolute, porque com relative não consertamos 
+totalmente o problema. Então voltaremos ao problema inicial, que era situar a 
+camada com position absolute no lugar exato, independentemente da definição de 
+tela. <BR><BR>A solução final que proponho passa por aplicar algum truquezinho. 
+De fato, estive a alguns dias atrás me perguntando sobre esta questão e afinal 
+encontrei a solução, apesar de não ter vindo de mim, e sim que a extrai de <A 
+href="http://www.cross-browser.com/" 
+target=_blank>http://www.cross-browser.com/</A>. <BR><BR>A idéia é um pouco 
+complexa e colocá-la em ação devemos realizar uma série de ações que, 
+sinceramente, considero excessivas para um problema inicialmente simples. Sendo 
+assim, não se assustem com o que vou expor a seguir, pois logo tratarei de 
+explicar um pouco melhor. <BR><BR>Nosso esquema de trabalho consistirá em uma 
+camada com posição relativa, que nos servirá de "âncora" e outra com a posição 
+absoluta, onde colocaremos o conteúdo final a mostrar na camada. 
+<BR><BR>Colocaremos a camada relativa no lugar aproximado onde queremos que 
+apareça a camada absoluta. Posicionaremos a camada absoluta, uma vez carregada a 
+página, em um lugar próximo à camada relativa. Supostamente, vamos ter que 
+realizar estas ações com Javascript, que é a linguagem que nos permite atualizar 
+as posições das capas dinamicamente. <BR><BR><B>Detalhadamente</B> 
+<BR><BR>Dissemos que haveria que colocar uma camada perto do lugar onde tem de 
+aparecer a camada com position absolute. Insisto em que as camadas relativas 
+sejam colocadas no lugar onde as colocamos dentro do código HTML, pois será 
+fácil colocar a capa relativa no lugar exato e que este lugar seja válido para 
+qualquer definição. <BR><BR>A segunda capa, a que Tem o conteúdo final, a 
+colocamos inicialmente em uma posição qualquer e escondida, de forma que não se 
+veja que está mal colocada. Uma vez terminada de carregar a página, poderemos 
+acessar a posição da camada relativa, extraindo seus valores top e left e 
+colocando-os em os correspondentes top e left da capa com posição absoluta. Uma 
+vez marcada a posição da capa absoluta podemos torná-la visível. <BR><BR><IMG 
+height=188 
+src="CSS, folhas de estilos - Manual completo_archivos/posicionado-camadas.gif" 
+width=212 align=right> Na imagem seguinte colocamos a camada com posição 
+relativa no link. Na verdade haveria três camadas para poder posicionar outras 
+tantas camadas com posição absoluta. A parte que vemos sombreada de verde 
+corresponde ao espaço que abarcaria a camada relativa. <BR><BR>Sua posição seria 
+a que está marcada por um "x " vermelho que aparece em sua esquina esquerda. Tal 
+posição depende do lugar onde apareça os links na página. <BR><BR>Logo, com 
+Javascript deveríamos atribuir a posição da camada absoluta de uma maneira 
+parecida a esta. <BR><BR><SPAN class=fuente8>left da capa absoluta = left da 
+capa relativa <BR>top da capa absoluta = top da capa relativa + altura da capa 
+relativa </SPAN><BR><BR>Podemos somar algum píxel a mais à posição da camada, se 
+é que queremos movê-la um pouco abaixo e à direita, tal como vimos na imagem. 
+<BR><BR>Não pretendo neste artigo, explicar como se fazem essas operações de 
+Javascript. Advirto que se não se conhece nada de Javascript será impossível se 
+dispor de uma tarefa tão tediosa como o maneja de camadas. Se por o contrário, 
+já tivemos contato com Javascript e DHTML anteriormente, não deveria ser um 
+problema realizar essas ações. <BR><BR><SPAN class=fuente8>Informe de <B>Miguel 
+Angel Alvarez</B><BR>Mail: <A 
+href="http://www.criarweb.com/artigos/miguel@desarrolloweb.com"><B>miguel@desarrolloweb.com</B></A><BR></SPAN><BR><BR><BR><FONT 
+face=verdana size=4><B>Como evitar que um página se 
+imprima</B></FONT><BR><BR>Para isso, temos de usar as folhas de estilo. Tanto se 
+o documento tem uma folha já associada como senão, o que vamos fazer é 
+associar-lhe uma nova folha de estilos. Tal folha conterá um estilo, com o 
+código necessário para ocultar um elemento: <BR><BR><SPAN class=codigo>.nãover{ 
+<BR>visibility:hidden <BR>} </SPAN><BR><BR>Na hora de associar a folha de 
+estilos, se acrescenta um modificador à etiqueta HTML que linka com o arquivo 
+.css que permite especificar para que tipo de meio se aplicará esta folha. Em 
+nosso caso, se aplica no âmbito da impressão, pelo que se utiliza o atributo 
+media="print". <BR><BR><SPAN class=codigo>&lt;link href="nome_folha" 
+rel="stylesheet" type="text/css" media="print"&gt; </SPAN><BR><BR>Uma vez feito 
+isso, basta que toda nossa página esteja dentro de um elemento div, que pertença 
+à classe nãover. <BR><BR><SPAN class=codigo>&lt;body&gt; <BR>&lt;div 
+class="nãover"&gt; <BR><BR>-- Conteúdo -- <BR><BR><BR>&lt;/div&gt; 
+<BR>&lt;/body&gt; </SPAN><BR><BR>Ao fazer isto provoca que a página seja 
+visualizada na tela, mas que se pelo contrário se decide imprimir, se aplicará a 
+folha de estilos de impressão, na qual o elemento está posto como não visível, 
+portanto não se imprimirá. <BR><BR><B>Código Completo:</B> <BR><BR>Vejamos o 
+código íntegro da página web e a folha de estilos associada. <BR><BR><B>Página 
+HTML</B> <BR><BR><SPAN class=codigo><BR>&lt;html&gt; <BR>&lt;head&gt; 
+<BR>&lt;link href="estilos.css" rel="stylesheet" type="text/css" 
+media="print"&gt; <BR>&lt;/head&gt; <BR>&lt;body&gt; <BR>&lt;div 
+class="nãover"&gt; <BR><BR>… conteúdo da página <BR><BR>&lt;/div&gt; 
+<BR>&lt;/body&gt; <BR>&lt;/html&gt; </SPAN><BR><BR><B>Folha estilos: 
+estilos.css</B> <BR><BR><SPAN class=codigo>.nãover{ <BR>visibility:hidden <BR>} 
+</SPAN><BR><BR>
+<TABLE cellSpacing=2 cellPadding=2 width="90%" align=center border=0>
+  <TBODY>
+  <TR>
+    <TD class=coment><B>Nota:</B> Esta característica das folhas de estilos 
+      funciona com êxito em navegadores IExplorer 6, Netscape 7 e Opera 7. Não 
+      provamos em outras versões. </TD></TR></TBODY></TABLE><BR>Pode-se <A 
+href="http://www.criarweb.com/artigos/exemplos/css/naoimprimir.html" 
+target=_blank>ver o exemplo relatado no artigo em uma página a parte</A>. 
+<BR><BR><SPAN class=fuente8>Informe de <B>Carlos Cuenca</B><BR>Consultoria 
+Informática<BR>Mail: <A 
+href="http://www.criarweb.com/artigos/carlos@desarrolloweb.com"><B>carlos@desarrolloweb.com</B></A><BR></SPAN><BR><BR><BR><FONT 
+face=verdana size=4><B>Título para tabelas decoradas com 
+CSS</B></FONT><BR><BR>CSS são Folhas de Estilo em Cascata. Muitos de vocês já 
+devem conhecer e suponho que já devem ter utilizado em mais de uma ocasião. Em 
+qualquer caso, tanto para aprender o que são como para consolidar os 
+conhecimentos, poderão acessar ao <A href="http://www.criarweb.com/css/">Manual 
+de CSS</A> de criarweb.com. <BR><BR>Vamos ver um uso das CSS que pode ser muito 
+interessante para fazer tabelas com títulos que tenham um certo estilo. O bom 
+das CSS é que podemos definir o estilo uma vez e se pode utilizar em múltiplos 
+elementos da página. Com tudo isso, vamos tratar neste artigo: a definição de um 
+estilo e a aplicação para fazer distintos tipos de decoração de tabelas. 
+<BR><BR>Podemos <A 
+href="http://www.criarweb.com/artigos/exemplos/css/titulo.html" 
+target=_blank>ver o resultado final</A> que vamos obter. <BR><BR><B>Definição 
+dos estilos</B> <BR><BR>No cabeçalho da página colocamos a etiqueta 
+&lt;style&gt; que serve para definir os estilos a utilizar na página. Vamos 
+definir um estilo por padrão para as células (etiqueta &lt;td&gt;) e duas 
+classes, a primeira para as tabelas e a segunda para as células titulares (as 
+que têm cor de fundo). <BR><BR>&lt;style type="text/css"&gt; <BR>td { 
+<BR>&nbsp;&nbsp;&nbsp; font-family:verdana,arial; <BR>&nbsp;&nbsp;&nbsp; 
+font-size:8pt; <BR>} <BR>.estilotabela{ <BR>&nbsp;&nbsp;&nbsp; 
+background-color:ffffff; <BR>&nbsp;&nbsp;&nbsp; border-style:solid; 
+<BR>&nbsp;&nbsp;&nbsp; border-color:666666; <BR>&nbsp;&nbsp;&nbsp; 
+border-width:1px; <BR>} <BR>.estilocelula{ <BR>&nbsp;&nbsp;&nbsp; 
+background-color:ddeeff; <BR>&nbsp;&nbsp;&nbsp; color:333333; 
+<BR>&nbsp;&nbsp;&nbsp; font-weight:bold; <BR>&nbsp;&nbsp;&nbsp; font-size:10pt; 
+<BR>} <BR>&lt;/style&gt; <BR><BR>Os atributos de estilos podem ser conhecidos no 
+manual de CSS. Neste caso, para a classe estilotabela estamos definindo uma cor 
+de fundo, uma borda sólida, uma cor da borda e uma largura da borda, por essa 
+ordem. Para a classe estilocelula estamos definindo uma cor de fundo, uma cor do 
+texto, uma espessura da fonte e um tamanho da fonte. <BR><BR><B>Utilização dos 
+estilos para obter uma tabela decorada</B> <BR><BR>Vejamos o código da primeira 
+tabela do exemplo. <BR><BR>&lt;table width=280 height=18 cellpadding=2 
+cellspacing=2 class="estilotabela"&gt; <BR>&lt;tr&gt;&lt;td 
+class="estilocelula"&gt;Título de seção&lt;/td&gt;&lt;/tr&gt; 
+<BR>&lt;tr&gt;&lt;td&gt;Este é um texto que poderia ser a parte debaixo da 
+tabela com o conteúdo relacionado com este título.&lt;/td&gt;&lt;/tr&gt; 
+<BR>&lt;/table&gt; <BR><BR>O único que tem de especial é que utiliza as classes 
+que foram definidas previamente. Na etiqueta &lt;table&gt; se utiliza a classe 
+estilotabela e na etiqueta &lt;td&gt; que queremos que seja a titular se utiliza 
+a classe estilocelula. A outra célula terá o estilo definido para todas as 
+células em geral. <BR><BR>A outra tabela teria este código: <BR><BR>&lt;table 
+width=280 height=18 cellpadding=2 cellspacing=2 class="estilotabela"&gt; 
+<BR>&lt;tr&gt;&lt;td class="estilocelula"&gt;Título de 
+seção&lt;/td&gt;&lt;/tr&gt; <BR>&lt;/table&gt; <BR>&lt;table width="280" 
+cellpadding="2" cellspacing="2"&gt;&lt;tr&gt;&lt;td&gt; <BR>Este é um texto que 
+poderia ser a parte debaixo da tabela com o conteúdo relacionado com este 
+título. <BR>&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; <BR><BR>Neste caso utilizamos 
+duas tabelas para fazer o efeito. A tabela de cima tem uma borda e a de baixo 
+não. Para isso, aplicamos a classe definida para a tabela e a célula somente na 
+tabela de cima, assim, a borda definida na declaração de estilos só afeta a 
+tabela de cima. <BR><BR>Podemos <A 
+href="http://www.criarweb.com/artigos/exemplos/css/titulo.html" 
+target=_blank>ver o resultado em uma página a parte</A>. <BR><BR><SPAN 
+class=fuente8>Informe de <B>Miguel Angel Alvarez</B><BR>Mail: <A 
+href="http://www.criarweb.com/artigos/miguel@desarrolloweb.com"><B>miguel@desarrolloweb.com</B></A><BR></SPAN><BR><BR><BR><FONT 
+face=verdana size=4><B>Bordas pontilhadas com CSS</B></FONT><BR><BR>Veremos 
+agora outra maneira de utilizar as CSS (folhas de estilo cascata) para criar um 
+estilo que podemos utilizar em HTML. É um estilo para realizar as bordas das 
+tabelas com linhas pontilhadas, que aliás é bastante original porém nosso 
+conselho é não abusar muito disso. <BR><BR>O efeito que se busca é o seguinte: 
+<BR><BR>
+<STYLE type=text/css>.pontilhado {
+	BORDER-RIGHT: #660033 1px dotted; BORDER-TOP: #660033 1px dotted; FONT-SIZE: 10pt; BORDER-LEFT: #660033 1px dotted; BORDER-BOTTOM: #660033 1px dotted; FONT-FAMILY: verdana, arial; BACKGROUND-COLOR: #cc3366
+}
+</STYLE>
+
+<TABLE class=pontilhado width="80%" align=center>
+  <TBODY>
+  <TR>
+    <TD><BR><BR></TD></TR></TBODY></TABLE><BR>Para conseguir isso, simplesmente 
+temos que utilizar a propriedade de CSS "border-style", atribuindo o valor 
+"dotted", que quer dizer pontilhado em inglês. Ademais, podemos definir outros 
+valores ao estilo de borda pontilhada, como pode ser a cor da borda ou a cor de 
+fundo da tabela. <BR><BR>Para este exercício definimos uma classe que 
+aplicaremos às tabelas ou a outros elementos que desejamos que tenham a borda 
+pontilhada. <BR><BR>Nota: Uma classe é uma declaração de estilo que podemos 
+utilizar em qualquer elemento de uma página. Para isso, inclui-se o atributo 
+class="nome_classe" na etiqueta HTML que desejamos que tenha tal estilo. 
+<BR><BR>&lt;style type="text/css"&gt; <BR>.pontilhado{ <BR>border-style: dotted; 
+<BR>border-width: 1px; <BR>border-color: 660033; <BR>background-color: cc3366; 
+<BR>font-family: verdana, arial; <BR>font-size: 10pt; <BR>} <BR>&lt;/style&gt; 
+<BR><BR>Esta classe tem uma série de atributos de estilos definidos. Desde o 
+primeiro até o último são: tipo de borda, largura da borda, cor da borda, cor de 
+fundo, tipo de letra e tamanho da fonte. O atributo que nos interessa é o 
+primeiro, no qual se indica que se deseja um tipo de borda pontilhado. 
+<BR><BR>Para utilizar o estilo temos que atribuir a um elemento de HMTL a classe 
+gerada anteriormente. Para isso, utilizamos o atributo class de HTML. Tal como 
+foi definida a classe pode-se utilizar em qualquer elemento da página web, como 
+uma tabela ou uma célula. <BR><BR>&lt;table class="pontilhado" width=80% 
+align="center"&gt; <BR>&lt;tr&gt; <BR>&lt;td&gt; <BR>&lt;b&gt;Isto é um 
+texto&lt;/b&gt; <BR>&lt;br&gt; <BR>Coloco para ver como fica. Com certeza, vou 
+gostar! E vocês também! <BR>&lt;/td&gt; <BR>&lt;/tr&gt; <BR>&lt;/table&gt; 
+<BR><BR>Neste exemplo, toda a tabela terá um efeito de borda pontilhada. Se 
+colocássemos essa classe unicamente em uma célula, somente essa célula teria a 
+borda pontilhada. É o caso do seguinte exemplo: <BR><BR>&lt;table width=300&gt; 
+<BR>&lt;tr&gt; <BR>&lt;td class= "pontilhado"&gt;&lt;b&gt;Título da 
+tabela&lt;/b&gt;&lt;/td&gt; <BR>&lt;/tr&gt; <BR>&lt;tr&gt; <BR>&lt;td&gt; 
+<BR><BR>Aqui poderíamos colocar qualquer coisa. Seria como o corpo da tabela que 
+corresponderia com o titular que teria algum estilo legal. <BR><BR>&lt;/td&gt; 
+<BR>&lt;/tr&gt; <BR>&lt;/table&gt; <BR><BR>Estes dois exemplos podem ser vistos 
+em uma página à parte que inclui também uma terceira proposta de uso do estilo 
+da borda pontilhada. <A 
+href="http://www.criarweb.com/artigos/exemplos/css/exemplo_bordas.html">Clique 
+aqui para ver o exemplo anexado</A>. <BR><BR><B>Não abusar do uso das bordas 
+pontilhadas</B> <BR><BR>As bordas com linhas pontilhadas podem ser muito úteis e 
+vistosas, mas se exageramos em sua utilização pode acontecer do efeito ficar 
+pouco agradável. <BR><BR>A borda pontilhada chama a atenção sobre o elemento que 
+a utiliza, porém provoca uma sensação de instabilidade. Também dá a impressão de 
+que não está terminado ou que não está integrado com o resto do desenho. 
+<BR><BR><SPAN class=fuente8>Informe de <B>Miguel Angel Alvarez</B><BR>Mail: <A 
+href="http://www.criarweb.com/artigos/miguel@desarrolloweb.com"><B>miguel@desarrolloweb.com</B></A><BR></SPAN><BR><BR><BR><FONT 
+face=verdana size=4><B>Estilos em campo de texto</B></FONT><BR><BR>Vamos ver uns 
+exemplos sobre como aplicar estilos avançados a campos de texto em páginas web. 
+Referimo-nos a campos de texto dos normais &lt;input type=text&gt; e campos de 
+texto que suportam várias linhas &lt;textarea&gt;. <BR><BR>Com estilos, como já 
+foi visto no <A href="http://www.criarweb.com/css/" target=_blank>manual de 
+CSS</A>, podemos definir o formato de apresentação de qualquer elemento da 
+página. Os campos de texto, que sempre têm uma forma muito específica, também 
+aceitam especificações de estilos para variar sua aparência típica. 
+<BR><BR>Vamos ver vários exemplos para comprovar as possibilidades das folhas de 
+estilos, aplicadas sobre campos de texto e textareas. <BR><BR><SPAN 
+class=codigo>&lt;input type="text" name="campotexto0" size="12" 
+style="border-width: 2px; border-style: solid; font-size:8pt; color: #009900; 
+letter-spacing : 3px;"&gt;</SPAN> <BR><BR>
+<FORM><INPUT 
+style="BORDER-RIGHT: 2px solid; BORDER-TOP: 2px solid; FONT-SIZE: 8pt; BORDER-LEFT: 2px solid; COLOR: #009900; BORDER-BOTTOM: 2px solid; LETTER-SPACING: 3px" 
+size=12 name=campotexto0> <BR><BR>Este campo de texto se apresentará com uma 
+borda de 2 pixels, um borda sólida, tamanho da letra de 8 pontos, cor da borda e 
+das letras verde um pouco escuro. Também se define um espaçado entre as letras 
+de 3 pixel. <BR><BR><SPAN class=codigo>&lt;input type="text" name="campotexto1" 
+size="12" style="background-color:e3e3e3; border: 1px solid #666666; 
+font-size:8pt; color: #000099"&gt;</SPAN> <BR><BR><INPUT 
+style="BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; FONT-SIZE: 8pt; BORDER-LEFT: #666666 1px solid; COLOR: #000099; BORDER-BOTTOM: #666666 1px solid; BACKGROUND-COLOR: #e3e3e3" 
+size=12 name=campotexto1> <BR><BR>Este campo de texto tem os estilos declarados 
+com uma sintaxe um pouco distinta, já que se agruparam vários estilos relativos 
+a borda em um só atributo. Os estilos com os que se apresentará são: cor de 
+fundo acinzentado, borda de 1 pixel, borda de estilo sólido, cor da borda cinza 
+mais escuro, tamanho do texto de 8 pontos e cor das letras azul. <BR><BR><SPAN 
+class=codigo>&lt;textarea cols="20" rows="3" name="campotexto2" 
+style="overflow:auto; border: 1px solid #ff6666;"&gt;&lt;/textarea&gt;</SPAN> 
+<BR><BR><TEXTAREA style="BORDER-RIGHT: #ff6666 1px solid; BORDER-TOP: #ff6666 1px solid; OVERFLOW: auto; BORDER-LEFT: #ff6666 1px solid; BORDER-BOTTOM: #ff6666 1px solid" name=campotexto2 rows=3></TEXTAREA> 
+<BR><BR>Este campo de texto com várias linhas, também chamado textarea, tem 
+vários estilos, que são parecidos aos que vimos para o anterior campo de texto, 
+com a segurança do atributo overflow, que está definido como auto. O atributo 
+overflow tem relação com as barras de deslocamento que aparecem nos textarea. O 
+valor auto serve para que a barra de deslocamento vertical do campo de texto só 
+apareça em caso de necessidade, ou seja, se o texto do campo supera as linhas 
+que tem reservadas o textarea. Se quisermos que as linhas não sejam vistas 
+nunca, podemos atribuí-la o valor hidden ao atributo overflow. Em relação aos 
+outros estilos deste campo de texto de múltiplas linhas, se definiram 3 valores 
+para o estilo da borde, em um único atributo. Os estilos são borda de um píxel, 
+borda de estilo sólido e borda de cor vermelho pastel. <BR><BR><SPAN 
+class=codigo>&lt;textarea cols="20" rows="3" name="campotexto3" readonly 
+style="overflow:auto; border-style:dashed; border-color:555555; border-width: 
+1px;"&gt; <BR><BR>Olá a todos que estão lendo isto. <BR>Espero que este exemplo 
+pareça interessante!! <BR>Saudações e sorte! <BR>Juliana <BR>&lt;/textarea&gt; 
+</SPAN><BR><BR><TEXTAREA style="BORDER-RIGHT: #555555 1px dashed; BORDER-TOP: #555555 1px dashed; OVERFLOW: auto; BORDER-LEFT: #555555 1px dashed; BORDER-BOTTOM: #555555 1px dashed" name=campotexto3 rows=3 readOnly>Olá a todos que estão lendo isto.
+Espero que este exemplo pareça interessante!!
+Saudações e sorte!
+Juliana
+</TEXTAREA> </FORM>Neste campo textarea, incluímos também um texto com o qual 
+inicializará seu conteúdo. Primeiro, chamamos a atenção sobre o atributo de HTML 
+readonly, que serve para que o campo textarea não seja editável, ou seja, que 
+não possa mudar seu conteúdo. Também com estilos CSS se definiu uma série de 
+valores para a aparência, estes são: mostrar as barras de deslocamento somente 
+quando for solicitado, uma borda do campo pontilhado, uma cor da borda cinza 
+escuro e uma largura da borda de 1 pixel. <BR><BR><B>Conclusão 
+</B><BR><BR>Esperamos que com estas indicações vocês possam aprender um pouco 
+mais sobre como modificar o estilo de um campo de texto, para adaptar melhor ao 
+desenho de suas páginas. <BR><BR>Temos que ter em conta que as características 
+de estilos nem sempre estão disponível em todos os navegadores. As mais 
+importantes sim que poderemos vê-las em todos os navegadores que suportem 
+estilos, apesar de que certos valores, como a borda pontilhada, não podem ser 
+visualizados corretamente em navegadores antigos. Ocorre o mesmo com o atributo 
+readonly, que nem sempre esteve disponível em HTML. <BR><BR><SPAN 
+class=fuente8>Informe de <B>Miguel Angel Alvarez</B><BR>Mail: <A 
+href="http://www.criarweb.com/artigos/miguel@desarrolloweb.com"><B>miguel@desarrolloweb.com</B></A><BR></SPAN><BR><BR>
+<HR>
+<BR><BR>
+<DIV align=center><FONT face=verdana size=2>Todos los <A 
+href="http://www.criarweb.com/copyright/">direitos de reprodução e difusão</A> 
+reservados</FONT> <BR><BR><FONT face=verdana size=3><A 
+href="http://www.criarweb.com/manuais/5">Voltar</A></FONT> 
+</DIV></FONT></DIV></BODY></HTML>

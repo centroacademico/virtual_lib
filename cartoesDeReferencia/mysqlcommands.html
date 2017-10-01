@@ -1,0 +1,1290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <style type="text/css" media="screen">@import "/3box2.css";</style>
+  <link rel="alternate" type="application/rss+xml" title="Pantz.org RSS Feed" href="http://feeds.feedburner.com/Pantzorg-TechnicalReferenceSite">
+  <title>MySQL</title>
+</head>
+
+<body>
+
+<div class="boxtop">
+<!-- SiteSearch Google -->
+<form method="get" action="http://www.google.com/custom" target="_top">
+<input type="hidden" name="domains" value="www.pantz.org"></input>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input type="text" name="q" size="15" maxlength="255" value="" id="sbi"></input>
+<label for="sbb" style="display: none">Submit search form</label>
+<input type="submit" name="sa" value="Search Pantz.org" id="sbb"></input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="/images/icon_rss.jpg" alt="RSS feed logo" title="Pantz.org 1.0 RSS Feed">&nbsp;<a href="http://feeds.feedburner.com/Pantzorg-TechnicalReferenceSite">RSS Feed</a> 
+| <a href="http://www.pantz.org/extra/about.html">About Pantz.org</a>
+<input type="hidden" name="sitesearch" value="www.pantz.org" id="ss1">
+</input><label for="ss1" title="Search Pantz.org"></label>
+<input type="hidden" name="client" value="pub-8796103469637220"></input>
+<input type="hidden" name="forid" value="1"></input>
+<input type="hidden" name="ie" value="ISO-8859-1"></input>
+<input type="hidden" name="oe" value="ISO-8859-1"></input>
+<input type="hidden" name="cof" value="GALT:#6A5ACD;GL:1;DIV:#000000;VLC:8F98A7;AH:center;BGC:FFFBF6;LBGC:EEDFCC;ALC:000000;LC:000000;T:000000;GFNT:8F98A7;GIMP:8F98A7;FORID:1"></input>
+<input type="hidden" name="hl" value="en"></input>
+</form>
+<!-- SiteSearch Google -->
+</div>
+
+<div class="title">MySQL Commands 
+
+<div style="font: italic 400 12px Times, mono; padding:5px 0px 0px 0px;">
+Posted: 07/24/2007 20:13 EST</a> |
+<a href="http://www.pantz.org/software/mysql">Section: /software/mysql</a> |
+<a href="http://www.pantz.org/software/mysql/mysqlcommands.html">Permanent Link</a> 
+</div>
+</div>
+
+<div class="boxcenter">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-8796103469637220";
+google_ad_slot = "9193491677";
+google_ad_width = 728;
+google_ad_height = 90;
+//--></script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+<p>This is a list of handy MySQL commands that I use time and time again. At the bottom are statements, clauses,
+and functions you can use in MySQL. Below that are PHP and Perl API functions you can use to interface with MySQL. To use
+those you will need to build PHP with MySQL functionality. To use MySQL with Perl you will need to use a Perl module.</p>
+<!-- more -->  
+
+
+<h4>To login (from unix shell) use -h only if needed.</h4>
+
+<p class="command">[mysql dir]/bin/mysql -h hostname -u root -p</p>
+
+<h4>Create a database on the sql server.</h4>
+<p class="command">create database [databasename];</p>
+
+<h4>List all databases on the sql server.</h4>
+<p class="command">show databases;</p>
+
+<h4>Switch to a database.</h4>
+<p class="command">use [db name];</p>
+
+<h4>To see all the tables in the db.</h4>
+<p class="command">show tables;</p>
+
+<h4>To see database's field formats.</h4>
+<p class="command">describe [table name];</p>
+
+<h4>To delete a db.</h4>
+<p class="command">drop database [database name];</p>
+
+<h4>To delete a table.</h4>
+<p class="command">drop table [table name];</p>
+
+<h4>Show all data in a table.</h4>
+<p class="command">SELECT * FROM [table name];</p>
+
+<h4>Returns the columns and column information pertaining to the designated table.</h4>
+<p class="command">show columns from [table name];</p>
+
+<h4>Show certain selected rows with the value "whatever".</h4>
+<p class="command"> SELECT * FROM [table name] WHERE [field name] = "whatever";</p>
+
+<h4>Show all records containing the name "Bob" AND the phone number '3444444'.</h4>
+<p class="command">SELECT * FROM [table name] WHERE name = "Bob" AND phone_number = '3444444';</p>
+
+<h4>Show all records not containing the name "Bob" AND the phone number '3444444' order by the phone_number field.</h4>
+<p class="command">SELECT * FROM [table name] WHERE name != "Bob" AND phone_number = '3444444' order by phone_number;</p>
+
+<h4>Show all records starting with the letters 'bob' AND the phone number '3444444'.</h4>
+<p class="command">SELECT * FROM [table name] WHERE name like "Bob%" AND phone_number = '3444444';</p>
+
+<h4>Use a regular expression to find records. Use "REGEXP BINARY" to force case-sensitivity. This finds any record beginning with a. </h4>
+<p class="command">SELECT * FROM [table name] WHERE rec RLIKE "^a$";</p>
+
+<h4>Show unique records.</h4>
+<p class="command">SELECT DISTINCT [column name] FROM [table name];</p>
+
+<h4>Show selected records sorted in an ascending (asc) or descending (desc).</h4>
+<p class="command">SELECT [col1],[col2] FROM [table name] ORDER BY [col2] DESC;</p> 
+
+<h4>Return number of rows.</h4>
+<p class="command">SELECT COUNT(*) FROM [table name];</p>
+
+<h4>Sum column.</h4>
+<p class="command">SELECT SUM(*) FROM [table name];</p>
+
+<h4>Join tables on common columns.</h4>
+<p class="command">select lookup.illustrationid, lookup.personid,person.birthday from lookup<br> left join person on 
+lookup.personid=person.personid=statement to join birthday in person table with primary illustration id;</p>
+
+<h4>Switch to the mysql db. Create a new user.</h4>
+<p class="command">INSERT INTO [table name] (Host,User,Password) VALUES('%','user',PASSWORD('password'));</p>
+
+<h4>Change a users password.(from unix shell).</h4>
+<p class="command">[mysql dir]/bin/mysqladmin -u root -h hostname.blah.org -p password 'new-password'</p>
+
+<h4>Change a users password.(from MySQL prompt).</h4>
+<p class="command">SET PASSWORD FOR 'user'@'hostname' = PASSWORD('passwordhere');</p>
+
+<h4>Allow the user "bob" to connect to the server from localhost using the password "passwd"</h4>
+<p class="command">grant usage on *.* to bob@localhost identified by 'passwd';</p>
+
+<h4>Switch to mysql db.Give user privilages for a db.</h4>
+<p class="command">INSERT INTO [table name] (Host,Db,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv,Drop_priv) VALUES 
+('%','databasename','username','Y','Y','Y','Y','Y','N');<br><br> or <br><br> grant all privileges on databasename.* to username@localhost;</p>
+
+<h4>To update info already in a table.</h4>
+<p class="command">UPDATE [table name] SET Select_priv = 'Y',Insert_priv = 'Y',Update_priv = 'Y' where [field name] = 'user';</p>
+
+<h4>Delete a row(s) from a table.</h4>
+<p class="command">DELETE from [table name] where [field name] = 'whatever';</p>
+
+<h4>Update database permissions/privilages.</h4>
+<p class="command">FLUSH PRIVILEGES;</p>
+
+<h4>Delete a column.</h4>
+<p class="command">alter table [table name] drop column [column name];</p>
+
+<h4>Add a new column to db.</h4>
+<p class="command">alter table [table name] add column [new column name] varchar (20);</p>
+
+<h4>Change column name.</h4>
+<p class="command">alter table [table name] change [old column name] [new column name] varchar (50);</p>
+
+<h4>Make a unique column so you get no dupes.</h4>
+<p class="command">alter table [table name] add unique ([column name]);</p>
+
+<h4>Make a column bigger.</h4>
+<p class="command">alter table [table name] modify [column name] VARCHAR(3);</p>
+
+<h4>Delete unique from table.</h4>
+<p class="command">alter table [table name] drop index [colmn name];</p>
+
+<h4>Load a CSV file into a table.</h4>
+<p class="command">LOAD DATA INFILE '/tmp/filename.csv' replace INTO TABLE [table name] FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' (field1,field2,field3);</p>
+
+<h4>Dump all databases for backup. Backup file is sql commands to recreate all db's.</h4>
+<p class="command">[mysql dir]/bin/mysqldump -u root -ppassword --opt &gt;/tmp/alldatabases.sql</p>
+
+<h4>Dump one database for backup.</h4>
+<p class="command">[mysql dir]/bin/mysqldump -u username -ppassword --databases databasename &gt;/tmp/databasename.sql</p>
+
+<h4>Dump a table from a database.</h4>
+<p class="command">[mysql dir]/bin/mysqldump -c -u username -ppassword databasename tablename &gt; /tmp/databasename.tablename.sql</p>
+
+<h4>Restore database (or database table) from backup.</h4>
+<p class="command">[mysql dir]/bin/mysql -u username -ppassword databasename &lt; /tmp/databasename.sql </p>
+
+<h4>Create Table Example 1.</h4>
+<p class="command">CREATE TABLE [table name] (firstname VARCHAR(20), middleinitial VARCHAR(3), lastname VARCHAR(35),suffix VARCHAR(3),officeid VARCHAR(10),userid 
+VARCHAR(15),username VARCHAR(8),email VARCHAR(35),phone VARCHAR(25), groups <br>VARCHAR(15),datestamp DATE,timestamp time,pgpemail VARCHAR(255)); </p> 
+
+<h4>Create Table Example 2.</h4>
+<p class="command">create table [table name] (personid int(50) not null auto_increment primary key,firstname varchar(35),middlename varchar(50),lastnamevarchar(50) default 
+'bato');</p>
+
+
+<div style="text-align: center">
+
+<p><b>MYSQL Statements and clauses</b></p>
+
+<pre>
+
+ALTER DATABASE
+
+ALTER TABLE
+
+ALTER VIEW
+
+ANALYZE TABLE
+
+BACKUP TABLE
+
+CACHE INDEX
+
+CHANGE MASTER TO
+
+CHECK TABLE
+
+CHECKSUM TABLE
+
+COMMIT
+
+CREATE DATABASE
+
+CREATE INDEX
+
+CREATE TABLE
+
+CREATE VIEW
+
+DELETE
+
+DESCRIBE
+
+DO
+
+DROP DATABASE
+
+DROP INDEX
+
+DROP TABLE
+
+DROP USER
+
+DROP VIEW
+
+EXPLAIN
+
+FLUSH
+
+GRANT
+
+HANDLER
+
+INSERT
+
+JOIN
+
+KILL
+
+LOAD DATA FROM MASTER
+
+LOAD DATA INFILE
+
+LOAD INDEX INTO CACHE
+
+LOAD TABLE...FROM MASTER
+
+LOCK TABLES
+
+OPTIMIZE TABLE
+
+PURGE MASTER LOGS
+
+RENAME TABLE
+
+REPAIR TABLE
+
+REPLACE
+
+RESET
+
+RESET MASTER
+
+RESET SLAVE
+
+RESTORE TABLE
+
+REVOKE
+
+ROLLBACK
+
+ROLLBACK TO SAVEPOINT
+
+SAVEPOINT
+
+SELECT
+
+SET
+
+SET PASSWORD
+
+SET SQL_LOG_BIN
+
+SET TRANSACTION
+
+SHOW BINLOG EVENTS
+
+SHOW CHARACTER SET
+
+SHOW COLLATION
+
+SHOW COLUMNS
+
+SHOW CREATE DATABASE
+
+SHOW CREATE TABLE
+
+SHOW CREATE VIEW
+
+SHOW DATABASES
+
+SHOW ENGINES
+
+SHOW ERRORS
+
+SHOW GRANTS
+
+SHOW INDEX
+
+SHOW INNODB STATUS
+
+SHOW LOGS
+
+SHOW MASTER LOGS
+
+SHOW MASTER STATUS
+
+SHOW PRIVILEGES
+
+SHOW PROCESSLIST
+
+SHOW SLAVE HOSTS
+
+SHOW SLAVE STATUS
+
+SHOW STATUS
+
+SHOW TABLE STATUS
+
+SHOW TABLES
+
+SHOW VARIABLES
+
+SHOW WARNINGS
+
+START SLAVE
+
+START TRANSACTION
+
+STOP SLAVE
+
+TRUNCATE TABLE
+
+UNION
+
+UNLOCK TABLES
+
+USE
+
+</pre>
+
+<p><b>String Functions</b></p>
+
+<pre>
+
+AES_DECRYPT
+
+AES_ENCRYPT
+
+ASCII
+
+BIN
+
+BINARY
+
+BIT_LENGTH
+
+CHAR
+
+CHAR_LENGTH
+
+CHARACTER_LENGTH
+
+COMPRESS
+
+CONCAT
+
+CONCAT_WS
+
+CONV
+
+DECODE
+
+DES_DECRYPT
+
+DES_ENCRYPT
+
+ELT
+
+ENCODE
+
+ENCRYPT
+
+EXPORT_SET
+
+FIELD
+
+FIND_IN_SET
+
+HEX
+
+INET_ATON
+
+INET_NTOA
+
+INSERT
+
+INSTR
+
+LCASE
+
+LEFT
+
+LENGTH
+
+LOAD_FILE
+
+LOCATE
+
+LOWER
+
+LPAD
+
+LTRIM
+
+MAKE_SET
+
+MATCH    AGAINST
+
+MD5
+
+MID
+
+OCT
+
+OCTET_LENGTH
+
+OLD_PASSWORD
+
+ORD
+
+PASSWORD
+
+POSITION
+
+QUOTE
+
+REPEAT
+
+REPLACE
+
+REVERSE
+
+RIGHT
+
+RPAD
+
+RTRIM
+
+SHA
+
+SHA1
+
+SOUNDEX
+
+SPACE
+
+STRCMP
+
+SUBSTRING
+
+SUBSTRING_INDEX
+
+TRIM
+
+UCASE
+
+UNCOMPRESS
+
+UNCOMPRESSED_LENGTH
+
+UNHEX
+
+UPPER
+
+</pre>
+
+<p><b>Date and Time Functions</b></p>
+
+<pre>
+
+ADDDATE
+
+ADDTIME
+
+CONVERT_TZ
+
+CURDATE
+
+CURRENT_DATE
+
+CURRENT_TIME
+
+CURRENT_TIMESTAMP
+
+CURTIME
+
+DATE
+
+DATE_ADD
+
+DATE_FORMAT
+
+DATE_SUB
+
+DATEDIFF
+
+DAY
+
+DAYNAME
+
+DAYOFMONTH
+
+DAYOFWEEK
+
+DAYOFYEAR
+
+EXTRACT
+
+FROM_DAYS
+
+FROM_UNIXTIME
+
+GET_FORMAT
+
+HOUR
+
+LAST_DAY
+
+LOCALTIME
+
+LOCALTIMESTAMP
+
+MAKEDATE
+
+MAKETIME
+
+MICROSECOND
+
+MINUTE
+
+MONTH
+
+MONTHNAME
+
+NOW
+
+PERIOD_ADD
+
+PERIOD_DIFF
+
+QUARTER
+
+SEC_TO_TIME
+
+SECOND
+
+STR_TO_DATE
+
+SUBDATE
+
+SUBTIME
+
+SYSDATE
+
+TIME
+
+TIMEDIFF
+
+TIMESTAMP
+
+TIMESTAMPDIFF
+
+TIMESTAMPADD
+
+TIME_FORMAT
+
+TIME_TO_SEC
+
+TO_DAYS
+
+UNIX_TIMESTAMP
+
+UTC_DATE
+
+UTC_TIME
+
+UTC_TIMESTAMP
+
+WEEK
+
+WEEKDAY
+
+WEEKOFYEAR
+
+YEAR
+
+YEARWEEK
+
+</pre>
+
+<p><b>Mathematical and Aggregate Functions</b></p>
+
+<pre>
+
+ABS
+
+ACOS
+
+ASIN
+
+ATAN
+
+ATAN2
+
+AVG
+
+BIT_AND
+
+BIT_OR
+
+BIT_XOR
+
+CEIL
+
+CEILING
+
+COS
+
+COT
+
+COUNT
+
+CRC32
+
+DEGREES
+
+EXP
+
+FLOOR
+
+FORMAT
+
+GREATEST
+
+GROUP_CONCAT
+
+LEAST
+
+LN
+
+LOG
+
+LOG2
+
+LOG10
+
+MAX
+
+MIN
+
+MOD
+
+PI
+
+POW
+
+POWER
+
+RADIANS
+
+RAND
+
+ROUND
+
+SIGN
+
+SIN
+
+SQRT
+
+STD
+
+STDDEV
+
+SUM
+
+TAN
+
+TRUNCATE
+
+VARIANCE
+
+</pre>
+
+<p><b>Flow Control Functions</b></p>
+
+<pre>
+
+CASE
+
+IF
+
+IFNULL
+
+NULLIF
+
+</pre>
+
+<p><b>Command-Line Utilities</b></p>
+
+<pre>
+
+comp_err
+
+isamchk
+
+make_binary_distribution
+
+msql2mysql
+
+my_print_defaults
+
+myisamchk
+
+myisamlog
+
+myisampack
+
+mysqlaccess
+
+mysqladmin
+
+mysqlbinlog
+
+mysqlbug
+
+mysqlcheck
+
+mysqldump
+
+mysqldumpslow
+
+mysqlhotcopy
+
+mysqlimport
+
+mysqlshow
+
+perror
+
+</pre>
+
+<p><b>Perl API - using functions and methods built into the Perl DBI with MySQL</b></p>
+
+<pre>
+
+available_drivers
+
+begin_work
+
+bind_col
+
+bind_columns
+
+bind_param
+
+bind_param_array
+
+bind_param_inout
+
+can
+
+clone
+
+column_info
+
+commit
+
+connect
+
+connect_cached
+
+data_sources
+
+disconnect
+
+do
+
+dump_results
+
+err
+
+errstr
+
+execute
+
+execute_array
+
+execute_for_fetch
+
+fetch
+
+fetchall_arrayref
+
+fetchall_hashref
+
+fetchrow_array
+
+fetchrow_arrayref
+
+fetchrow_hashref
+
+finish
+
+foreign_key_info
+
+func
+
+get_info
+
+installed_versions
+
+last_insert_id
+
+looks_like_number
+
+neat
+
+neat_list
+
+parse_dsn
+
+parse_trace_flag
+
+parse_trace_flags
+
+ping
+
+prepare
+
+prepare_cached
+
+primary_key
+
+primary_key_info
+
+quote
+
+quote_identifier
+
+rollback
+
+rows
+
+selectall_arrayref
+
+selectall_hashref
+
+selectcol_arrayref
+
+selectrow_array
+
+selectrow_arrayref
+
+selectrow_hashref
+
+set_err
+
+state
+
+table_info
+
+table_info_all
+
+tables
+
+trace
+
+trace_msg
+
+type_info
+
+type_info_all
+
+Attributes for Handles
+
+</pre>
+
+<p><b>PHP API - using functions built into PHP with MySQL</b></p>
+
+<pre>
+
+mysql_affected_rows
+
+mysql_change_user
+
+mysql_client_encoding
+
+mysql_close
+
+mysql_connect
+
+mysql_create_db
+
+mysql_data_seek
+
+mysql_db_name
+
+mysql_db_query
+
+mysql_drop_db
+
+mysql_errno
+
+mysql_error
+
+mysql_escape_string
+
+mysql_fetch_array
+
+mysql_fetch_assoc
+
+mysql_fetch_field
+
+mysql_fetch_lengths
+
+mysql_fetch_object
+
+mysql_fetch_row
+
+mysql_field_flags
+
+mysql_field_len
+
+mysql_field_name
+
+mysql_field_seek
+
+mysql_field_table
+
+mysql_field_type
+
+mysql_free_result
+
+mysql_get_client_info
+
+mysql_get_host_info
+
+mysql_get_proto_info
+
+mysql_get_server_info
+
+mysql_info
+
+mysql_insert_id
+
+mysql_list_dbs
+
+mysql_list_fields
+
+mysql_list_processes
+
+mysql_list_tables
+
+mysql_num_fields
+
+mysql_num_rows
+
+mysql_pconnect
+
+mysql_ping
+
+mysql_query
+
+mysql_real_escape_string
+
+mysql_result
+
+mysql_select_db
+
+mysql_stat
+
+mysql_tablename
+
+mysql_thread_id
+
+mysql_unbuffered_query
+
+</pre>
+
+</div>
+
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-8796103469637220";
+google_ad_slot = "8533290849";
+google_ad_width = 728;
+google_ad_height = 15;
+//--></script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<br><p>
+<a href="http://del.icio.us/post?url=http%3A%2F%2Fwww.pantz.org%2Fsoftware%2Fmysql%2Fmysqlcommands.html;title=MySQL%20Commands">Tag this post with del.icio.us!</a> | <a href="http://www.digg.com/submit?url=http://www.pantz.org/software/mysql/mysqlcommands.html&amp;title=MySQL Commands&amp;phase=3">Digg Me!</a> | <a href="http://reddit.com/submit?url=http%3A%2F%2Fwww.pantz.org%2Fsoftware%2Fmysql%2Fmysqlcommands.html;title=MySQL%20Commands">Reddit this!</a>
+</p>
+
+<br><div class="blosxomstoryfoot"><h4 class="related_stories">Related stories</h4><ul class="related_stories">
+<li class="related_stories"><a href="http://www.pantz.org/software/mysql/openofficeandmysql.html" class="related_stories" title="3 shared tags: database, mysql, sql">Connecting Openoffice.org's Writer and MySQL on Debian GNU/Linux
+</a> (3 shared tags)</li>
+<li class="related_stories"><a href="http://www.pantz.org/software/mysql/fixingmysqlcrashedtables.html" class="related_stories" title="3 shared tags: database, mysql, sql">Fixing MySQL crashed tables
+</a> (3 shared tags)</li>
+<li class="related_stories"><a href="http://www.pantz.org/software/apache/apachephpmysqlsslinstall.html" class="related_stories" title="1 shared tags: mysql">Install of Apache, PHP, SSL, MySQL in linux
+</a> (1 shared tags)</li>
+</ul></div>
+
+<br>
+</div>
+<div id="boxleft">
+<p><div id="boxleftlinks"><a href="http://www.pantz.org/tags/3com.html">3com</a>(1)<br>
+<a href="http://www.pantz.org/tags/alsa.html">alsa</a>(2)<br>
+<a href="http://www.pantz.org/tags/alsactl.html">alsactl</a>(1)<br>
+<a href="http://www.pantz.org/tags/alsamixer.html">alsamixer</a>(1)<br>
+<a href="http://www.pantz.org/tags/amd.html">amd</a>(1)<br>
+<a href="http://www.pantz.org/tags/apache.html">apache</a>(5)<br>
+<a href="http://www.pantz.org/tags/areca.html">areca</a>(2)<br>
+<a href="http://www.pantz.org/tags/ati.html">ati</a>(1)<br>
+<a href="http://www.pantz.org/tags/awk.html">awk</a>(1)<br>
+<a href="http://www.pantz.org/tags/badblocks.html">badblocks</a>(1)<br>
+<a href="http://www.pantz.org/tags/bind.html">bind</a>(1)<br>
+<a href="http://www.pantz.org/tags/bios.html">bios</a>(3)<br>
+<a href="http://www.pantz.org/tags/bonnie.html">bonnie</a>(1)<br>
+<a href="http://www.pantz.org/tags/cable.html">cable</a>(3)<br>
+<a href="http://www.pantz.org/tags/carp.html">carp</a>(1)<br>
+<a href="http://www.pantz.org/tags/cat5.html">cat5</a>(3)<br>
+<a href="http://www.pantz.org/tags/cdrom.html">cdrom</a>(1)<br>
+<a href="http://www.pantz.org/tags/centos.html">centos</a>(6)<br>
+<a href="http://www.pantz.org/tags/chart.html">chart</a>(1)<br>
+<a href="http://www.pantz.org/tags/cifs.html">cifs</a>(1)<br>
+<a href="http://www.pantz.org/tags/cisco.html">cisco</a>(3)<br>
+<a href="http://www.pantz.org/tags/comcast.html">comcast</a>(2)<br>
+<a href="http://www.pantz.org/tags/commands.html">commands</a>(3)<br>
+<a href="http://www.pantz.org/tags/comodo.html">comodo</a>(1)<br>
+<a href="http://www.pantz.org/tags/compiz-fusion.html">compiz-fusion</a>(1)<br>
+<a href="http://www.pantz.org/tags/cron.html">cron</a>(1)<br>
+<a href="http://www.pantz.org/tags/crontab.html">crontab</a>(1)<br>
+<a href="http://www.pantz.org/tags/crossover.html">crossover</a>(2)<br>
+<a href="http://www.pantz.org/tags/cups.html">cups</a>(2)<br>
+<a href="http://www.pantz.org/tags/cvs.html">cvs</a>(1)<br>
+<a href="http://www.pantz.org/tags/database.html">database</a>(3)<br>
+<a href="http://www.pantz.org/tags/dd.html">dd</a>(2)<br>
+<a href="http://www.pantz.org/tags/dd_rescue.html">dd_rescue</a>(2)<br>
+<a href="http://www.pantz.org/tags/debian.html">debian</a>(11)<br>
+<a href="http://www.pantz.org/tags/decimal.html">decimal</a>(1)<br>
+<a href="http://www.pantz.org/tags/dhclient.html">dhclient</a>(1)<br>
+<a href="http://www.pantz.org/tags/dhcp.html">dhcp</a>(2)<br>
+<a href="http://www.pantz.org/tags/diagnostic.html">diagnostic</a>(1)<br>
+<a href="http://www.pantz.org/tags/diskexplorer.html">diskexplorer</a>(1)<br>
+<a href="http://www.pantz.org/tags/disks.html">disks</a>(5)<br>
+<a href="http://www.pantz.org/tags/dns.html">dns</a>(3)<br>
+<a href="http://www.pantz.org/tags/dovecot.html">dovecot</a>(1)<br>
+<a href="http://www.pantz.org/tags/dsniff.html">dsniff</a>(1)<br>
+<a href="http://www.pantz.org/tags/dvdauthor.html">dvdauthor</a>(1)<br>
+<a href="http://www.pantz.org/tags/e-mail.html">e-mail</a>(13)<br>
+<a href="http://www.pantz.org/tags/editor.html">editor</a>(1)<br>
+<a href="http://www.pantz.org/tags/emerald.html">emerald</a>(1)<br>
+<a href="http://www.pantz.org/tags/ethernet.html">ethernet</a>(3)<br>
+<a href="http://www.pantz.org/tags/ext3.html">ext3</a>(2)<br>
+<a href="http://www.pantz.org/tags/fat32.html">fat32</a>(1)<br>
+<a href="http://www.pantz.org/tags/fedora.html">fedora</a>(4)<br>
+<a href="http://www.pantz.org/tags/fetchmail.html">fetchmail</a>(2)<br>
+<a href="http://www.pantz.org/tags/fiber.html">fiber</a>(2)<br>
+<a href="http://www.pantz.org/tags/filesystems.html">filesystems</a>(2)<br>
+<a href="http://www.pantz.org/tags/firefox.html">firefox</a>(2)<br>
+<a href="http://www.pantz.org/tags/firewall.html">firewall</a>(6)<br>
+<a href="http://www.pantz.org/tags/flexlm.html">flexlm</a>(2)<br>
+<a href="http://www.pantz.org/tags/floppy.html">floppy</a>(1)<br>
+<a href="http://www.pantz.org/tags/flowtools.html">flowtools</a>(1)<br>
+<a href="http://www.pantz.org/tags/format.html">format</a>(1)<br>
+<a href="http://www.pantz.org/tags/ftp.html">ftp</a>(2)<br>
+<a href="http://www.pantz.org/tags/gnome.html">gnome</a>(1)<br>
+<a href="http://www.pantz.org/tags/greylisting.html">greylisting</a>(1)<br>
+<a href="http://www.pantz.org/tags/growisofs.html">growisofs</a>(1)<br>
+<a href="http://www.pantz.org/tags/grub.html">grub</a>(1)<br>
+<a href="http://www.pantz.org/tags/harddrive.html">harddrive</a>(4)<br>
+<a href="http://www.pantz.org/tags/hba.html">hba</a>(1)<br>
+<a href="http://www.pantz.org/tags/hex.html">hex</a>(1)<br>
+<a href="http://www.pantz.org/tags/hfsc.html">hfsc</a>(1)<br>
+<a href="http://www.pantz.org/tags/html.html">html</a>(2)<br>
+<a href="http://www.pantz.org/tags/http.html">http</a>(4)<br>
+<a href="http://www.pantz.org/tags/idl.html">idl</a>(1)<br>
+<a href="http://www.pantz.org/tags/ie.html">ie</a>(2)<br>
+<a href="http://www.pantz.org/tags/intel.html">intel</a>(1)<br>
+<a href="http://www.pantz.org/tags/ios.html">ios</a>(1)<br>
+<a href="http://www.pantz.org/tags/iptables.html">iptables</a>(1)<br>
+<a href="http://www.pantz.org/tags/irix.html">irix</a>(2)<br>
+<a href="http://www.pantz.org/tags/javascript.html">javascript</a>(3)<br>
+<a href="http://www.pantz.org/tags/kde.html">kde</a>(6)<br>
+<a href="http://www.pantz.org/tags/kernel.html">kernel</a>(10)<br>
+<a href="http://www.pantz.org/tags/kmail.html">kmail</a>(1)<br>
+<a href="http://www.pantz.org/tags/kprinter.html">kprinter</a>(1)<br>
+<a href="http://www.pantz.org/tags/krecord.html">krecord</a>(1)<br>
+<a href="http://www.pantz.org/tags/kubuntu.html">kubuntu</a>(4)<br>
+<a href="http://www.pantz.org/tags/linux.html">linux</a>(45)<br>
+<a href="http://www.pantz.org/tags/logfile.html">logfile</a>(1)<br>
+<a href="http://www.pantz.org/tags/maradns.html">maradns</a>(1)<br>
+<a href="http://www.pantz.org/tags/matlab.html">matlab</a>(1)<br>
+<a href="http://www.pantz.org/tags/memory.html">memory</a>(2)<br>
+<a href="http://www.pantz.org/tags/mencoder.html">mencoder</a>(1)<br>
+<a href="http://www.pantz.org/tags/mhdd.html">mhdd</a>(1)<br>
+<a href="http://www.pantz.org/tags/mkinitrd.html">mkinitrd</a>(2)<br>
+<a href="http://www.pantz.org/tags/mkisofs.html">mkisofs</a>(1)<br>
+<a href="http://www.pantz.org/tags/motherboard.html">motherboard</a>(1)<br>
+<a href="http://www.pantz.org/tags/mouse.html">mouse</a>(2)<br>
+<a href="http://www.pantz.org/tags/mplayer.html">mplayer</a>(2)<br>
+<a href="http://www.pantz.org/tags/multitail.html">multitail</a>(1)<br>
+<a href="http://www.pantz.org/tags/mutt.html">mutt</a>(1)<br>
+<a href="http://www.pantz.org/tags/myodbc.html">myodbc</a>(1)<br>
+<a href="http://www.pantz.org/tags/mysql.html">mysql</a>(4)<br>
+<a href="http://www.pantz.org/tags/mythtv.html">mythtv</a>(2)<br>
+<a href="http://www.pantz.org/tags/nagios.html">nagios</a>(3)<br>
+<a href="http://www.pantz.org/tags/nameserver.html">nameserver</a>(2)<br>
+<a href="http://www.pantz.org/tags/netflow.html">netflow</a>(1)<br>
+<a href="http://www.pantz.org/tags/nic.html">nic</a>(2)<br>
+<a href="http://www.pantz.org/tags/ntfs.html">ntfs</a>(1)<br>
+<a href="http://www.pantz.org/tags/ntp.html">ntp</a>(2)<br>
+<a href="http://www.pantz.org/tags/nvidia.html">nvidia</a>(5)<br>
+<a href="http://www.pantz.org/tags/odbc.html">odbc</a>(1)<br>
+<a href="http://www.pantz.org/tags/openbsd.html">openbsd</a>(20)<br>
+<a href="http://www.pantz.org/tags/openntpd.html">openntpd</a>(1)<br>
+<a href="http://www.pantz.org/tags/openoffice.html">openoffice</a>(4)<br>
+<a href="http://www.pantz.org/tags/opteron.html">opteron</a>(1)<br>
+<a href="http://www.pantz.org/tags/parted.html">parted</a>(1)<br>
+<a href="http://www.pantz.org/tags/partimage.html">partimage</a>(3)<br>
+<a href="http://www.pantz.org/tags/patch.html">patch</a>(1)<br>
+<a href="http://www.pantz.org/tags/perl.html">perl</a>(5)<br>
+<a href="http://www.pantz.org/tags/pf.html">pf</a>(2)<br>
+<a href="http://www.pantz.org/tags/pfflowd.html">pfflowd</a>(1)<br>
+<a href="http://www.pantz.org/tags/pfsync.html">pfsync</a>(1)<br>
+<a href="http://www.pantz.org/tags/photorec.html">photorec</a>(1)<br>
+<a href="http://www.pantz.org/tags/php.html">php</a>(6)<br>
+<a href="http://www.pantz.org/tags/pop3.html">pop3</a>(3)<br>
+<a href="http://www.pantz.org/tags/pop3s.html">pop3s</a>(1)<br>
+<a href="http://www.pantz.org/tags/ports.html">ports</a>(1)<br>
+<a href="http://www.pantz.org/tags/postfix.html">postfix</a>(2)<br>
+<a href="http://www.pantz.org/tags/power.html">power</a>(2)<br>
+<a href="http://www.pantz.org/tags/procmail.html">procmail</a>(3)<br>
+<a href="http://www.pantz.org/tags/proftpd.html">proftpd</a>(2)<br>
+<a href="http://www.pantz.org/tags/proxy.html">proxy</a>(3)<br>
+<a href="http://www.pantz.org/tags/qemu.html">qemu</a>(2)<br>
+<a href="http://www.pantz.org/tags/r-studio.html">r-studio</a>(1)<br>
+<a href="http://www.pantz.org/tags/raid.html">raid</a>(3)<br>
+<a href="http://www.pantz.org/tags/recovery.html">recovery</a>(2)<br>
+<a href="http://www.pantz.org/tags/router.html">router</a>(1)<br>
+<a href="http://www.pantz.org/tags/rsync.html">rsync</a>(2)<br>
+<a href="http://www.pantz.org/tags/samba.html">samba</a>(2)<br>
+<a href="http://www.pantz.org/tags/schedule.html">schedule</a>(1)<br>
+<a href="http://www.pantz.org/tags/scsi.html">scsi</a>(5)<br>
+<a href="http://www.pantz.org/tags/seatools.html">seatools</a>(1)<br>
+<a href="http://www.pantz.org/tags/sendmail.html">sendmail</a>(3)<br>
+<a href="http://www.pantz.org/tags/sgi.html">sgi</a>(1)<br>
+<a href="http://www.pantz.org/tags/shell.html">shell</a>(2)<br>
+<a href="http://www.pantz.org/tags/siw.html">siw</a>(1)<br>
+<a href="http://www.pantz.org/tags/smtp.html">smtp</a>(6)<br>
+<a href="http://www.pantz.org/tags/solaris.html">solaris</a>(3)<br>
+<a href="http://www.pantz.org/tags/soundcard.html">soundcard</a>(1)<br>
+<a href="http://www.pantz.org/tags/spam.html">spam</a>(3)<br>
+<a href="http://www.pantz.org/tags/spamd.html">spamd</a>(2)<br>
+<a href="http://www.pantz.org/tags/sql.html">sql</a>(3)<br>
+<a href="http://www.pantz.org/tags/squid.html">squid</a>(2)<br>
+<a href="http://www.pantz.org/tags/ssh.html">ssh</a>(7)<br>
+<a href="http://www.pantz.org/tags/ssl.html">ssl</a>(7)<br>
+<a href="http://www.pantz.org/tags/subnet.html">subnet</a>(1)<br>
+<a href="http://www.pantz.org/tags/sun.html">sun</a>(1)<br>
+<a href="http://www.pantz.org/tags/supermicro.html">supermicro</a>(1)<br>
+<a href="http://www.pantz.org/tags/switches.html">switches</a>(2)<br>
+<a href="http://www.pantz.org/tags/symbols.html">symbols</a>(1)<br>
+<a href="http://www.pantz.org/tags/t1.html">t1</a>(1)<br>
+<a href="http://www.pantz.org/tags/tcpip.html">tcpip</a>(2)<br>
+<a href="http://www.pantz.org/tags/telnet.html">telnet</a>(3)<br>
+<a href="http://www.pantz.org/tags/terminal.html">terminal</a>(1)<br>
+<a href="http://www.pantz.org/tags/testdisk.html">testdisk</a>(1)<br>
+<a href="http://www.pantz.org/tags/thttpd.html">thttpd</a>(1)<br>
+<a href="http://www.pantz.org/tags/thunderbird.html">thunderbird</a>(3)<br>
+<a href="http://www.pantz.org/tags/timezone.html">timezone</a>(1)<br>
+<a href="http://www.pantz.org/tags/tools.html">tools</a>(1)<br>
+<a href="http://www.pantz.org/tags/tuning.html">tuning</a>(1)<br>
+<a href="http://www.pantz.org/tags/tunnel.html">tunnel</a>(1)<br>
+<a href="http://www.pantz.org/tags/vi.html">vi</a>(1)<br>
+<a href="http://www.pantz.org/tags/windows.html">windows</a>(8)<br>
+<a href="http://www.pantz.org/tags/windowsxp.html">windowsxp</a>(2)<br>
+<a href="http://www.pantz.org/tags/wireless.html">wireless</a>(2)<br>
+<a href="http://www.pantz.org/tags/wpa_supplicant.html">wpa_supplicant</a>(1)<br>
+<a href="http://www.pantz.org/tags/X.html">X</a>(10)<br>
+<a href="http://www.pantz.org/tags/xauth.html">xauth</a>(1)<br>
+<a href="http://www.pantz.org/tags/xfree86.html">xfree86</a>(1)<br>
+<a href="http://www.pantz.org/tags/xfs.html">xfs</a>(2)<br>
+<a href="http://www.pantz.org/tags/Xinearama.html">Xinearama</a>(1)<br>
+<a href="http://www.pantz.org/tags/xmms.html">xmms</a>(1)<br>
+<a href="http://www.pantz.org/tags/zdump.html">zdump</a>(1)<br>
+<a href="http://www.pantz.org/tags/zic.html">zic</a>(1)<br>
+<a href="http://www.pantz.org/tags/zlib.html">zlib</a>(1)<br>
+</div></p>
+</div>
+
+<!-- <div id="boxright">
+<script type="text/javascript"><!--
+google_ad_client = "pub-8796103469637220";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "text";
+google_ad_channel = "";
+google_color_border = "FFF7ED";
+google_color_link = "6A5ACD";
+google_color_bg = "FFF7ED";
+google_color_text = "000000";
+google_color_url = "000000";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-8796103469637220";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "text";
+google_ad_channel = "";
+google_color_border = "FFF7ED";
+google_color_link = "6A5ACD";
+google_color_bg = "FFF7ED";
+google_color_text = "000000";
+google_color_url = "000000";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-8796103469637220";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "text";
+google_ad_channel = "";
+google_color_border = "FFF7ED";
+google_color_link = "6A5ACD";
+google_color_bg = "FFF7ED";
+google_color_text = "000000";
+google_color_url = "000000";
+//-->
+</script>
+<script type="text/javascript" 
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div> -->
+
+</body>
+</html>

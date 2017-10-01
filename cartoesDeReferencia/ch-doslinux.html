@@ -1,0 +1,1144 @@
+<HTML
+><HEAD
+><TITLE
+>DOS to Linux Cheat Sheet</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.54"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Appendixes"
+HREF="p8326.html"><LINK
+REL="PREVIOUS"
+TITLE="A Brief History of Linux and Red Hat"
+HREF="ch-history.html"><LINK
+REL="NEXT"
+TITLE="Different Paths"
+HREF="s1-doslinux-pathnames.html"><link rel="stylesheet" type="text/css" href="/css/homepage.css"><link rel="SHORTCUT ICON" href="/favicon.ico"><style type="text/css" media="all">@import "/css/non_ns4.css";</style><link rel="stylesheet" type="text/css" href="/css/redhat_lx.css"></HEAD
+><BODY
+CLASS="APPENDIX"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><!-- docs header table -->
+
+<style type="text/css">
+table.docs-header {
+        width: 100%;
+        font-family: helvetica, arial, sans-serif;
+        font-size: 12pt;
+        margin : 0;
+        padding : 0;
+        background-color: #b5b5b5;
+        }
+
+table.docs-header td {
+        border-bottom: 6px solid #000000;
+        }
+
+table.breadcrumb {
+        font-family: helvetica, arial, sans-serif;
+        font-size: 9pt;
+	margin-left: 20px;
+        }
+
+#docs-owl    {
+        position: absolute;
+        top: 17px;
+        right: 10px;
+        border: 0;         
+        float: right;
+        }
+
+#docs-search  {
+        font-family: helvetica, arial, sans-serif;
+	font-weight: bold;
+	font-size: 10pt;
+	color: #000000;
+	vertical-align: middle;
+	margin-right: 20px;
+        }
+
+</style>
+		<FORM action="/apps/search/results.html" method="post" name="search" id="search">
+                <input type="hidden" name="restrict" value="docs">
+		<INPUT type="hidden" name="search:source" value="google:redhat">
+                <table class="docs-header" cellspacing="1">
+                  <tr bgcolor="#b5b5b5">
+                    <td align="left" valign="middle"><img src="/img/docs_header.gif" alt="Red Hat Docs"></td>
+                    <td align="right" valign="middle">
+		      <div id="docs-search">
+		      Search Docs:&nbsp;&nbsp;<INPUT type="text" name="search:query_cb" size="12">&nbsp;&nbsp;
+                      <INPUT type="submit" value="Go"></div>
+		    </td>
+                  </tr>
+
+</table>
+
+		<div><input type="hidden" name="asp_charset"
+		value="utf-8" /></div></form>
+<!-- end docs header table --><!-- breadcrumb -->
+
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+                <td width="100%">
+<a href="/docs/" style="color:#990000; font-family:helvetica; text-decoration:none; font-size:9pt; font-weight:bold;">Red Hat Docs</a>&nbsp;&nbsp;<span style="color:#990000; font-family:helvetica; font-size:9pt; font-weight:bold;">&gt;</span>&nbsp;
+
+<a href="/docs/manuals/" style="color:#990000; font-family:helvetica; text-decoration:none; font-size:9pt; font-weight:bold;">Red Hat Manuals</a>&nbsp;&nbsp;<span style="color:#990000; font-family:helvetica; font-size:9pt; font-weight:bold;">&gt;</span>&nbsp;
+
+<a href="/docs/manuals/linux/"  style="color:#990000; font-family:helvetica; text-decoration:none; font-size:9pt; font-weight:bold;">Red Hat Linux Manuals</a>&nbsp;&nbsp;<span style="color:#990000; font-family:helvetica; font-size:9pt; font-weight:bold;">&gt;</span>&nbsp;
+
+                </td>
+        </tr>
+        <tr>
+                <td><img src="/img/pixel.gif" width="1" height="5" border="0" alt="" /></td>
+        </tr>
+</table>
+
+<!-- end breadcrumb --><BR /><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-history.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-doslinux-pathnames.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="APPENDIX"
+><H1
+><A
+NAME="CH-DOSLINUX"
+>Appendix C. DOS to Linux Cheat Sheet</A
+></H1
+><P
+>      Many Linux commands you type at a shell prompt are not that different
+      from the commands you would type either in MS-DOS or in Windows (from the
+      MS-DOS prompt). In fact, some commands are identical.
+  </P
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-DOSLINUX-COMMANDS"
+>DOS and Linux Commands</A
+></H1
+><P
+>    What follows are some common commands used at the MS-DOS prompt in Windows
+    9<TT
+CLASS="REPLACEABLE"
+><I
+>x</I
+></TT
+>, and in Linux, as well as a basic example of
+    how the command is used at the Linux shell prompt. Note that these commands
+    usually have a number of options. To learn more about each command, read its
+    associated man page (for example, type <TT
+CLASS="USERINPUT"
+><B
+>man ls</B
+></TT
+> at the
+    shell prompt to read about the <TT
+CLASS="COMMAND"
+>ls</TT
+> command).
+    </P
+><DIV
+CLASS="TABLE"
+><A
+NAME="TB-COMMANDS"
+></A
+><P
+><B
+>Table C-1. Similar Commands</B
+></P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+CELLSPACING="0"
+CELLPADDING="4"
+CLASS="CALSTABLE"
+><THEAD
+><TR
+><TH
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Command's Purpose</TH
+><TH
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>MS-DOS</TH
+><TH
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Linux</TH
+><TH
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Basic Linux Example</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Copies files</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>copy</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>cp</TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>cp <TT
+CLASS="REPLACEABLE"
+><I
+>thisfile.txt</I
+></TT
+> /home/<TT
+CLASS="REPLACEABLE"
+><I
+>thisdirectory</I
+></TT
+></TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Moves files</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>move</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>mv</TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>mv <TT
+CLASS="REPLACEABLE"
+><I
+>thisfile.txt</I
+></TT
+>
+			/home/<TT
+CLASS="REPLACEABLE"
+><I
+>thisdirectory</I
+></TT
+></TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Lists files</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>dir</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>ls</TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>ls</TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Clears screen</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>cls</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>clear</TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>clear</TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Closes prompt window</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>exit</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>exit</TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>exit</TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Displays or sets date</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>date</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>date</TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>date</TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Deletes files</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>del</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>rm</TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>rm <TT
+CLASS="REPLACEABLE"
+><I
+>thisfile.txt</I
+></TT
+></TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>"Echoes" output on the screen</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>echo</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>echo</TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>echo <TT
+CLASS="REPLACEABLE"
+><I
+>this message</I
+></TT
+></TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Edits files with simple text editor</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>edit</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>pico</TT
+><A
+NAME="AEN9041"
+HREF="#FTN.AEN9041"
+>[a]</A
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>pico <TT
+CLASS="REPLACEABLE"
+><I
+>thisfile.txt</I
+></TT
+></TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Compares the contents of files</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>fc</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>diff</TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>diff <TT
+CLASS="REPLACEABLE"
+><I
+>file1</I
+></TT
+>
+			  <TT
+CLASS="REPLACEABLE"
+><I
+>file2</I
+></TT
+></TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Finds a string of text in a file</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>find</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>grep</TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>grep
+                <TT
+CLASS="REPLACEABLE"
+><I
+>this word or phrase</I
+></TT
+></TT
+>
+                <TT
+CLASS="REPLACEABLE"
+><I
+>thisfile.txt</I
+></TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Formats a floppy</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>format
+                a:</TT
+> (if floppy's in <TT
+CLASS="FILENAME"
+>A:</TT
+>)</TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>mke2fs</TT
+> (or
+                <TT
+CLASS="COMMAND"
+>mformat</TT
+><A
+NAME="AEN9077"
+HREF="#FTN.AEN9077"
+>[b]</A
+>)</TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>/sbin/mke2fs
+                /dev/fd0</TT
+> (<TT
+CLASS="FILENAME"
+>/dev/fd0</TT
+> is the Linux
+                equivalent of <TT
+CLASS="FILENAME"
+>A:</TT
+>)</TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Displays command help</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+><TT
+CLASS="REPLACEABLE"
+><I
+>command</I
+></TT
+>
+		      /?</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>man</TT
+><A
+NAME="AEN9090"
+HREF="#FTN.AEN9090"
+>[c]</A
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>man
+		      <TT
+CLASS="REPLACEABLE"
+><I
+>command</I
+></TT
+></TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Creates a directory</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>mkdir</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>mkdir</TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>mkdir <TT
+CLASS="REPLACEABLE"
+><I
+>directory</I
+></TT
+></TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Screens through a file</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>more</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>less</TT
+><A
+NAME="AEN9111"
+HREF="#FTN.AEN9111"
+>[d]</A
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>less
+                <TT
+CLASS="REPLACEABLE"
+><I
+>thisfile.txt</I
+></TT
+></TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Renames a file</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>ren</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>mv</TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>mv <TT
+CLASS="REPLACEABLE"
+><I
+>thisfile.txt</I
+></TT
+>
+			  <TT
+CLASS="REPLACEABLE"
+><I
+>thatfile.txt</I
+></TT
+></TT
+><A
+NAME="AEN9128"
+HREF="#FTN.AEN9128"
+>[e]</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Shows your location in the file system</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>chdir</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>pwd</TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>pwd</TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Changes directories with a specified path
+                (<I
+CLASS="FIRSTTERM"
+>absolute path</I
+>)</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>cd <TT
+CLASS="REPLACEABLE"
+><I
+>pathname</I
+></TT
+></TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>cd <TT
+CLASS="REPLACEABLE"
+><I
+>pathname</I
+></TT
+></TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>cd <TT
+CLASS="REPLACEABLE"
+><I
+>/directory/directory</I
+></TT
+></TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Changes directories with a <I
+CLASS="FIRSTTERM"
+>relative path</I
+></TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>cd ..</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>cd ..</TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>cd ..</TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Displays the time</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>time</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>date</TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>date</TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="24%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Shows amount of RAM and use</TD
+><TD
+WIDTH="15%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>mem</TT
+></TD
+><TD
+WIDTH="12%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>free</TT
+></TD
+><TD
+WIDTH="49%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="COMMAND"
+>procinfo</TT
+></TD
+></TR
+></TBODY
+><TR
+><TD
+COLSPAN="4"
+>Notes:<BR><A
+NAME="FTN.AEN9041"
+>a. </A
+>Pico is a
+			    simple text editor; other editors you can use in
+			    place of <B
+CLASS="APPLICATION"
+>pico</B
+> include
+			    <B
+CLASS="APPLICATION"
+>emacs</B
+> and <B
+CLASS="APPLICATION"
+>vi</B
+>.<BR><A
+NAME="FTN.AEN9077"
+>b. </A
+>This formats a disk
+                for the DOS filesystem.<BR><A
+NAME="FTN.AEN9090"
+>c. </A
+>Or you can
+		      use <TT
+CLASS="COMMAND"
+>info</TT
+> for some
+		      commands.<BR><A
+NAME="FTN.AEN9111"
+>d. </A
+>You can also
+                another <I
+CLASS="FIRSTTERM"
+>pager</I
+>, called
+                <TT
+CLASS="COMMAND"
+>more</TT
+>, to scroll through a file a screen at at
+                time.<BR><A
+NAME="FTN.AEN9128"
+>e. </A
+>The
+			  <TT
+CLASS="COMMAND"
+>mv</TT
+> command serves double-duty,
+			  because it can both move a file and, if you want to
+			  rename a file in the same directory, you "move" that
+			  file to the same directory with a new
+			  name, as in this example.<BR></TD
+></TR
+></TABLE
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-history.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-doslinux-pathnames.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>A Brief History of Linux and Red Hat</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p8326.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Different Paths</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>
