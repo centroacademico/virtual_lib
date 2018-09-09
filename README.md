@@ -53,11 +53,14 @@ Iniciativa do C.A.S.I para material de consulta e outras utilidades que podem fa
 
 ### Ferramentas para vida acadêmica
 [Cite for me](http://www.citethisforme.com/pt) - Gerador de referencia bibliográfica no formato que você quiser.  
-[Gerador de referencias](http://novo.more.ufsc.br/homepage/inserir_homepage) - Se o Cite for me não funcionar faça na "mão".  
+[Gerador de referencias](http://novo.more.ufsc.br/homepage/inserir_homepage) - Se o Cite for me não funcionar faça na "mão". 
 [Scihub](https://sci-hub.tw/) - Baixe qualquer artigo cientifico de graça - "To remove all barriers in the way of science".  
+[Minas em numeros](http://www.numeros.mg.gov.br) - Diversas estatisticas criminais do estado de MG.  
 
 ### Portais
 [DevHub](https://devhub.io/) - Possui conteúdo de quase tudo, mas muita coisa voltada para web - ultimo acesso: 09/08/2018.  
 [30 seconds of code](https://30secondsofcode.org/index) - Explicações rápidas sobre funções e métodos de JavaScript, CSS etc, também possui uma vasta coleção de métodos uteis que sem duvidas você vai querer reaproveitar.  
 [MachineLearning repository](http://archive.ics.uci.edu/ml/datasets.html?format=&task=cla&att=&area=&numAtt=&numIns=&type=&sort=nameUp&view=table) - Então várias bases de dados públicas para machine learning.  
 [Geeks for geeks](https://www.geeksforgeeks.org/) - Tem tudo sobre computação, é ate dificil listar - ultimo acesso: 09/08/2018.  
+[IT Books](http://it-ebooks.info/) - Vários livros de TI para baixar ou comprar - ultimo acesso: 09/08/2018.  
+[Java Magazine](http://www.javamagazine.mozaicreader.com/#&pageSet=0&page=0&contentItem=0) - Revista de Java - ultimo acesso: 09/08/2018.
