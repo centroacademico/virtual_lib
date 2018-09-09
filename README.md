@@ -16,6 +16,7 @@ Iniciativa do C.A.S.I para material de consulta e outras utilidades que podem fa
 [ASCII Flow](http://asciiflow.com/) - Editor de ASCII, possui funções de desenhar tabelas, linhas entre outros, tudo em ASCII.  
 [JSON](https://jsoneditoronline.org/) - Um editor de JSON..só ¯\_(ツ)_/¯  
 [Lesster](https://lesstester.com/) - Editor de LESS online.  
+[RevealJs](https://slides.com/) - Editor de slides, mas muito mais que isso.  
 
 ### Mock
 [Mocky](https://www.mocky.io/) - Teste sua API com respostas HTTP reais.  
