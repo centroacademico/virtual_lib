@@ -53,7 +53,7 @@ Iniciativa do C.A.S.I para material de consulta e outras utilidades que podem fa
 
 ### Ferramentas para vida acadêmica
 [Cite for me](http://www.citethisforme.com/pt) - Gerador de referencia bibliográfica no formato que você quiser.  
-[Gerador de referencias](http://novo.more.ufsc.br/homepage/inserir_homepage) - Se o Cite for me não funcionar faça na "mão". 
+[Gerador de referencias](http://novo.more.ufsc.br/homepage/inserir_homepage) - Se o Cite for me não funcionar faça na "mão".   
 [Scihub](https://sci-hub.tw/) - Baixe qualquer artigo cientifico de graça - "To remove all barriers in the way of science".  
 [Minas em numeros](http://www.numeros.mg.gov.br) - Diversas estatisticas criminais do estado de MG.  
 
