@@ -31,7 +31,7 @@ Iniciativa do C.A.S.I para material de consulta e outras utilidades que podem fa
 [ILOVEPDF](http://www.ilovepdf.com/pt) - Conversor de PDF para vários outros, divide PDF, junta, converte etc.  
 
 ### Ferramentas
-[SQLite](https://sqliteonline.com/#) - Banco SQLite online, execute querys, crie tabelas tudo online e sem instalar nada.  
+[SQLite](https://sqliteonline.com/#) - Banco SQLite online, execute querys, crie tabelas tudo online e sem instalar nada.    
 [4Dev](https://www.4devs.com.br/gerador_de_pessoas) - Um site com diversas ferramentas 4dev's. Gerador de pessoa fisica, CPF, CNPJ, Nicks, RENAVAN, CEP, Titulo eleitoral, quase tudo que você imaginar.  
 [JSONMate](http://jsonmate.com/) - Cria link permanente de um JSON, Beautify, Uglify, Editor de JSON, Querys.  
 [Workbench Online](http://ondras.zarovi.cz/sql/demo/) - Workbench online para banco de dados relacionais, exporta tabelas em SQL, para bancos de dados MySQL, Sqlite, web2py, Postgress, Oracle, cubrid entre outros.  
@@ -47,7 +47,7 @@ Iniciativa do C.A.S.I para material de consulta e outras utilidades que podem fa
 [WolframAlpha](https://www.wolframalpha.com/) - Resolve quase qualquer expressão matemática para você.  
 [Symbolab](https://www.symbolab.com/) - Também resolve quase qualquer expressão matemática para você, só que deixa você ver os passos de graça.  
 [Tiny PNG](https://tinypng.com/) - Diminui o tamanho de arquivos de imagem como png, jpg etc.  
-[Make thumbnails](http://makethumbnails.com/#options) - O nome diz tudo.
+[Make thumbnails](http://makethumbnails.com/#options) - O nome diz tudo.  
 [Ezgif](https://ezgif.com/) - Ferramenta para editar GIF online, entre diversas outras possibilidades com imagens.  
 [Audio Joiner](https://audio-joiner.com/pt/) - Une arquivos de áudio, corta, converte, entre vários outras funcionalidades com áudio.  
 
@@ -63,4 +63,4 @@ Iniciativa do C.A.S.I para material de consulta e outras utilidades que podem fa
 [MachineLearning repository](http://archive.ics.uci.edu/ml/datasets.html?format=&task=cla&att=&area=&numAtt=&numIns=&type=&sort=nameUp&view=table) - Então várias bases de dados públicas para machine learning.  
 [Geeks for geeks](https://www.geeksforgeeks.org/) - Tem tudo sobre computação, é ate dificil listar - ultimo acesso: 09/08/2018.  
 [IT Books](http://it-ebooks.info/) - Vários livros de TI para baixar ou comprar - ultimo acesso: 09/08/2018.  
-[Java Magazine](http://www.javamagazine.mozaicreader.com/#&pageSet=0&page=0&contentItem=0) - Revista de Java - ultimo acesso: 09/08/2018.
+[Java Magazine](http://www.javamagazine.mozaicreader.com/#&pageSet=0&page=0&contentItem=0) - Revista de Java - ultimo acesso: 09/08/2018.  
